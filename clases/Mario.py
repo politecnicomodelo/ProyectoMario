@@ -2,10 +2,11 @@ import sys
 import time
 import pygame
 from .Bloques import Bloque
+from .Piso import Piso
 from pygame.locals import *
 
-ancho = 640
-alto = 360
+ancho = 1360
+alto = 768
 
 class Mario(pygame.sprite.Sprite):
     def __init__(self):
@@ -16,20 +17,21 @@ class Mario(pygame.sprite.Sprite):
         self.rect.centery = alto-50
 
     def mover(self, keys):
+
         self.image = pygame.image.load("imagenes/marioder.png")
         if keys[K_UP]:
             self.image = pygame.image.load("imagenes/mariosalta.png")
-            self.rect.y -= 2
+            self.rect.y -= 20
 
         if keys[K_DOWN]:
-            self.rect.y += 2
+            self.rect.y += 20
 
         if self.rect.right <= ancho:
              if keys[K_RIGHT]:
                 self.image = pygame.image.load("imagenes/mariocorreder.png")
-                self.rect.x += 2
+                self.rect.x += 20
 
         if self.rect.left >=0:
             if keys[K_LEFT]:
                 self.image = pygame.image.load("imagenes/mariocorreizq.png")
-                self.rect.x -= 2
+                self.rect.x -=20
