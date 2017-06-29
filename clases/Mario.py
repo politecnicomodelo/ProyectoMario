@@ -13,27 +13,59 @@ class Mario(pygame.sprite.Sprite):
         self.image = pygame.image.load("imagenes/mario/marioder.png")
         self.rect = self.image.get_rect()
         self.rect.centerx = ancho-1300
-        self.rect.centery = alto-200
+        self.rect.centery = 630
 
-    def mover(self, keys, objpiso, objcubo):
+    def mover(self, keys, objpiso, objcubo, muevePantalla):
+        self.image=pygame.image.load("imagenes/mario/marioder.png")
 
-        self.image = pygame.image.load("imagenes/mario/marioder.png")
-        if keys[K_UP] and not self.rect.colliderect(objcubo):
-            self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-            self.rect.y -= 10
+        if self.rect.x<680:
+            muevePantalla=False
+            if not self.rect.colliderect(objcubo):
+                if keys[K_UP]:
+                    self.image =pygame.image.load("imagenes/mario/mariosalta.png")
+                    self.rect.y -= 15
 
-        if keys[K_DOWN] and not self.rect.colliderect(objpiso):
-             self.rect.y += 10
+            if not self.rect.colliderect(objpiso):
+                if keys[K_DOWN]:
+                    self.rect.y += 15
 
-        contador=0
-        if self.rect.right <= ancho:
-             if keys[K_RIGHT]:
-                self.image = pygame.image.load(ListaSpritesDer[contador])
-                contador += 1
-                if contador>len(ListaSpritesDer):
-                    contador=0
-                self.rect.x += 10
+            contador1=0
+            if self.rect.right <= ancho:
+                 if keys[K_RIGHT]:
+                    self.image =self.spriteMario(contador1, ListaSpritesDer)
+                    self.rect.x += 15
 
-        if self.rect.left >=0:
+            contador2=0
+            if self.rect.left >= 0:
+                if keys[K_LEFT]:
+                    self.image =self.spriteMario(contador2, ListaSpritesIzq)
+                    self.rect.x -= 15
+
+        else:
+            muevePantalla=False
+            contador1=0
+            contador2=0
+            if keys[K_RIGHT] and self.rect.right <= ancho:
+                self.image =self.spriteMario(contador1, ListaSpritesDer)
+                muevePantalla=True
+
             if keys[K_LEFT]:
-                self.rect.x -= 10
+                self.image = self.spriteMario(contador2, ListaSpritesIzq)
+                self.rect.x -= 15
+
+            if keys[K_UP] and not self.rect.colliderect(objcubo):
+                self.image =pygame.image.load("imagenes/mario/mariosalta.png")
+                self.rect.y -= 15
+
+            if keys[K_DOWN] and not self.rect.colliderect(objpiso):
+                self.rect.y += 15
+
+        return muevePantalla
+
+
+    def spriteMario(self, contador, Lista):
+        if contador != 0:
+            contador+=1
+        if contador <= len(Lista):
+            contador=0
+        return pygame.image.load(Lista[contador])

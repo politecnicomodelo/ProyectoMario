@@ -16,21 +16,30 @@ def main():
     mario=Mario()
     bloque=Bloque()
     unPiso = Piso()
+    x=0
+    y=0
+    muevePantalla=False
     while True:
         for eventos in pygame.event.get():
             if eventos.type == QUIT:
                 sys.exit(0)
-        reloj.tick(60)
         teclas = pygame.key.get_pressed()
-        screen.blit(fondo, (0, 0))
-        mario.mover(teclas, unPiso, bloque)
+
+        muevePantalla = mario.mover(teclas, unPiso, bloque, muevePantalla)
+
+        while muevePantalla is True:
+            x-=10
+
+        screen.blit(fondo, (x, y))
+        mario.mover(teclas, unPiso, bloque, muevePantalla)
         screen.blit(mario.image, mario.rect)
-        screen.blit(bloque.image, bloque.rect)
+        #screen.blit(bloque.image, bloque.rect)
         screen.blit(unPiso.image, unPiso.rect)
         mario.update()
         unPiso.update()
         bloque.update()
         pygame.display.flip()
+        reloj.tick(120)
 
 if __name__ == '__main__':
     pygame.init()
