@@ -12,7 +12,7 @@ def main():
     reloj=pygame.time.Clock()
     screen=pygame.display.set_mode((ancho, alto))
     pygame.display.set_caption("Mario Bros")
-    fondo=pygame.image.load("imagenes/celeste.png")
+    fondo=pygame.image.load("imagenes/fondo.jpg")
     mario=Mario()
     bloque=Bloque()
     unPiso = Piso()
@@ -25,19 +25,15 @@ def main():
                 sys.exit(0)
         teclas = pygame.key.get_pressed()
 
-        muevePantalla = mario.mover(teclas, unPiso, bloque, muevePantalla)
-
-        while muevePantalla is True:
-            x-=10
+        if muevePantalla == True:
+            x-=15
 
         screen.blit(fondo, (x, y))
-        mario.mover(teclas, unPiso, bloque, muevePantalla)
+        muevePantalla=mario.mover(teclas, unPiso, bloque, muevePantalla)
         screen.blit(mario.image, mario.rect)
-        #screen.blit(bloque.image, bloque.rect)
         screen.blit(unPiso.image, unPiso.rect)
         mario.update()
         unPiso.update()
-        bloque.update()
         pygame.display.flip()
         reloj.tick(120)
 

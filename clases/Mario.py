@@ -16,6 +16,7 @@ class Mario(pygame.sprite.Sprite):
         self.rect.centery = 630
 
     def mover(self, keys, objpiso, objcubo, muevePantalla):
+
         self.image=pygame.image.load("imagenes/mario/marioder.png")
 
         if self.rect.x<680:
@@ -30,10 +31,9 @@ class Mario(pygame.sprite.Sprite):
                     self.rect.y += 15
 
             contador1=0
-            if self.rect.right <= ancho:
-                 if keys[K_RIGHT]:
-                    self.image =self.spriteMario(contador1, ListaSpritesDer)
-                    self.rect.x += 15
+            if keys[K_RIGHT]:
+                self.image =self.spriteMario(contador1, ListaSpritesDer)
+                self.rect.x += 15
 
             contador2=0
             if self.rect.left >= 0:
@@ -42,10 +42,11 @@ class Mario(pygame.sprite.Sprite):
                     self.rect.x -= 15
 
         else:
-            muevePantalla=False
+            self.image = pygame.image.load("imagenes/mario/marioder.png")
+            muevePantalla = False
             contador1=0
             contador2=0
-            if keys[K_RIGHT] and self.rect.right <= ancho:
+            if keys[K_RIGHT]:
                 self.image =self.spriteMario(contador1, ListaSpritesDer)
                 muevePantalla=True
 
@@ -61,6 +62,7 @@ class Mario(pygame.sprite.Sprite):
                 self.rect.y += 15
 
         return muevePantalla
+
 
 
     def spriteMario(self, contador, Lista):
