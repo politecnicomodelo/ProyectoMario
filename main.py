@@ -3,10 +3,16 @@ import pygame
 from pygame.locals import *
 from clases.Mario import Mario
 from clases.Bloques import Bloque
+from clases.Monedas import Moneda
+from clases.Hongos import Hongo
+from clases.Signos import Signo
 from clases.Piso import Piso
 
 ancho = 1360
 alto = 768
+
+def crearObjetos():
+    print("Hola")
 
 def main():
     reloj=pygame.time.Clock()
@@ -14,7 +20,6 @@ def main():
     pygame.display.set_caption("Mario Bros")
     fondo=pygame.image.load("imagenes/fondo.jpg")
     mario=Mario()
-    bloque=Bloque()
     unPiso = Piso()
     x=0
     y=0
@@ -29,7 +34,7 @@ def main():
             x-=15
 
         screen.blit(fondo, (x, y))
-        muevePantalla=mario.mover(teclas, unPiso, bloque, muevePantalla)
+        muevePantalla=mario.mover(teclas, unPiso, muevePantalla)
         screen.blit(mario.image, mario.rect)
         screen.blit(unPiso.image, unPiso.rect)
         mario.update()
