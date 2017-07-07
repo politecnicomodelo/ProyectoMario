@@ -15,50 +15,52 @@ class Mario(pygame.sprite.Sprite):
         self.rect.centerx = ancho-1300
         self.rect.centery = 630
 
-    def mover(self, keys, objpiso, muevePantalla):
+    def mover(self, keys, objpiso, muevePantalla, Activos):
 
         self.image=pygame.image.load("imagenes/mario/marioder.png")
 
-        if self.rect.x<680:
-            muevePantalla=False
-            if keys[K_UP]:
-                self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-                self.rect.y -= 15
+        if pygame.sprite.spritecollide(self, Activos, True) == None:
 
-            if not self.rect.colliderect(objpiso):
-                if keys[K_DOWN]:
-                    self.rect.y += 15
+            if self.rect.x<680:
+                    muevePantalla=False
+                    if keys[K_UP]:
+                        self.image = pygame.image.load("imagenes/mario/mariosalta.png")
+                        self.rect.y -= 15
 
-            contador1=0
-            if keys[K_RIGHT]:
-                self.image =self.spriteMario(contador1, ListaSpritesDer)
-                self.rect.x += 15
+                    if not self.rect.colliderect(objpiso):
+                        if keys[K_DOWN]:
+                            self.rect.y += 15
 
-            contador2=0
-            if self.rect.left >= 0:
-                if keys[K_LEFT]:
-                    self.image =self.spriteMario(contador2, ListaSpritesIzq)
-                    self.rect.x -= 15
+                    contador1=0
+                    if keys[K_RIGHT]:
+                        self.image =self.spriteMario(contador1, ListaSpritesDer)
+                        self.rect.x += 15
 
-        else:
-            self.image = pygame.image.load("imagenes/mario/marioder.png")
-            muevePantalla = False
-            contador1=0
-            contador2=0
-            if keys[K_RIGHT]:
-                self.image =self.spriteMario(contador1, ListaSpritesDer)
-                muevePantalla=True
+                    contador2=0
+                    if self.rect.left >= 0:
+                        if keys[K_LEFT]:
+                            self.image =self.spriteMario(contador2, ListaSpritesIzq)
+                            self.rect.x -= 15
 
-            if keys[K_LEFT]:
-                self.image = self.spriteMario(contador2, ListaSpritesIzq)
-                self.rect.x -= 15
+            else:
+                    self.image = pygame.image.load("imagenes/mario/marioder.png")
+                    muevePantalla = False
+                    contador1=0
+                    contador2=0
+                    if keys[K_RIGHT]:
+                        self.image =self.spriteMario(contador1, ListaSpritesDer)
+                        muevePantalla=True
 
-            if keys[K_UP]:
-                self.image =pygame.image.load("imagenes/mario/mariosalta.png")
-                self.rect.y -= 15
+                    if keys[K_LEFT]:
+                        self.image = self.spriteMario(contador2, ListaSpritesIzq)
+                        self.rect.x -= 15
 
-            if keys[K_DOWN] and not self.rect.colliderect(objpiso):
-                self.rect.y += 15
+                    if keys[K_UP]:
+                        self.image =pygame.image.load("imagenes/mario/mariosalta.png")
+                        self.rect.y -= 15
+
+                    if keys[K_DOWN] and not self.rect.colliderect(objpiso):
+                        self.rect.y += 15
 
         return muevePantalla
 

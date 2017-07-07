@@ -11,19 +11,30 @@ from clases.Piso import Piso
 ancho = 1360
 alto = 768
 
-def crearObjetos():
-    print("Hola")
+Monedas=0
+Vidas=0
+
+Activos=pygame.sprite.Group()
+Marios=pygame.sprite.Group()
+
+mario = Mario()
+mario.add(Marios)
+unPiso = Piso()
+unPiso.add(Activos)
+bloque1=Bloque(582, 444)
+bloque1.add(Activos)
+signo1=Signo(798, 444)
+signo1.add(Activos)
 
 def main():
+
     reloj=pygame.time.Clock()
-    screen=pygame.display.set_mode((ancho, alto))
+    fondo = pygame.image.load("imagenes/fondo.jpg")
+    screen = pygame.display.set_mode((ancho, alto))
     pygame.display.set_caption("Mario Bros")
-    fondo=pygame.image.load("imagenes/fondo.jpg")
-    mario=Mario()
-    unPiso = Piso()
-    x=0
-    y=0
-    muevePantalla=False
+    x = 0
+    y = 0
+    muevePantalla = False
     while True:
         for eventos in pygame.event.get():
             if eventos.type == QUIT:
@@ -31,16 +42,17 @@ def main():
         teclas = pygame.key.get_pressed()
 
         if muevePantalla == True:
-            x-=15
+            x -= 15
+            for item in Activos:
+                item.rect.x -= 15
 
+        signo1.devuelve(mario, False, True, Activos)
+        muevePantalla = mario.mover(teclas, unPiso, muevePantalla, Activos)
         screen.blit(fondo, (x, y))
-        muevePantalla=mario.mover(teclas, unPiso, muevePantalla)
-        screen.blit(mario.image, mario.rect)
-        screen.blit(unPiso.image, unPiso.rect)
-        mario.update()
-        unPiso.update()
+        Activos.draw(screen)
+        Marios.draw(screen)
         pygame.display.flip()
-        reloj.tick(120)
+        reloj.tick(60)
 
 if __name__ == '__main__':
     pygame.init()
