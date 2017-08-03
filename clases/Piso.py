@@ -10,4 +10,4 @@ class Piso(pygame.sprite.Sprite):
         self.image = pygame.image.load("imagenes/piso.png")
         self.rect = self.image.get_rect()
         self.rect.centerx = ancho/2
-        self.rect.centery = 700
+        self.rect.centery = 570

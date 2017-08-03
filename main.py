@@ -19,12 +19,21 @@ Marios=pygame.sprite.Group()
 
 mario = Mario()
 mario.add(Marios)
-unPiso = Piso()
-unPiso.add(Activos)
+
 bloque1=Bloque(582, 444)
 bloque1.add(Activos)
+
 signo1=Signo(798, 444)
+signo1.devuelve(mario, False, True, Activos, Monedas)
 signo1.add(Activos)
+
+signo2=Signo(725, 252)
+signo2.devuelve(mario, False, True, Activos, Monedas)
+signo2.add(Activos)
+
+signo3=Signo(2000, 252)
+signo3.devuelve(mario, False, True, Activos, Monedas)
+signo3.add(Activos)
 
 def main():
 
@@ -35,6 +44,7 @@ def main():
     x = 0
     y = 0
     muevePantalla = False
+
     while True:
         for eventos in pygame.event.get():
             if eventos.type == QUIT:
@@ -46,8 +56,12 @@ def main():
             for item in Activos:
                 item.rect.x -= 15
 
-        signo1.devuelve(mario, False, True, Activos)
-        muevePantalla = mario.mover(teclas, unPiso, muevePantalla, Activos)
+        muevePantalla = mario.mover(teclas, muevePantalla, Activos)
+
+        signo1.devuelve(mario, False, True, Activos, Monedas)
+        signo2.devuelve(mario, False, True, Activos, Monedas)
+        signo3.devuelve(mario, False, True, Activos, Monedas)
+
         screen.blit(fondo, (x, y))
         Activos.draw(screen)
         Marios.draw(screen)

@@ -7,5 +7,5 @@ class Moneda(pygame.sprite.Sprite):
         self.image = pygame.image.load("imagenes/moneda.png")
         self.image = pygame.transform.scale(self.image, (40, 40))
         self.rect = self.image.get_rect()
-        self.rect.x=padre.rect.x
-        self.rect.y=padre.rect.y+20
+        self.rect.x=padre.rect.x+15
+        self.rect.y=padre.rect.y-47
