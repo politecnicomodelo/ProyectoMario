@@ -16,6 +16,7 @@ Vidas=0
 
 Activos=pygame.sprite.Group()
 Marios=pygame.sprite.Group()
+Pisos=pygame.sprite.Group()
 
 mario = Mario()
 mario.add(Marios)
