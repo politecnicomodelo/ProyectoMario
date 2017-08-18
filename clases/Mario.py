@@ -1,5 +1,7 @@
 import pygame
 from pygame.locals import *
+import _thread
+import time
 
 ancho = 1360
 alto = 768
@@ -26,10 +28,7 @@ class Mario(pygame.sprite.Sprite):
 
             if keys[K_UP]:
                 self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-                self.rect.y -= 30
-                if pygame.sprite.spritecollideany(self,Activos)!=None:
-                    Sprite=pygame.sprite.spritecollideany(self, Activos)
-                    self.rect.top=Sprite.rect.bottom
+                _thread.start_new_thread(self.saltoMario,())
 
             if keys[K_DOWN]:
                 self.rect.y += 30
@@ -56,24 +55,24 @@ class Mario(pygame.sprite.Sprite):
                         self.rect.left = Sprite.rect.right
 
         else:
-            self.image = pygame.image.load("imagenes/mario/marioder.png")
-            muevePantalla = False
-            contador1=0
-            contador2=0
-            if keys[K_RIGHT]:
-                self.image =self.spriteMario(contador1, ListaSpritesDer)
-                muevePantalla=True
+             self.image = pygame.image.load("imagenes/mario/marioder.png")
+             muevePantalla = False
+             contador1=0
+             contador2=0
+             if keys[K_RIGHT]:
+                 self.image =self.spriteMario(contador1, ListaSpritesDer)
+                 muevePantalla=True
 
-            if keys[K_LEFT]:
+             if keys[K_LEFT]:
                 self.image = self.spriteMario(contador2, ListaSpritesIzq)
                 self.rect.x -= 30
 
-            if keys[K_UP]:
-                self.image =pygame.image.load("imagenes/mario/mariosalta.png")
-                self.rect.y -= 30
+             if keys[K_UP]:
+                  _thread.start_new_thread(self.saltoMario, ())
+                  muevePantalla=True
 
-            if keys[K_DOWN]:
-                self.rect.y += 30
+             if keys[K_DOWN]:
+                   self.rect.y += 30
 
         return muevePantalla
 
@@ -83,3 +82,11 @@ class Mario(pygame.sprite.Sprite):
         if contador >= len(Lista):
             contador=0
         return pygame.image.load(Lista[contador])
+
+    def saltoMario(self):
+        self.image = pygame.image.load("imagenes/mario/mariosalta.png")
+        self.rect.y-=10
+        self.rect.x+=1
+
+
+
