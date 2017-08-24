@@ -9,10 +9,7 @@ class Moneda(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (40, 40))
         self.rect = self.image.get_rect()
         self.rect.x=padre.rect.x+15
-        self.rect.y=padre.rect.y-47
+        self.rect.y=padre.rect.y-51
 
     def matarMoneda(self, Activos):
-        self.rect.y-=5
-        time.sleep(1)
-        self.rect.y+=5
         Activos.remove(self)

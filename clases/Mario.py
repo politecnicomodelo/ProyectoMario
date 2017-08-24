@@ -15,8 +15,8 @@ class Mario(pygame.sprite.Sprite):
         self.image = pygame.image.load("imagenes/mario/marioder.png")
         self.image = pygame.transform.scale(self.image, (90, 90))
         self.rect = self.image.get_rect()
-        self.rect.centerx = ancho-1300
-        self.rect.centery = 630
+        self.rect.x = ancho-1300
+        self.rect.y = 623
 
     def mover(self, keys, muevePantalla, Activos):
 
@@ -28,31 +28,22 @@ class Mario(pygame.sprite.Sprite):
 
             if keys[K_UP]:
                 self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-                _thread.start_new_thread(self.saltoMario,())
+                self.saltoMario()
 
             if keys[K_DOWN]:
                 self.rect.y += 30
-                if pygame.sprite.spritecollideany(self,Activos)!=None:
-                    Sprite=pygame.sprite.spritecollideany(self, Activos)
-                    self.rect.bottom=Sprite.rect.top
 
             contador1=0
 
             if keys[K_RIGHT]:
                 self.image =self.spriteMario(contador1, ListaSpritesDer)
                 self.rect.x += 30
-                if pygame.sprite.spritecollideany(self,Activos)!=None:
-                    Sprite=pygame.sprite.spritecollideany(self, Activos)
-                    self.rect.right=Sprite.rect.left
 
             contador2=0
             if self.rect.left >= 0:
                 if keys[K_LEFT]:
                     self.image =self.spriteMario(contador2, ListaSpritesIzq)
                     self.rect.x -= 30
-                    if pygame.sprite.spritecollideany(self, Activos) != None:
-                        Sprite = pygame.sprite.spritecollideany(self, Activos)
-                        self.rect.left = Sprite.rect.right
 
         else:
              self.image = pygame.image.load("imagenes/mario/marioder.png")
@@ -68,11 +59,11 @@ class Mario(pygame.sprite.Sprite):
                 self.rect.x -= 30
 
              if keys[K_UP]:
-                  _thread.start_new_thread(self.saltoMario, ())
-                  muevePantalla=True
+                self.saltoMario()
+                muevePantalla=True
 
              if keys[K_DOWN]:
-                   self.rect.y += 30
+                self.rect.y += 30
 
         return muevePantalla
 
@@ -85,8 +76,7 @@ class Mario(pygame.sprite.Sprite):
 
     def saltoMario(self):
         self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-        self.rect.y-=10
-        self.rect.x+=1
+        self.rect.y-=30
 
 
 

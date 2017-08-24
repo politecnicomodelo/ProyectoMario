@@ -21,6 +21,15 @@ Pisos=pygame.sprite.Group()
 mario = Mario()
 mario.add(Marios)
 
+piso1=Piso(0, 695,"imagenes/piso1.png")
+piso2=Piso(4297,695,"imagenes/piso2.png")
+piso3=Piso(5736,695,"imagenes/piso3.jpg")
+piso4=Piso(10819,695,"imagenes/piso4.png")
+piso1.add(Pisos)
+piso2.add(Pisos)
+piso3.add(Pisos)
+piso4.add(Pisos)
+
 bloque1=Bloque(582, 444)
 bloque1.add(Activos)
 
@@ -35,6 +44,10 @@ signo2.add(Activos)
 signo3=Signo(2000, 252)
 signo3.devuelve(mario, False, True, Activos, Monedas)
 signo3.add(Activos)
+
+listaSignos=[signo1, signo2, signo3]
+listaBloques=[bloque1]
+
 
 def main():
 
@@ -53,19 +66,23 @@ def main():
         teclas = pygame.key.get_pressed()
 
         if muevePantalla == True:
-            x -= 15
+            x -= 50
             for item in Activos:
-                item.rect.x -= 15
+                item.rect.x -= 50
+            for item in Pisos:
+                item.rect.x -= 50
 
         muevePantalla = mario.mover(teclas, muevePantalla, Activos)
 
-        signo1.devuelve(mario, False, True, Activos, Monedas)
-        signo2.devuelve(mario, False, True, Activos, Monedas)
-        signo3.devuelve(mario, False, True, Activos, Monedas)
+        for item in listaSignos:
+            item.devuelve(mario, False, True, Activos, Monedas)
+        for item in listaBloques:
+            item.devuelveBloque(mario)
 
         screen.blit(fondo, (x, y))
         Activos.draw(screen)
         Marios.draw(screen)
+        Pisos.draw(screen)
         pygame.display.flip()
         reloj.tick(60)
 
