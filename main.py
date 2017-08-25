@@ -41,7 +41,7 @@ signo2=Signo(725, 252)
 signo2.devuelve(mario, False, True, Activos, Monedas)
 signo2.add(Activos)
 
-signo3=Signo(2000, 252)
+signo3=Signo(655, 444)
 signo3.devuelve(mario, False, True, Activos, Monedas)
 signo3.add(Activos)
 
@@ -66,13 +66,13 @@ def main():
         teclas = pygame.key.get_pressed()
 
         if muevePantalla == True:
-            x -= 50
+            x -= 20
             for item in Activos:
-                item.rect.x -= 50
+                item.rect.x -= 20
             for item in Pisos:
-                item.rect.x -= 50
+                item.rect.x -= 20
 
-        muevePantalla = mario.mover(teclas, muevePantalla, Activos)
+        muevePantalla = mario.mover(teclas, muevePantalla, Activos, Pisos)
 
         for item in listaSignos:
             item.devuelve(mario, False, True, Activos, Monedas)

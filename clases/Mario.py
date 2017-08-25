@@ -13,70 +13,83 @@ class Mario(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load("imagenes/mario/marioder.png")
-        self.image = pygame.transform.scale(self.image, (90, 90))
+        self.image = pygame.transform.scale(self.image, (100, 100))
         self.rect = self.image.get_rect()
         self.rect.x = ancho-1300
-        self.rect.y = 623
+        self.rect.y = 600
 
-    def mover(self, keys, muevePantalla, Activos):
+    def mover(self, keys, muevePantalla, Activos, Pisos):
 
         self.image=pygame.image.load("imagenes/mario/marioder.png")
-        Sprite=None
+        self.image = pygame.transform.scale(self.image, (100, 100))
 
         if self.rect.x<680:
-            muevePantalla=False
+                muevePantalla=False
 
-            if keys[K_UP]:
-                self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-                self.saltoMario()
+                if keys[K_UP]:
+                    _thread.start_new_thread(self.saltoDerecha, (Activos, Pisos,))
 
-            if keys[K_DOWN]:
-                self.rect.y += 30
+                if keys[K_DOWN]: #NO EXISTE, PRUEBA
+                    self.rect.y += 30
 
-            contador1=0
+                if keys[K_RIGHT]:
+                    self.image = pygame.image.load("imagenes/mario/mariocorreder2.png")
+                    self.image = pygame.transform.scale(self.image, (100, 100))
+                    self.rect.x += 30
 
-            if keys[K_RIGHT]:
-                self.image =self.spriteMario(contador1, ListaSpritesDer)
-                self.rect.x += 30
-
-            contador2=0
-            if self.rect.left >= 0:
-                if keys[K_LEFT]:
-                    self.image =self.spriteMario(contador2, ListaSpritesIzq)
-                    self.rect.x -= 30
+                if self.rect.left >= 0:
+                    if keys[K_LEFT]:
+                        self.image = pygame.image.load("imagenes/mario/mariocorreizqr2.png")
+                        self.image = pygame.transform.scale(self.image,(100, 100))
+                        self.rect.x -= 30
 
         else:
-             self.image = pygame.image.load("imagenes/mario/marioder.png")
-             muevePantalla = False
-             contador1=0
-             contador2=0
-             if keys[K_RIGHT]:
-                 self.image =self.spriteMario(contador1, ListaSpritesDer)
-                 muevePantalla=True
-
-             if keys[K_LEFT]:
-                self.image = self.spriteMario(contador2, ListaSpritesIzq)
-                self.rect.x -= 30
-
-             if keys[K_UP]:
-                self.saltoMario()
+            self.image = pygame.image.load("imagenes/mario/marioder.png")
+            self.image = pygame.transform.scale(self.image, (100, 100))
+            muevePantalla = False
+            if keys[K_RIGHT]:
+                self.image = pygame.image.load("imagenes/mario/mariocorreder2.png")
+                self.image = pygame.transform.scale(self.image, (100, 100))
                 muevePantalla=True
 
-             if keys[K_DOWN]:
+            if keys[K_LEFT]:
+                self.image = pygame.image.load( "imagenes/mario/mariocorreizqr2.png")
+                self.image = pygame.transform.scale(self.image, (100, 100))
+                self.rect.x -= 30
+
+            if keys[K_UP]:
+                _thread.start_new_thread(self.saltoDerecha, (Activos, Pisos,))
+
+            if keys[K_DOWN]: #NO EXISTE, PRUEBA
                 self.rect.y += 30
 
         return muevePantalla
 
-    def spriteMario(self, contador, Lista):
-        if contador != 0:
-            contador+=1
-        if contador >= len(Lista):
-            contador=0
-        return pygame.image.load(Lista[contador])
+    def saltoDerecha(self, Activos, Pisos):
+        if self.rect.x < 1100:
+            self.image = pygame.image.load("imagenes/mario/mariosalta.png")
+            self.image = pygame.transform.scale(self.image, (100, 100))
+            x=0
+            while x < 45:
+                self.rect.y -= 1
+                self.rect.x += 0.5
+                time.sleep(0.1)
+                x+=1
+            while pygame.sprite.spritecollideany(self, Pisos, collided = None) == None:
+                self.rect.y += 40
+                self.rect.x += 30
+                time.sleep(0.1)
 
-    def saltoMario(self):
-        self.image = pygame.image.load("imagenes/mario/mariosalta.png")
-        self.rect.y-=30
-
-
-
+    def saltoIzquierda(self, Activos, Pisos):
+        if self.rect.x < 1100:
+            self.image = pygame.image.load("imagenes/mario/mariosalta.png")
+            self.rect.y -= 37.5
+            self.rect.x -= 12.5
+            time.sleep(0.00001)
+            self.rect.y -= 37.5
+            self.rect.x -= 12.5
+            time.sleep(0.00001)
+            while pygame.sprite.spritecollideany(self, Pisos, collided = None) == None:
+                self.rect.y += 25
+                self.rect.x -= 12.5
+                time.sleep(0000.1)
