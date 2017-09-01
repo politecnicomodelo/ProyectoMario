@@ -19,6 +19,7 @@ class Mario(pygame.sprite.Sprite):
         self.rect.y = 600
 
     def mover(self, keys, muevePantalla, Activos, Pisos):
+
         self.image=pygame.image.load("imagenes/mario/marioder.png")
         self.image = pygame.transform.scale(self.image, (100, 100))
         muevePantalla=False
