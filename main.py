@@ -193,11 +193,11 @@ def main():
         teclas = pygame.key.get_pressed()
 
         if muevePantalla == True:
-            x -= 300
+            x -= 30
             for item in Activos:
-                item.rect.x -= 300
+                item.rect.x -= 30
             for item in Pisos:
-                item.rect.x -= 300
+                item.rect.x -= 30
 
         muevePantalla = mario.mover(teclas, muevePantalla, Activos, Pisos)
 
