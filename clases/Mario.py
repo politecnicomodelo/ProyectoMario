@@ -39,13 +39,13 @@ class Mario(pygame.sprite.Sprite):
                         if keys[K_RIGHT]:
                             self.image = pygame.image.load("imagenes/mario/mariocorreder2.png")
                             self.image = pygame.transform.scale(self.image, (100, 100))
-                            self.rect.x += 30
+                            self.rect.x += 300
 
                         if self.rect.left >= 0:
                             if keys[K_LEFT]:
                                 self.image = pygame.image.load("imagenes/mario/mariocorreizqr2.png")
                                 self.image = pygame.transform.scale(self.image,(100, 100))
-                                self.rect.x -= 30
+                                self.rect.x -= 300
 
         else:
                     self.image = pygame.image.load("imagenes/mario/marioder.png")
@@ -59,7 +59,7 @@ class Mario(pygame.sprite.Sprite):
                     if keys[K_LEFT]:
                         self.image = pygame.image.load( "imagenes/mario/mariocorreizqr2.png")
                         self.image = pygame.transform.scale(self.image, (100, 100))
-                        self.rect.x -= 30
+                        self.rect.x -= 300
 
                     if keys[K_UP]:
                         _thread.start_new_thread(self.saltoDerecha, (Activos, Pisos,))
