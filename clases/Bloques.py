@@ -3,8 +3,8 @@ from pygame.locals import *
 import time
 import _thread
 
-ancho = 1360
-alto = 768
+ancho = 1280
+alto = 720
 
 class Bloque(pygame.sprite.Sprite):
     def __init__(self, centrox, centroy):

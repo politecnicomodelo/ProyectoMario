@@ -12,4 +12,6 @@ class Moneda(pygame.sprite.Sprite):
         self.rect.y=padre.rect.y-51
 
     def matarMoneda(self, Activos):
+        time.sleep(1)
         Activos.remove(self)
+        self.kill(self)

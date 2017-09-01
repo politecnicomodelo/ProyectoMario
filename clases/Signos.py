@@ -5,8 +5,8 @@ from .Monedas import Moneda
 import time
 import _thread
 
-ancho = 1360
-alto = 768
+ancho = 1280
+alto = 720
 
 class Signo(pygame.sprite.Sprite):
 
@@ -39,5 +39,5 @@ class Signo(pygame.sprite.Sprite):
                     Monedas+=1
                     moneda=Moneda(self)
                     moneda.add(Activos)
-                    _thread.start_new_thread(moneda.matarMoneda, (Activos,))
                     _thread.start_new_thread(self.moverSigno, ())
+                    _thread.start_new_thread(moneda.matarMoneda, (Activos,))
