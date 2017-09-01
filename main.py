@@ -8,8 +8,8 @@ from clases.Hongos import Hongo
 from clases.Signos import Signo
 from clases.Piso import Piso
 
-ancho = 1360
-alto = 768
+ancho = 1280
+alto = 720
 
 Monedas=0
 Vidas=0
@@ -180,16 +180,17 @@ def main():
 
     reloj=pygame.time.Clock()
     fondo = pygame.image.load("imagenes/fondo.jpg")
-    screen = pygame.display.set_mode((ancho, alto))
-    pygame.display.set_caption("Mario Bros")
+    screen = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN)
+    pygame.display.set_caption("Super Mega Mario Bros")
     x = 0
     y = 0
     muevePantalla = False
 
     while True:
         for eventos in pygame.event.get():
-            if eventos.type == QUIT:
-                sys.exit(0)
+            if eventos.type == pygame.K_ESCAPE:
+                quit()
+
         teclas = pygame.key.get_pressed()
 
         if muevePantalla == True:
@@ -206,12 +207,18 @@ def main():
         for item in listaBloques:
             item.devuelveBloque(mario)
 
+        if mario.rect.x == 10000:
+            ganarJuego(mario)
         screen.blit(fondo, (x, y))
         Activos.draw(screen)
         Marios.draw(screen)
         Pisos.draw(screen)
         pygame.display.flip()
         reloj.tick(60)
+
+def ganarJuego(mario):
+    x=0
+    #Animacion de victoria
 
 if __name__ == '__main__':
     pygame.init()
