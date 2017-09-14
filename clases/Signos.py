@@ -11,7 +11,7 @@ class Signo(pygame.sprite.Sprite):
 
     def __init__(self, centrox, centroy):
 
-        Base.__init__(centrox, centroy, 73, 71, "imagenes/signo.png")
+        Base.__init__(self, centrox, centroy, 73, 71, "imagenes/signo.png")
         Base.sprites.add(self)
 
     def moverSigno(self):
