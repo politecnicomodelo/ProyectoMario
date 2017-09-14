@@ -1,4 +1,4 @@
-from .grupo_sprites import *
+from .Grupo_Sprites import *
 import pygame
 
 

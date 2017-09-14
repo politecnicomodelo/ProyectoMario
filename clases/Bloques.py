@@ -1,7 +1,7 @@
 import pygame
 import time
 import _thread
-from .base import *
+from .Base import *
 
 ancho = 1280
 alto = 720
@@ -10,7 +10,7 @@ class Bloque(pygame.sprite.Sprite):
 
     def __init__(self, centrox, centroy):
 
-        Base.__init__(centrox, centroy, 73, 71, "imagenes/bloque.png")
+        Base.__init__(self, centrox, centroy, 73, 71, "imagenes/bloque.png")
 
     def mueveBloque(self):
         self.image = pygame.transform.scale(self.image, (73, 71))
