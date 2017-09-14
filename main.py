@@ -1,11 +1,11 @@
-import pygame
 from clases.Controlador import *
-from clases.Mario import Mario
+from clases.Mario import *
+from .clases.Fondo import *
 
 ancho = 1280
 alto = 720
 
-main()
+mario = Mario()
 
 def main():
 
@@ -15,7 +15,7 @@ def main():
 
     reloj = Controlador.iniciar_reloj()
 
-    fondo = pygame.image.load("imagenes/fondo.jpg")
+    fondo = Fondo()
 
     while True:
 
@@ -23,8 +23,12 @@ def main():
 
         teclas = pygame.key.get_pressed()
 
+        print(teclas)
+
         Controlador.rellenar_pantalla(ventana, fondo, 0, 0)
 
         pygame.display.flip()
 
         Controlador.set_fps(reloj, 60)
+
+main()

@@ -1,4 +1,5 @@
 import pygame
+import pygame.locals
 
 class Controlador(object):
 
@@ -31,10 +32,10 @@ class Controlador(object):
     @classmethod
     def buscar_eventos(cls):
         for evento in pygame.event.get():
-            if evento.type == QUIT:
+            if evento.type == pygame.QUIT:
                 cls.terminar()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-                cls.terminar(
+                cls.terminar()
 
     @classmethod
     def buscar_teclas(cls):
