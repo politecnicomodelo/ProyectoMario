@@ -7,6 +7,7 @@ class Base(pygame.sprite.Sprite):
     sprites = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
+
         pygame.sprite.Sprite.__init__(self)
 
         self.image = pygame.image.load(ruta)
