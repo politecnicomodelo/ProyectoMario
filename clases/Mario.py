@@ -21,16 +21,16 @@ class Mario(Base):
         self.image=pygame.image.load("imagenes/mario/marioder.png")
         self.image = pygame.transform.scale(self.image, (100, 100))
         muevePantalla=False
-        if keys[K_UP]:
+        if keys[pygame.K_UP]:
             _thread.start_new_thread(self.saltoLugar, (Activos,Pisos,))
 
-        if keys[K_RIGHT] and keys[K_UP]:
+        if keys[pygame.K_RIGHT] and keys[pygame.K_UP]:
             _thread.start_new_thread(self.saltoDerecha, (Activos, Pisos,))
 
-        if keys[K_LEFT] and keys[K_UP]:
+        if keys[pygame.K_LEFT] and keys[pygame.K_UP]:
             _thread.start_new_thread(self.saltoIzquierda, (Activos, Pisos,))
 
-        if keys[K_RIGHT]:
+        if keys[pygame.K_RIGHT]:
             self.image = pygame.image.load("imagenes/mario/mariocorreder2.png")
             self.image = pygame.transform.scale(self.image, (100, 100))
             if self.rect.x < 680:
@@ -38,7 +38,7 @@ class Mario(Base):
             else:
                  muevePantalla = True
 
-        if keys[K_LEFT]:
+        if keys[pygame.K_LEFT]:
             if self.rect.left >= 0:
                 self.image = pygame.image.load("imagenes/mario/mariocorreizqr2.png")
                 self.image = pygame.transform.scale(self.image,(100, 100))
