@@ -1,8 +1,11 @@
-import pygame
+from archivos.nivel import *
 from clases.control.Controlador import *
 from clases.control.Fondo import *
 
-def juego(colores, ancho, alto, mario):
+def juego(colores, mario):
+
+    ancho = 1280
+    alto = 720
 
     Controlador.iniciar()
 
@@ -12,13 +15,4 @@ def juego(colores, ancho, alto, mario):
 
     fondo = Fondo()
 
-    while True:
-        Controlador.buscar_eventos()
-
-        teclas = pygame.key.get_pressed()
-
-        Controlador.rellenar_pantalla(ventana, fondo)
-
-        pygame.display.flip()
-
-        Controlador.set_fps(reloj, 60)
+    nivel(reloj, mario, ventana, colores, fondo)
