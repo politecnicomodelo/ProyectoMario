@@ -1,5 +1,4 @@
-import pygame
-from pygame.locals import *
+from .base import *
 import _thread
 import time
 
@@ -9,14 +8,12 @@ alto = 720
 ListaSpritesDer=["imagenes/mario/mariocorreder1.png", "imagenes/mario/mariocorreder2.png"]
 ListaSpritesIzq=["imagenes/mario/mariocorreizq1.png", "imagenes/mario/mariocorreizqr2.png"]
 
-class Mario(pygame.sprite.Sprite):
+class Mario(Base):
+
     def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("imagenes/mario/marioder.png")
-        self.image = pygame.transform.scale(self.image, (100, 100))
-        self.rect = self.image.get_rect()
-        self.rect.x = ancho-1300
-        self.rect.y = 600
+
+        Base.__init__(ancho-1300, 600, 100, 100, "imagenes/mario/marioder.png")
+
 
     def mover(self, keys, muevePantalla, Activos, Pisos):
 

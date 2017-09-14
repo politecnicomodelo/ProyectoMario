@@ -1,9 +1,6 @@
 import pygame
-from pygame.locals import *
 from clases.Mario import Mario
 from clases.Bloques import Bloque
-from clases.Monedas import Moneda
-from clases.Hongos import Hongo
 from clases.Signos import Signo
 from clases.Piso import Piso
 
