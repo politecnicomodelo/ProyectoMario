@@ -1,9 +1,8 @@
-import pygame
-from pygame.locals import *
 from .Hongos import Hongo
 from .Monedas import Moneda
 import time
 import _thread
+from .Base import *
 
 ancho = 1280
 alto = 720
@@ -11,12 +10,9 @@ alto = 720
 class Signo(pygame.sprite.Sprite):
 
     def __init__(self, centrox, centroy):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("imagenes/signo.png")
-        self.image = pygame.transform.scale(self.image, (73, 71))
-        self.rect = self.image.get_rect()
-        self.rect.centerx = centrox
-        self.rect.centery = centroy
+
+        Base.__init__(centrox, centroy, 73, 71, "imagenes/signo.png")
+        Base.sprites.add(self)
 
     def moverSigno(self):
         self.image = pygame.image.load("imagenes/signotocado.png")

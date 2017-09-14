@@ -5,6 +5,7 @@ ancho = 1280
 alto = 720
 
 class Piso(pygame.sprite.Sprite):
+
     def __init__(self, x, y, imagen):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(imagen)

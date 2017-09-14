@@ -1,15 +1,13 @@
 import pygame
 import time
-from pygame.locals import *
+from .Base import *
 
 class Moneda(pygame.sprite.Sprite):
-    def __init__(self, padre):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("imagenes/moneda.png")
-        self.image = pygame.transform.scale(self.image, (40, 40))
-        self.rect = self.image.get_rect()
-        self.rect.x=padre.rect.x+15
-        self.rect.y=padre.rect.y-51
+
+    def __init__(self, Padre):
+
+        Base.__init__(self, Padre.rect.x + 15, Padre.rect.y - 51, 40, 40, "imagenes/moneda.png")
+        Base.sprites.add(self)
 
     def matarMoneda(self, Activos):
         time.sleep(1)
