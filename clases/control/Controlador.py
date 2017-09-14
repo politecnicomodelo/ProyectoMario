@@ -28,8 +28,8 @@ class Controlador(object):
         reloj.tick(frames)
 
     @classmethod
-    def rellenar_pantalla(cls, ventana, fondo):
-        ventana.fill([255, 255, 255])
+    def rellenar_pantalla(cls, ventana, fondo, colores):
+        ventana.fill(colores["Negro"])
         ventana.blit(fondo.image, fondo.rect)
 
     @classmethod
