@@ -1,6 +1,9 @@
-import pygame
 import time
-from .Base import *
+from clases.control.Base import *
+import time
+
+from clases.control.Base import *
+
 
 class Moneda(pygame.sprite.Sprite):
 

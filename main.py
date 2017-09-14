@@ -1,6 +1,6 @@
-from clases.Controlador import *
 from clases.Mario import *
-from .clases.Fondo import *
+from clases.control.Controlador import *
+from clases.control.Fondo import *
 
 ancho = 1280
 alto = 720
@@ -23,12 +23,14 @@ def main():
 
         teclas = pygame.key.get_pressed()
 
-        print(teclas)
+        if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
+            print("DERECHA")
 
-        Controlador.rellenar_pantalla(ventana, fondo, 0, 0)
+        Controlador.rellenar_pantalla(ventana, fondo)
 
         pygame.display.flip()
 
         Controlador.set_fps(reloj, 60)
+
 
 main()

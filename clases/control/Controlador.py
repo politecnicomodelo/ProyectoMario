@@ -14,8 +14,10 @@ class Controlador(object):
 
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
+
+        display = pygame.display.set_mode((ancho, alto)) #Agregar ", pygame.FULLSCREEN" para la pantalla completa"
         pygame.display.set_caption("Super Mega Mario Bros")
-        return pygame.display.set_mode((ancho,alto)), pygame.FULLSCREEN
+        return display
 
     @classmethod
     def iniciar_reloj(cls):
@@ -26,8 +28,9 @@ class Controlador(object):
         reloj.tick(frames)
 
     @classmethod
-    def rellenar_pantalla(cls, ventana, fondo, x, y):
-        ventana.blit(fondo, (x, y))
+    def rellenar_pantalla(cls, ventana, fondo):
+        ventana.fill([255, 255, 255])
+        ventana.blit(fondo.image, fondo.rect)
 
     @classmethod
     def buscar_eventos(cls):

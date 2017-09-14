@@ -1,7 +1,7 @@
 import pygame
 import time
 import _thread
-from .Base import *
+from clases.control.Base import *
 
 ancho = 1280
 alto = 720

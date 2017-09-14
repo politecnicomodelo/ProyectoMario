@@ -1,5 +1,6 @@
-from .Grupo_Sprites import *
 import pygame
+
+from clases.control.Grupo_Sprites import *
 
 
 class Base(pygame.sprite.Sprite):

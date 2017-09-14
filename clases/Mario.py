@@ -1,4 +1,4 @@
-from .Base import *
+from clases.control.Base import *
 import _thread
 import time
 
