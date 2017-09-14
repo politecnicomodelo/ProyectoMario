@@ -15,7 +15,6 @@ class Mario(Base):
         Base.__init__(self, ancho-1300, 600, 100, 100, "imagenes/mario/marioder.png")
         Base.sprites.add(self)
 
-
     def mover(self, keys, muevePantalla, Activos, Pisos):
 
         self.image=pygame.image.load("imagenes/mario/marioder.png")

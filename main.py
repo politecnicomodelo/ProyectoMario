@@ -3,6 +3,7 @@ from clases.Mario import Mario
 from clases.Bloques import Bloque
 from clases.Signos import Signo
 from clases.Piso import Piso
+from clases.Goombas import Goomba
 
 ancho = 1280
 alto = 720
@@ -16,6 +17,9 @@ Pisos=pygame.sprite.Group()
 
 mario = Mario()
 mario.add(Marios)
+
+goomba1=Goomba()
+goomba1.add(Activos)
 
 piso1=Piso(0, 695,"imagenes/piso1.png")
 piso2=Piso(4297,695,"imagenes/piso2.png")
@@ -170,6 +174,7 @@ listaSignos=[signo1, signo2, signo3, signo4, signo5, signo6, signo7, signo8, sig
 listaBloques=[bloque1, bloque2, bloque3, bloque4, bloque5,bloque6,bloque7,bloque8,bloque9,bloque10,bloque11,bloque12,
 bloque13,bloque14,bloque15,bloque16,bloque17,bloque18,bloque19,bloque20,bloque21,bloque22,bloque23,bloque24,bloque25,
 bloque26,bloque27,bloque28]
+listaGoombas=[goomba1]
 
 
 def main():
@@ -202,6 +207,8 @@ def main():
             item.devuelve(mario, False, True, Activos, Monedas)
         for item in listaBloques:
             item.devuelveBloque(mario)
+        for item in listaGoombas:
+            item.mueveGoomba(Activos, mario)
 
         if mario.rect.x == 10000:
             ganarJuego(mario)
