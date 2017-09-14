@@ -11,6 +11,7 @@ class Bloque(pygame.sprite.Sprite):
     def __init__(self, centrox, centroy):
 
         Base.__init__(self, centrox, centroy, 73, 71, "imagenes/bloque.png")
+        Base.sprites.add(self)
 
     def mueveBloque(self):
         self.image = pygame.transform.scale(self.image, (73, 71))
