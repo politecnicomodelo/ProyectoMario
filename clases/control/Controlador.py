@@ -15,7 +15,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto)) #Agregar ", pygame.FULLSCREEN" para la pantalla completa"
+        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Mega Mario Bros")
         return display
 
