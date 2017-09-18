@@ -14,6 +14,13 @@ class Mario(Base):
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",)
         self.frame = 0
+
+        self.maximo = 0
+        self.salto = False
+        self.bajando = False
+        self.original = 0
+        self.continuar = False
+
         Base.sprites.add(self)
 
     def mover_derecha(self, velocidad, frames_totales):
@@ -76,7 +83,39 @@ class Mario(Base):
         self.cambiar_sprite(self.movimientos[0])
         if self.direccion is False:
             self.invertir()
+        if self.salto is True:
+            self.continuar = False
 
+    def activar_salto(self):
 
+        self.original = self.rect.y
+        self.maximo = self.rect.y - 100
+        self.salto = True
+        self.continuar = True
 
+    def aumentar_salto(self):
 
+        print(self.rect.y)
+        print(self.maximo)
+
+        if self.maximo > self.original - 300:
+            self.maximo = self.maximo - 100
+
+    def saltar(self):
+
+        if self.maximo == self.rect.y:
+            self.bajando = True
+
+        if self.bajando is False:
+
+            if self.rect.y <= self.maximo + 60:
+                self.rect.y -= 10
+            else:
+                self.rect.y -= 30
+
+        if self.bajando is True:
+            self.rect.y += 25
+
+        if self.original == self.rect.y:
+            self.bajando = False
+            self.salto = False
