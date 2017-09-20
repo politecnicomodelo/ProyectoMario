@@ -17,8 +17,5 @@ def procesos(reloj, mario, FPS, frames_totales):
     elif teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.salto is False:
         mario.activar_salto()
 
-    elif teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.continuar is True:
-        mario.aumentar_salto()
-
     if mario.salto:
         mario.saltar()

@@ -12,14 +12,14 @@ class Mario(Base):
         self.estado = 0
         self.direccion = True
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
-                            "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",)
+                            "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
+                            "imagenes/mario/mario_salto.png",)
         self.frame = 0
 
         self.maximo = 0
         self.salto = False
         self.bajando = False
         self.original = 0
-        self.continuar = False
 
         Base.sprites.add(self)
 
@@ -31,19 +31,25 @@ class Mario(Base):
             self.estado = 0
             return
 
-        if (frames_totales - self.frame > 2):
+        if self.salto is False:
+            if (frames_totales - self.frame > 2):
 
-            if self.estado == 0 or self.estado == 1 or self.estado == 2:
-                self.estado += 1
-                self.frame = frames_totales
-                self.cambiar_sprite(self.movimientos[self.estado])
+                if self.estado == 0 or self.estado == 1 or self.estado == 2:
+                    self.estado += 1
+                    self.frame = frames_totales
+                    self.cambiar_sprite(self.movimientos[self.estado])
 
-            elif self.estado == 3:
-                self.estado = 1
-                self.frame = frames_totales
-                self.cambiar_sprite(self.movimientos[self.estado])
+                elif self.estado == 3:
+                    self.estado = 1
+                    self.frame = frames_totales
+                    self.cambiar_sprite(self.movimientos[self.estado])
 
         self.rect.x += velocidad
+
+        if self.rect.x < 680:
+             self.rect.x += 30
+        else:
+             muevePantalla = True
 
     def mover_izquierda(self, velocidad, frames_totales):
 
@@ -52,19 +58,20 @@ class Mario(Base):
             self.invertir()
             return
 
-        if (frames_totales - self.frame > 2):
+        if self.salto is False:
+            if (frames_totales - self.frame > 2):
 
-            if self.estado == 0 or self.estado == 1 or self.estado == 2:
-                self.estado += 1
-                self.frame = frames_totales
-                self.cambiar_sprite(self.movimientos[self.estado])
-                self.invertir()
+                if self.estado == 0 or self.estado == 1 or self.estado == 2:
+                    self.estado += 1
+                    self.frame = frames_totales
+                    self.cambiar_sprite(self.movimientos[self.estado])
+                    self.invertir()
 
-            elif self.estado == 3:
-                self.estado = 1
-                self.frame = frames_totales
-                self.cambiar_sprite(self.movimientos[self.estado])
-                self.invertir()
+                elif self.estado == 3:
+                    self.estado = 1
+                    self.frame = frames_totales
+                    self.cambiar_sprite(self.movimientos[self.estado])
+                    self.invertir()
 
         self.rect.x -= velocidad
 
@@ -80,26 +87,21 @@ class Mario(Base):
 
     def detenerse(self):
 
-        self.cambiar_sprite(self.movimientos[0])
-        if self.direccion is False:
-            self.invertir()
-        if self.salto is True:
-            self.continuar = False
+        if self.salto is False:
+            self.cambiar_sprite(self.movimientos[0])
+            if self.direccion is False:
+                self.invertir()
+            if self.salto is True:
+                self.continuar = False
 
     def activar_salto(self):
 
         self.original = self.rect.y
-        self.maximo = self.rect.y - 100
+        self.maximo = self.rect.y - 300
         self.salto = True
-        self.continuar = True
-
-    def aumentar_salto(self):
-
-        print(self.rect.y)
-        print(self.maximo)
-
-        if self.maximo > self.original - 300:
-            self.maximo = self.maximo - 100
+        self.cambiar_sprite(self.movimientos[4])
+        if self.direccion is False:
+            self.invertir()
 
     def saltar(self):
 
@@ -111,11 +113,12 @@ class Mario(Base):
             if self.rect.y <= self.maximo + 60:
                 self.rect.y -= 10
             else:
-                self.rect.y -= 30
+                self.rect.y -= 20
 
         if self.bajando is True:
-            self.rect.y += 25
+            self.rect.y += 20
 
         if self.original == self.rect.y:
             self.bajando = False
             self.salto = False
+            self.detenerse()
