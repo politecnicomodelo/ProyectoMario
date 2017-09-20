@@ -34,7 +34,7 @@ class Controlador(object):
         ventana.blit(fondo.image, fondo.rect)
 
     @classmethod
-    def mover_pantalla(cls, fondo):
+    def mover_pantalla(cls, fondo, mario):
         fondo.rect.x -= 30
         for item in Base.sprites:
             item.rect.x -= 30

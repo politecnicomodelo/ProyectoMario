@@ -11,8 +11,13 @@ class Bloque(pygame.sprite.Sprite):
     def __init__(self, centrox, centroy):
 
         Base.__init__(self, centrox, centroy, 73, 71, "imagenes/bloque.png")
-        Base.sprites.add(self)
 
+        Base.sprites.add(self)
+        Base.bloques.add(self)
+
+
+
+    '''
     def mueveBloque(self):
         self.image = pygame.transform.scale(self.image, (73, 71))
         self.rect.y-=2
@@ -22,3 +27,4 @@ class Bloque(pygame.sprite.Sprite):
     def devuelveBloque(self, Mario):
         if self.rect.collidepoint(Mario.rect.midtop):
             _thread.start_new_thread(self.mueveBloque, ())
+    '''

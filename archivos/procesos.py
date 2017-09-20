@@ -19,3 +19,6 @@ def procesos(reloj, mario, FPS, frames_totales):
 
     if mario.salto:
         mario.saltar()
+
+    if mario.colision(Base.piso) is False and mario.salto is False:
+        mario.caerse()

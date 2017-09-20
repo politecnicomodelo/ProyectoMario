@@ -1,9 +1,7 @@
-from clases.control.Controlador import *
 from archivos.dibujo import *
 from archivos.procesos import *
-from clases import *
+from archivos.inicializacion import *
 
-# Separacion entre bloques: 72
 
 def nivel(reloj, mario, ventana, colores, fondo):
 
@@ -13,11 +11,7 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     segundo = 0
 
-    x = 0
-
-    for i in range(15):
-        piso = Piso(x,695,"imagenes/piso_bloque.png")
-        x += 72
+    inicializacion()
 
     while True:
 

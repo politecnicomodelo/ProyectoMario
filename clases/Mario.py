@@ -112,10 +112,15 @@ class Mario(Base):
         if self.bajando is True:
             self.rect.y += 20
 
-        if self.colision(Base.piso):
+        self.colisiones_con_salto()
+
+    def colisiones_con_salto(self):
+
+        if self.colision(Base.piso) is not False:
             self.bajando = False
             self.salto = False
             self.detenerse()
+
 
     def mover_pantalla(self):
         if self.rect.x > 680:
@@ -125,6 +130,10 @@ class Mario(Base):
 
         elemento = pygame.sprite.spritecollideany(self, grupo, collided = None)
         if elemento is not None:
-            return True
+            return elemento
         else:
             return False
+
+    def caerse(self):
+        self.rect.y += 20
+        # Reaparecer
