@@ -1,5 +1,6 @@
 import pygame
 import pygame.locals
+from clases.control.Base import *
 
 class Controlador(object):
 
@@ -31,6 +32,13 @@ class Controlador(object):
     def rellenar_pantalla(cls, ventana, fondo, colores):
         ventana.fill(colores["Negro"])
         ventana.blit(fondo.image, fondo.rect)
+
+    @classmethod
+    def mover_pantalla(cls, fondo):
+        fondo.rect.x -= 30
+        for item in Base.sprites:
+            item.rect.x -= 30
+
 
     @classmethod
     def buscar_eventos(cls, mario):

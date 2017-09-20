@@ -46,11 +46,6 @@ class Mario(Base):
 
         self.rect.x += velocidad
 
-        if self.rect.x < 680:
-             self.rect.x += 30
-        else:
-             muevePantalla = True
-
     def mover_izquierda(self, velocidad, frames_totales):
 
         if self.direccion is True:
@@ -122,3 +117,7 @@ class Mario(Base):
             self.bajando = False
             self.salto = False
             self.detenerse()
+
+    def mover_pantalla(self):
+        if self.rect.x > 680:
+            return True

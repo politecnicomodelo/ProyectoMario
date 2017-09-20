@@ -19,6 +19,6 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
             segundo += 0.25
 
-        dibujo(fondo, ventana, colores)
+        dibujo(fondo, ventana, colores, mario)
 
         frames_totales += 1
