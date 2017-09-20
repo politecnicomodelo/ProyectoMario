@@ -117,10 +117,21 @@ class Mario(Base):
     def colisiones_con_salto(self):
 
         if self.colision(Base.piso) is not False:
-            self.bajando = False
-            self.salto = False
-            self.detenerse()
+            self.terminar_salto()
 
+        objeto = self.colision(Base.bloques)
+
+        if objeto is not False:
+            if self.bajando is False:
+                self.bajando = True
+
+    def terminar_salto(self):
+        self.bajando = False
+        self.salto = False
+        self.detenerse()
+
+
+# TODO: Cambiar los "not false" de las colisiones por True
 
     def mover_pantalla(self):
         if self.rect.x > 680:
