@@ -1,5 +1,5 @@
 import pygame
-from pygame.locals import *
+from clases.control import *
 
 ancho = 1280
 alto = 720
@@ -12,3 +12,6 @@ class Piso(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
+        Base.sprites.add(self)
+        Base.piso.add(self)

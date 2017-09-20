@@ -6,6 +6,7 @@ from clases.control.Grupo_Sprites import *
 class Base(pygame.sprite.Sprite):
 
     sprites = Sprites()
+    piso = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 
