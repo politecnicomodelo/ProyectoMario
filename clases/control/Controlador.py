@@ -56,10 +56,11 @@ class Controlador(object):
         return pygame.key.get_pressed()
 
     @classmethod
-    def eliminar_sprites(cls):
-        for item in Base.bloques:
-            if item.rect.x < -100:
-                Base.sprites.remove(item)
+    def eliminar_sprites(cls, mario):
+        for item in Base.sprites:
+            if item is not mario:
+                if item.rect.x < -100:
+                    Base.sprites.remove(item)
 
     @classmethod
     def salto_mario(cls, mario):

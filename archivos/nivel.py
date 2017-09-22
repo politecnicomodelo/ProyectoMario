@@ -21,11 +21,6 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
             segundo += 0.25
 
-        #for bloque in Base.piso:
-            #if bloque in Base.sprites:
-                #i += 1
-
-
         dibujo(fondo, ventana, colores)
 
         frames_totales += 1
