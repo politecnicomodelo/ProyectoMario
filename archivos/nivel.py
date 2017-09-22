@@ -25,3 +25,5 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
         frames_totales += 1
 
+
+

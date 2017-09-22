@@ -69,8 +69,15 @@ class Controlador(object):
             mario.saltar()
 
         if mario.salto is False:
+            print(mario.rect.x)
             if mario.colision(Base.piso) is False:
-                if mario.colision(Base.bloques) is False:
+
+                objeto = mario.colision(Base.bloques)
+                if objeto is False:
+                    mario.caerse()
+                elif mario.rect.x < objeto.rect.x + 55 and mario.rect.x > objeto.rect.x - 90:
+                    pass
+                else:
                     mario.caerse()
 
 #TODO: Mejorar la caida al borde del bloque
