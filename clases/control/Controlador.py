@@ -35,9 +35,10 @@ class Controlador(object):
 
     @classmethod
     def mover_pantalla(cls, fondo, mario):
-        fondo.rect.x -= 30
+        fondo.rect.x -= 20
         for item in Base.sprites:
-            item.rect.x -= 30
+            if item is not mario:
+                item.rect.x -= 20
 
 
     @classmethod
@@ -53,3 +54,18 @@ class Controlador(object):
     @classmethod
     def buscar_teclas(cls):
         return pygame.key.get_pressed()
+
+    @classmethod
+    def eliminar_sprites(cls):
+        for item in Base.bloques:
+            if item.rect.x < -100:
+                Base.sprites.remove(item)
+
+    @classmethod
+    def salto_mario(cls, mario):
+
+        if mario.salto:
+            mario.saltar()
+
+        if mario.colision(Base.piso) is False and mario.salto is False:
+            mario.caerse()

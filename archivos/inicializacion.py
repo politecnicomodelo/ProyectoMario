@@ -29,3 +29,5 @@ def inicializacion():
     #CREACION DE BLOQUES
 
     bloque = Bloque(50,400)
+    bloque = Bloque(1000,400)
+    bloque = Bloque(1600,400)

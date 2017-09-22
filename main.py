@@ -12,7 +12,6 @@ def main():
 main()
 
 # TODO: Hacer que pueda saltar y moverse a la vez
-# TODO: Mejorar las transiciones cuando pasa de pantalla
 # TODO: Sacar los sprites del grupo cuando la pantalla avanza?
 # TODO: Caerse y reaparecer
 # TODO: Cómo hacer la devolucion de las colisiones?

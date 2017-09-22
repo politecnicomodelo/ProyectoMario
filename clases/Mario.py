@@ -43,7 +43,8 @@ class Mario(Base):
                     self.frame = frames_totales
                     self.cambiar_sprite(self.movimientos[self.estado])
 
-        self.rect.x += velocidad
+        if self.mover_pantalla() is False:
+            self.rect.x += velocidad
 
     def mover_izquierda(self, velocidad, frames_totales):
 
@@ -53,7 +54,7 @@ class Mario(Base):
             return
 
         if self.salto is False:
-            if (frames_totales - self.frame > 2):
+            if (frames_totales - self.frame) > 2:
 
                 if self.estado == 0 or self.estado == 1 or self.estado == 2:
                     self.estado += 1
@@ -91,7 +92,7 @@ class Mario(Base):
     def activar_salto(self):
 
         self.original = self.rect.y
-        self.maximo = self.rect.y - 300
+        self.maximo = self.rect.y - 320
         self.salto = True
         self.cambiar_sprite(self.movimientos[4])
         if self.direccion is False:
@@ -136,6 +137,7 @@ class Mario(Base):
     def mover_pantalla(self):
         if self.rect.x > 680:
             return True
+        return False
 
     def colision(self, grupo):
 

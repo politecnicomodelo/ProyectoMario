@@ -1,7 +1,7 @@
 from clases.control import *
 import pygame
 
-def procesos(reloj, mario, FPS, frames_totales):
+def procesos(reloj, mario, FPS, frames_totales, fondo):
 
     Controlador.set_fps(reloj, FPS)
     Controlador.buscar_eventos(mario)
@@ -9,6 +9,8 @@ def procesos(reloj, mario, FPS, frames_totales):
     teclas = pygame.key.get_pressed()
 
     if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
+        if mario.mover_pantalla():
+            Controlador.mover_pantalla(fondo, mario)
         mario.mover_derecha(15, frames_totales)
 
     elif teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
@@ -17,8 +19,6 @@ def procesos(reloj, mario, FPS, frames_totales):
     elif teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.salto is False:
         mario.activar_salto()
 
-    if mario.salto:
-        mario.saltar()
+    Controlador.eliminar_sprites()
 
-    if mario.colision(Base.piso) is False and mario.salto is False:
-        mario.caerse()
+    Controlador.salto_mario(mario)

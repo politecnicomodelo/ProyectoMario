@@ -15,12 +15,17 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     while True:
 
-        procesos(reloj, mario, FPS, frames_totales)
+        procesos(reloj, mario, FPS, frames_totales, fondo)
 
         if frames_totales % (FPS / 4) == 0:
 
             segundo += 0.25
 
-        dibujo(fondo, ventana, colores, mario)
+        #for bloque in Base.piso:
+            #if bloque in Base.sprites:
+                #i += 1
+
+
+        dibujo(fondo, ventana, colores)
 
         frames_totales += 1
