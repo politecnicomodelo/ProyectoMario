@@ -1,4 +1,4 @@
-import pygame
+from clases import *
 import pygame.locals
 from clases.control.Base import *
 
@@ -58,9 +58,13 @@ class Controlador(object):
     @classmethod
     def eliminar_sprites(cls, mario):
         for item in Base.sprites:
-            if item is not mario:
-                if item.rect.x < -100:
+            if item.rect.x < -25:
+                if item is not mario:
                     Base.sprites.remove(item)
+                    if item in Base.bloques:
+                        Base.bloques.remove(item)
+                    elif item in Base.piso:
+                        Base.piso.remove(item)
 
     @classmethod
     def salto_mario(cls, mario):
@@ -69,15 +73,12 @@ class Controlador(object):
             mario.saltar()
 
         if mario.salto is False:
-            print(mario.rect.x)
             if mario.colision(Base.piso) is False:
 
                 objeto = mario.colision(Base.bloques)
                 if objeto is False:
                     mario.caerse()
                 elif mario.rect.x < objeto.rect.x + 55 and mario.rect.x > objeto.rect.x - 90:
-                    pass
+                    mario.bajando = False
                 else:
                     mario.caerse()
-
-#TODO: Mejorar la caida al borde del bloque

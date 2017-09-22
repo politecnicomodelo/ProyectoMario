@@ -69,7 +69,8 @@ class Mario(Base):
                     self.cambiar_sprite(self.movimientos[self.estado])
                     self.invertir()
 
-        self.rect.x -= velocidad
+        if self.rect.x > -10:
+            self.rect.x -= velocidad
 
     def invertir(self):
 
@@ -119,6 +120,10 @@ class Mario(Base):
         if self.colision(Base.piso) is not False:
             self.terminar_salto()
 
+        self.colision_bloques()
+
+    def colision_bloques(self):
+
         objeto = self.colision(Base.bloques)
 
         if objeto is not False:
@@ -126,10 +131,19 @@ class Mario(Base):
             if self.bajando is False:
                 if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
                     self.bajando = True
+                else:
+                    if self.rect.x > objeto.rect.x:
+                        self.rect.x = objeto.rect.x + 80
 
-            elif self.bajando is True and objeto.rect.y > self.rect.y:
+            elif self.bajando is True and objeto.rect.y >= self.rect.y + 90:
                 self.terminar_salto()
 
+            elif self.bajando:
+                print("entre")
+                if self.rect.x > objeto.rect.x:
+                    self.rect.x = objeto.rect.x + 80
+
+            print(self.bajando)
 
     def terminar_salto(self):
         self.bajando = False
@@ -151,4 +165,5 @@ class Mario(Base):
 
     def caerse(self):
         self.rect.y += 20
+        self.bajando = True
         #TODO: Reaparecer
