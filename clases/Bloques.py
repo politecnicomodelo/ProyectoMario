@@ -6,7 +6,7 @@ from clases.control.Base import *
 ancho = 1280
 alto = 720
 
-class Bloque(pygame.sprite.Sprite):
+class Bloque(Base):
 
     def __init__(self, centrox, centroy):
 

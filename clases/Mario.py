@@ -86,8 +86,6 @@ class Mario(Base):
             self.cambiar_sprite(self.movimientos[0])
             if self.direccion is False:
                 self.invertir()
-            if self.salto is True:
-                self.continuar = False
 
     def activar_salto(self):
 
@@ -123,16 +121,14 @@ class Mario(Base):
         objeto = self.colision(Base.bloques)
 
         if objeto is not False:
-            if self.bajando is False:
-                self.bajando = True
+            print(self.rect.x)
+            print(objeto.rect.x)
+
 
     def terminar_salto(self):
         self.bajando = False
         self.salto = False
         self.detenerse()
-
-
-# TODO: Cambiar los "not false" de las colisiones por True
 
     def mover_pantalla(self):
         if self.rect.x > 680:
@@ -149,4 +145,4 @@ class Mario(Base):
 
     def caerse(self):
         self.rect.y += 20
-        # Reaparecer
+        #TODO: Reaparecer

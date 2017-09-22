@@ -10,6 +10,3 @@ def main():
     juego(colores, mario)
 
 main()
-
-# TODO: Caerse y reaparecer
-# TODO: Cómo hacer la devolucion de las colisiones?
