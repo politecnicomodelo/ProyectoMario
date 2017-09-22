@@ -121,8 +121,13 @@ class Mario(Base):
         objeto = self.colision(Base.bloques)
 
         if objeto is not False:
-            print(self.rect.x)
-            print(objeto.rect.x)
+
+            if self.bajando is False:
+                if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
+                    self.bajando = True
+
+            elif self.bajando is True and objeto.rect.y > self.rect.y:
+                self.terminar_salto()
 
 
     def terminar_salto(self):
