@@ -1,6 +1,3 @@
-import pygame
-import time
-import _thread
 from clases.control.Base import *
 
 ancho = 1280
@@ -14,17 +11,3 @@ class Bloque(Base):
 
         Base.sprites.add(self)
         Base.bloques.add(self)
-
-
-
-    '''
-    def mueveBloque(self):
-        self.image = pygame.transform.scale(self.image, (73, 71))
-        self.rect.y-=2
-        time.sleep(0.5)
-        self.rect.y+=2
-
-    def devuelveBloque(self, Mario):
-        if self.rect.collidepoint(Mario.rect.midtop):
-            _thread.start_new_thread(self.mueveBloque, ())
-    '''

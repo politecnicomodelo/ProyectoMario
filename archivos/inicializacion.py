@@ -9,19 +9,19 @@ def inicializacion():
     x = 0
 
     for i in range(57):
-        piso = Piso(x,695,"imagenes/piso_bloque.png")
+        piso = Piso(x,695)
         x += 72
 
     x = 4320
 
     for i in range(17):
-        piso = Piso(x,695,"imagenes/piso_bloque.png")
+        piso = Piso(x,695)
         x += 72
 
     x = 5760
 
     for i in range(6):
-        piso = Piso(x,695,"imagenes/piso_bloque.png")
+        piso = Piso(x,695)
         x += 72
 
     #TERMINA CREACION DE PISO

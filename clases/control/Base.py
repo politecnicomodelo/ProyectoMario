@@ -1,5 +1,4 @@
 import pygame
-
 from clases.control.Grupo_Sprites import *
 
 
