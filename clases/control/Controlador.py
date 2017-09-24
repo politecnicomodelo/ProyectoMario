@@ -73,9 +73,13 @@ class Controlador(object):
             mario.saltar()
 
         if mario.salto is False:
+
             if mario.colision(Base.piso) is False:
 
                 objeto = mario.colision(Base.bloques)
+
+                if mario.bajando:
+                    mario.colision_bloques(objeto)
 
                 if objeto is not False:
                     if mario.rect.x < objeto.rect.x + 55 and mario.rect.x > objeto.rect.x - 90:
@@ -84,7 +88,3 @@ class Controlador(object):
                         mario.caerse()
                 else:
                     mario.caerse()
-
-            if mario.bajando:
-
-                mario.colisiones_con_salto()
