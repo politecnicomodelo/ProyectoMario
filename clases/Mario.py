@@ -129,22 +129,23 @@ class Mario(Base):
         if objeto is not False:
 
             if self.bajando is False:
-                if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90 and self.rect.y > objeto.rect.y + 65: #Está dentro de los parametros del bloque?
-                    self.bajando = True
-                else: #Si está colisionando, pero fuera de los parámetros regulares del bloque, entonces evita la solapación
+                if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
+                    if self.rect.y > objeto.rect.y + 65:
+                        self.bajando = True
+                else:
                     if self.rect.x > objeto.rect.x:
                         self.rect.x = objeto.rect.x + 80
                     else:
-                        self.rect.x = objeto.rect.x - 120
+                        self.rect.x = objeto.rect.x - 105
 
-            elif self.bajando is True and objeto.rect.y >= self.rect.y + 90: #Si está sobre el bloque se mantiene
+            elif self.bajando and objeto.rect.y >= self.rect.y + 90:
                 self.terminar_salto()
 
-            elif self.bajando: #Si está bajando por alguno de los bordes
+            elif self.bajando:
                 if self.rect.x > objeto.rect.x:
                     self.rect.x = objeto.rect.x + 80
                 else:
-                    self.rect.x = objeto.rect.x - 120
+                    self.rect.x = objeto.rect.x - 110
 
     def terminar_salto(self):
         self.bajando = False
@@ -166,4 +167,5 @@ class Mario(Base):
 
     def caerse(self):
         self.rect.y += 20
-        self.bajando = True
+        if self.bajando is False:
+            self.bajando = True
