@@ -49,7 +49,8 @@ class Controlador(object):
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
                 cls.terminar()
             if evento.type == pygame.KEYUP:
-                mario.detenerse()
+                if mario.bajando is False:
+                    mario.detenerse()
 
     @classmethod
     def buscar_teclas(cls):
@@ -72,19 +73,4 @@ class Controlador(object):
         if mario.salto:
             mario.saltar()
 
-        if mario.salto is False:
-
-            if mario.colision(Base.piso) is False:
-
-                objeto = mario.colision(Base.bloques)
-
-                if mario.bajando:
-                    mario.colision_bloques(objeto)
-
-                if objeto is not False:
-                    if mario.rect.x < objeto.rect.x + 55 and mario.rect.x > objeto.rect.x - 90:
-                        mario.bajando = False
-                    else:
-                        mario.caerse()
-                else:
-                    mario.caerse()
+        mario.calcular_caida()

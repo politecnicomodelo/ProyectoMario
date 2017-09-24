@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56a1cf89-4e83-4884-95f5-71e173649f53" name="Default" comment="" />
+    <list default="true" id="56a1cf89-4e83-4884-95f5-71e173649f53" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/Mario.py" afterPath="$PROJECT_DIR$/clases/Mario.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/control/Controlador.py" afterPath="$PROJECT_DIR$/clases/control/Controlador.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,32 +18,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controlador.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clases/control/Controlador.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mario.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clases/Mario.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="170" column="50" lean-forward="false" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -324,14 +303,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#3511#3671#0" expanded="false" />
+            <element signature="e#3722#4541#0" expanded="false" />
+            <element signature="e#4693#4759#0" expanded="false" />
+            <element signature="e#4801#4972#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clases/control/Controlador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="88" column="21" lean-forward="true" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        <state relative-caret-position="297">
+          <caret line="75" column="30" lean-forward="false" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -340,10 +323,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clases/Mario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="170" column="50" lean-forward="false" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="50" />
+        <state relative-caret-position="296">
+          <caret line="198" column="36" lean-forward="true" selection-start-line="198" selection-start-column="36" selection-end-line="198" selection-end-column="36" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#3511#3671#0" expanded="false" />
+            <element signature="e#3722#4541#0" expanded="false" />
+            <element signature="e#4693#4759#0" expanded="false" />
+            <element signature="e#4801#4972#0" expanded="false" />
           </folding>
         </state>
       </provider>

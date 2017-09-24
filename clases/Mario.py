@@ -120,7 +120,6 @@ class Mario(Base):
         if self.colision(Base.piso) is not False:
             self.terminar_salto()
 
-
         objeto = self.colision(Base.bloques)
 
         self.colision_bloques(objeto)
@@ -169,3 +168,32 @@ class Mario(Base):
         if self.bajando is False:
             self.bajando = True
             self.cambiar_sprite(self.movimientos[4])
+            if self.direccion is False:
+                self.invertir()
+
+    def calcular_caida(self):
+
+        if self.salto is False:
+
+            if self.colision(Base.piso) is False:
+
+                print("No toco")
+
+                objeto = self.colision(Base.bloques)
+
+                if self.bajando:
+                    self.colision_bloques(objeto)
+
+                if objeto is not False:
+                    if self.rect.x < objeto.rect.x + 55 and self.rect.x > objeto.rect.x - 90:
+                        self.bajando = False
+                    else:
+                        self.caerse()
+                else:
+                    self.caerse()
+
+            else:
+                print("Toque")
+                if self.bajando:
+                    self.bajando = False
+                    self.detenerse()
