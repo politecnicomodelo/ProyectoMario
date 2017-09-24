@@ -31,8 +31,8 @@ class Mario(Base):
             self.estado = 0
             return
 
-        if self.salto is False:
-            if (frames_totales - self.frame > 2):
+        if self.salto is False and self.bajando is False:
+            if frames_totales - self.frame > 2:
 
                 if self.estado == 0 or self.estado == 1 or self.estado == 2:
                     self.estado += 1
@@ -54,7 +54,7 @@ class Mario(Base):
             self.invertir()
             return
 
-        if self.salto is False:
+        if self.salto is False and self.bajando is False:
             if (frames_totales - self.frame) > 2:
 
                 if self.estado == 0 or self.estado == 1 or self.estado == 2:
@@ -168,3 +168,4 @@ class Mario(Base):
         self.rect.y += 20
         if self.bajando is False:
             self.bajando = True
+            self.cambiar_sprite(self.movimientos[4])
