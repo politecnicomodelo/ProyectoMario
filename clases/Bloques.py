@@ -5,9 +5,5 @@ alto = 720
 
 class Bloque(Base):
 
-    def __init__(self, centrox, centroy):
-
-        Base.__init__(self, centrox, centroy, 73, 71, "imagenes/bloque.png")
-
-        Base.sprites.add(self)
-        Base.bloques.add(self)
+    def __init__(self, x, y, ruta):
+        Base.__init__(self, x, y, 73, 71, ruta)

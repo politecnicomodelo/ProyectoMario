@@ -1,9 +1,9 @@
 from clases.Bloques import *
 
-class Signo(Bloque):
+class Ladrillo(Bloque):
 
     def __init__(self, x, y):
-        Bloque.__init__(self, x, y, "imagenes/signo.png")
+        Bloque.__init__(self, x, y, "imagenes/bloque.png")
 
         Base.sprites.add(self)
         Base.bloques.add(self)

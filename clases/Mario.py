@@ -177,8 +177,6 @@ class Mario(Base):
 
             if self.colision(Base.piso) is False:
 
-                print("No toco")
-
                 objeto = self.colision(Base.bloques)
 
                 if self.bajando:
@@ -193,7 +191,6 @@ class Mario(Base):
                     self.caerse()
 
             else:
-                print("Toque")
                 if self.bajando:
                     self.bajando = False
                     self.detenerse()
