@@ -7,6 +7,8 @@ class Base(pygame.sprite.Sprite):
     sprites = Sprites()
     piso = Sprites()
     bloques = Sprites()
+    ladrillos = Sprites()
+    signos = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 

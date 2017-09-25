@@ -22,3 +22,5 @@ def procesos(reloj, mario, FPS, frames_totales, fondo):
     Controlador.eliminar_sprites(mario)
 
     Controlador.salto_mario(mario)
+
+    Controlador.colisiones(mario)

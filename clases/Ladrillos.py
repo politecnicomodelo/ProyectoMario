@@ -7,3 +7,4 @@ class Ladrillo(Bloque):
 
         Base.sprites.add(self)
         Base.bloques.add(self)
+        Base.ladrillos.add(self)

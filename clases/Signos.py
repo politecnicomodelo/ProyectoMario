@@ -7,3 +7,4 @@ class Signo(Bloque):
 
         Base.sprites.add(self)
         Base.bloques.add(self)
+        Base.signos.add(self)

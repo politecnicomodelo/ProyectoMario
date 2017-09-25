@@ -73,4 +73,16 @@ class Controlador(object):
         if mario.salto:
             mario.saltar()
 
-        mario.calcular_caida()
+    @classmethod
+    def colisiones(cls, mario):
+
+        #Mientras anda a pie
+        if mario.salto is False:
+
+            #Hay colision con el piso?
+            if mario.colision_piso() is False:
+
+                #Hay colision con algun bloque?
+                if mario.colision_bloques() is False:
+
+                    mario.caerse()
