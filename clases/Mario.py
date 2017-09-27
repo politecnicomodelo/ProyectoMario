@@ -31,8 +31,6 @@ class Mario(Base):
             self.estado = 0
             return
 
-        print(self.bajando)
-        print(self.salto)
         if self.salto is False and self.bajando is False:
             if frames_totales - self.frame > 2:
 
@@ -181,15 +179,15 @@ class Mario(Base):
             #Chocó en la derecha?
             elif self.rect.x > bloque.rect.x:
                 self.rect.x = bloque.rect.x + 70
-                print("Mi rect en X: " + str(self.rect.x) + " el rect del bloque: " + str(bloque.rect.x))
-            #Chocó en la izquierda
+            #Chocó en la izquierda?
             elif self.rect.x < bloque.rect.x:
                 self.rect.x = bloque.rect.x - 95
 
     def terminar_salto(self):
-        self.bajando = False
-        self.salto = False
-        self.detenerse()
+        if self.bajando:
+            self.bajando = False
+            self.salto = False
+            self.detenerse()
 
     def mover_pantalla(self):
         if self.rect.x > 680:
