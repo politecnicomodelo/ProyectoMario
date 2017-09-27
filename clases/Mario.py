@@ -31,10 +31,12 @@ class Mario(Base):
             self.estado = 0
             return
 
+        print(self.bajando)
+        print(self.salto)
         if self.salto is False and self.bajando is False:
             if frames_totales - self.frame > 2:
 
-                if self.estado == 0 or self.estado == 1 or self.estado == 2:
+                if self.estado >= 0 and self.estado <= 2:
                     self.estado += 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.movimientos[self.estado])
@@ -122,8 +124,6 @@ class Mario(Base):
 
         objeto = self.colision(Base.bloques)
 
-        print(objeto)
-
         #Chocó con un bloque?
         if objeto is not False:
             self.colision_bloques_salto(objeto)
@@ -148,32 +148,43 @@ class Mario(Base):
                 elif self.rect.x < objeto.rect.x:
                     self.rect.x = objeto.rect.x - 95
 
-        #Chocó mientras estaba bajando?
-        if self.bajando:
-
-            #Chocó estando en la hitbox?
-            if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
-
-                #Chocó estando sobre el bloque?
-                if objeto.rect.y >= self.rect.y + 90:
-                    self.terminar_salto()
-
-            #Chocó estando fuera de la hitbox?
-            #Chocó en la derecha?
-            if self.rect.x > objeto.rect.x:
-                self.rect.x = objeto.rect.x + 70
-            #Chocó en la izquierda
-            elif self.rect.x < objeto.rect.x:
-                self.rect.x = objeto.rect.x - 95
+        #Está bajando?
+        else:
+            self.colision_bloques_caida(objeto)
 
     def colision_bloques(self, bloque):
 
-        #Me crucé con un bloque mientras caminaba?
+        if bloque is not False:
 
-        #Me caí de un bloque?
-        if self.rect.x > bloque.rect.x + 60 and self.rect.x < bloque.rect.x - 90:
+            #Me crucé con un bloque mientras caminaba?
+            #Me caí de un bloque?
+            if self.rect.x > bloque.rect.x + 60 or self.rect.x < bloque.rect.x - 90:
 
+                return True
+
+        if bloque is False:
             return True
+
+        return False
+
+    def colision_bloques_caida(self, bloque):
+
+        #Chocó estando en la hitbox?
+        if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
+
+            #Chocó estando sobre el bloque?
+            if bloque.rect.y >= self.rect.y + 90:
+
+                self.terminar_salto()
+
+            #Chocó estando fuera de la hitbox?
+            #Chocó en la derecha?
+            elif self.rect.x > bloque.rect.x:
+                self.rect.x = bloque.rect.x + 70
+                print("Mi rect en X: " + str(self.rect.x) + " el rect del bloque: " + str(bloque.rect.x))
+            #Chocó en la izquierda
+            elif self.rect.x < bloque.rect.x:
+                self.rect.x = bloque.rect.x - 95
 
     def terminar_salto(self):
         self.bajando = False

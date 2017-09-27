@@ -28,6 +28,6 @@ def inicializacion():
 
     #CREACION DE BLOQUES
 
-    bloque = Ladrillo(550,450)
+    bloque = Ladrillo(120,450)
 
     bloque = Signo(480, 450)

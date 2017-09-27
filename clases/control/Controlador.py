@@ -82,7 +82,15 @@ class Controlador(object):
             #Hay colision con el piso?
             if mario.colision_piso() is False:
 
-                #Hay colision con algun bloque?
-                if mario.colision_bloques() is False:
+                objeto = mario.colision(Base.bloques)
+                if objeto is not False:
+                    mario.colision_bloques_caida(objeto)
 
+                #Hay colision con algun bloque?
+                if mario.colision_bloques(objeto):
                     mario.caerse()
+
+            else:
+                if mario.bajando:
+                    mario.detenerse()
+                    mario.bajando = False
