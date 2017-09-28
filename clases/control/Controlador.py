@@ -125,6 +125,9 @@ class Controlador(object):
 
     @classmethod
     def mover_bloques(cls):
+        for moneda in Base.monedas:
+            if moneda.movible:
+                moneda.movimiento()
         for item in Base.signos:
             if item.proceso:
                 item.tocado()

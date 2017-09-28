@@ -1,4 +1,5 @@
 from clases.Bloques import *
+from clases.Monedas import *
 
 class Signo(Bloque):
 
@@ -19,7 +20,7 @@ class Signo(Bloque):
             self.bajando = False
             self.original = self.rect.y
             self.image = pygame.image.load("imagenes/signotocado.png")
-            self.image = pygame.transform.scale(self.image, (73, 71))
+            self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
             self.unico = False
 
     def terminar_tocado(self):
@@ -30,6 +31,8 @@ class Signo(Bloque):
             self.rect.y += 2
         elif self.rect.y + 16 == self.original:
             self.bajando = True
+            moneda = Moneda(self.rect.x + 20, self.rect.y - 10, True)
+            moneda.activar_movimiento()
         else:
             self.rect.y -= 2
 
