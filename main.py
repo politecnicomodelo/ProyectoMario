@@ -7,6 +7,7 @@ mario = Mario()
 
 def main():
 
+    mario.mover_derecha(0,0)
     juego(colores, mario)
 
 main()

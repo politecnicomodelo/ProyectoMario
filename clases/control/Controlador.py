@@ -85,6 +85,10 @@ class Controlador(object):
     @classmethod
     def colisiones(cls, mario):
 
+        moneda = mario.colision(Base.monedas)
+        if moneda is not False:
+            moneda.agarrada()
+
         #Mientras anda a pie
         if mario.salto is False:
 

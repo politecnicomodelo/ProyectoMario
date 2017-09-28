@@ -33,3 +33,15 @@ def inicializacion():
     bloque = Ladrillo(256, 450, False)
 
     bloque = Signo(332, 450)
+
+    #TERMINA CREACION DE BLOQUES
+
+    #CREACION DE MONEDAS
+
+    moneda = Moneda(190, 350, False)
+
+    moneda = Moneda(230, 250, False)
+
+    moneda = Moneda(1000, 300, False)
+
+    #TERMINA CREACION DE MONEDAS
