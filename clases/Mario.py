@@ -122,6 +122,26 @@ class Mario(Base):
 
         objeto = self.colision(Base.bloques)
 
+        objeto2 = False
+        #Colisiona con dos objetos?
+        if objeto in Base.bloques:
+            objeto2 = self.colision(Base.ladrillos2)
+            if objeto2 is False:
+                objeto2 = self.colision(Base.signos)
+                if objeto2 is False:
+                    objeto2 = self.colision(Base.ladrillos)
+
+        if objeto2 is not False:
+            #Cuál está mas cerca de rect.x
+            comparacion = self.rect.x - objeto.rect.x
+            comparacion2 = self.rect.x - objeto2.rect.x
+            if comparacion < 0:
+                comparacion = comparacion + -(comparacion) + comparacion
+            if comparacion2 < 0:
+                comparacion2 = comparacion2 + -(comparacion2) + comparacion2
+            if comparacion > comparacion2:
+                objeto = objeto2
+
         #Chocó con un bloque?
         if objeto is not False:
             self.colision_bloques_salto(objeto)

@@ -4,10 +4,7 @@
     <list default="true" id="56a1cf89-4e83-4884-95f5-71e173649f53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/inicializacion.py" afterPath="$PROJECT_DIR$/archivos/inicializacion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/Ladrillos.py" afterPath="$PROJECT_DIR$/clases/Ladrillos.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/Mario.py" afterPath="$PROJECT_DIR$/clases/Mario.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/control/Base.py" afterPath="$PROJECT_DIR$/clases/control/Base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/control/Controlador.py" afterPath="$PROJECT_DIR$/clases/control/Controlador.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +21,7 @@
       <file leaf-file-name="Controlador.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clases/control/Controlador.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
+            <state relative-caret-position="142">
               <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
             </state>
@@ -34,8 +31,8 @@
       <file leaf-file-name="Mario.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clases/Mario.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state relative-caret-position="-198">
+              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
                 <element signature="e#148#668#0" expanded="false" />
@@ -44,12 +41,11 @@
                 <element signature="e#2539#2649#0" expanded="false" />
                 <element signature="e#2873#3079#0" expanded="false" />
                 <element signature="e#3112#3445#0" expanded="false" />
-                <element signature="e#3492#3724#0" expanded="false" />
-                <element signature="e#5530#6082#0" expanded="false" />
-                <element signature="e#6271#6337#0" expanded="false" />
-                <element signature="e#6379#6550#0" expanded="false" />
-                <element signature="e#6582#6790#0" expanded="false" />
-                <element signature="e#6831#7252#0" expanded="false" />
+                <element signature="e#6932#7041#0" expanded="false" />
+                <element signature="e#7081#7147#0" expanded="false" />
+                <element signature="e#7189#7360#0" expanded="false" />
+                <element signature="e#7392#7600#0" expanded="false" />
+                <element signature="e#7641#8062#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,8 +54,18 @@
       <file leaf-file-name="inicializacion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/archivos/inicializacion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="323">
+              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bloques.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clases/Bloques.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -146,6 +152,11 @@
               <item name="ProyectoMario" type="462c0819:PsiDirectoryNode" />
               <item name="clases" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoMario" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoMario" type="462c0819:PsiDirectoryNode" />
+              <item name="imagenes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -319,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506283317297</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Agregado de Mario entre bloques">
+      <created>1506605538172</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1506605538172</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -372,11 +390,12 @@
     <MESSAGE value="Mejoradas las colisiones con los bloques" />
     <MESSAGE value="Hechas las colisiones exactas en los bloques" />
     <MESSAGE value="Agregado el sprite de salto mientras que Mario cae" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregado el sprite de salto mientras que Mario cae" />
+    <MESSAGE value="Agregado de Mario entre bloques" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado de Mario entre bloques" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -403,12 +422,11 @@
             <element signature="e#2539#2649#0" expanded="false" />
             <element signature="e#2873#3079#0" expanded="false" />
             <element signature="e#3112#3445#0" expanded="false" />
-            <element signature="e#3492#3724#0" expanded="false" />
-            <element signature="e#5530#6082#0" expanded="false" />
-            <element signature="e#6271#6337#0" expanded="false" />
-            <element signature="e#6379#6550#0" expanded="false" />
-            <element signature="e#6582#6790#0" expanded="false" />
-            <element signature="e#6831#7252#0" expanded="false" />
+            <element signature="e#6932#7041#0" expanded="false" />
+            <element signature="e#7081#7147#0" expanded="false" />
+            <element signature="e#7189#7360#0" expanded="false" />
+            <element signature="e#7392#7600#0" expanded="false" />
+            <element signature="e#7641#8062#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -425,12 +443,11 @@
             <element signature="e#2539#2649#0" expanded="false" />
             <element signature="e#2873#3079#0" expanded="false" />
             <element signature="e#3112#3445#0" expanded="false" />
-            <element signature="e#3492#3724#0" expanded="false" />
-            <element signature="e#5530#6082#0" expanded="false" />
-            <element signature="e#6271#6337#0" expanded="false" />
-            <element signature="e#6379#6550#0" expanded="false" />
-            <element signature="e#6582#6790#0" expanded="false" />
-            <element signature="e#6831#7252#0" expanded="false" />
+            <element signature="e#6932#7041#0" expanded="false" />
+            <element signature="e#7081#7147#0" expanded="false" />
+            <element signature="e#7189#7360#0" expanded="false" />
+            <element signature="e#7392#7600#0" expanded="false" />
+            <element signature="e#7641#8062#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -471,12 +488,11 @@
             <element signature="e#2539#2649#0" expanded="false" />
             <element signature="e#2873#3079#0" expanded="false" />
             <element signature="e#3112#3445#0" expanded="false" />
-            <element signature="e#3492#3724#0" expanded="false" />
-            <element signature="e#5530#6082#0" expanded="false" />
-            <element signature="e#6271#6337#0" expanded="false" />
-            <element signature="e#6379#6550#0" expanded="false" />
-            <element signature="e#6582#6790#0" expanded="false" />
-            <element signature="e#6831#7252#0" expanded="false" />
+            <element signature="e#6932#7041#0" expanded="false" />
+            <element signature="e#7081#7147#0" expanded="false" />
+            <element signature="e#7189#7360#0" expanded="false" />
+            <element signature="e#7392#7600#0" expanded="false" />
+            <element signature="e#7641#8062#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -488,14 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clases/Bloques.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/archivos/procesos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -503,11 +511,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clases/control/Base.py">
+    <entry file="file://$PROJECT_DIR$/clases/Signos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -521,32 +539,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clases/control/Controlador.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
+        <state relative-caret-position="142">
           <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imagenes/bloque.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/control/Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/Bloques.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/archivos/inicializacion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clases/Signos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="323">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clases/Mario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        <state relative-caret-position="-198">
+          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
             <element signature="e#148#668#0" expanded="false" />
@@ -555,12 +586,11 @@
             <element signature="e#2539#2649#0" expanded="false" />
             <element signature="e#2873#3079#0" expanded="false" />
             <element signature="e#3112#3445#0" expanded="false" />
-            <element signature="e#3492#3724#0" expanded="false" />
-            <element signature="e#5530#6082#0" expanded="false" />
-            <element signature="e#6271#6337#0" expanded="false" />
-            <element signature="e#6379#6550#0" expanded="false" />
-            <element signature="e#6582#6790#0" expanded="false" />
-            <element signature="e#6831#7252#0" expanded="false" />
+            <element signature="e#6932#7041#0" expanded="false" />
+            <element signature="e#7081#7147#0" expanded="false" />
+            <element signature="e#7189#7360#0" expanded="false" />
+            <element signature="e#7392#7600#0" expanded="false" />
+            <element signature="e#7641#8062#0" expanded="false" />
           </folding>
         </state>
       </provider>
