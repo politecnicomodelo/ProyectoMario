@@ -1,6 +1,6 @@
 from clases import *
 import pygame.locals
-from clases.control.Base import *
+from clases.control import *
 
 class Controlador(object):
 

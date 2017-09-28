@@ -11,6 +11,7 @@ class Base(pygame.sprite.Sprite):
     ladrillos2 = Sprites()
     signos = Sprites()
     monedas = Sprites()
+    tuberias = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 
