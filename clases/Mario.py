@@ -155,6 +155,21 @@ class Mario(Base):
         if bloque is not False:
 
             #Me crucé con un bloque mientras caminaba?
+            if bloque in Base.signos:
+                bloque2 = self.colision(Base.ladrillos)
+                if bloque2 is False:
+                    bloque2 = self.colision(Base.ladrillos2)
+            else:
+                if bloque in Base.ladrillos:
+                    bloque2 = self.colision(Base.ladrillos2)
+                elif bloque in Base.ladrillos2:
+                    bloque2 = self.colision(Base.ladrillos)
+                if bloque2 is False:
+                    bloque2 = self.colision(Base.signos)
+
+            if bloque is not False and bloque2 is not False:
+                return False
+
             #Me caí de un bloque?
             if self.rect.x > bloque.rect.x + 60 or self.rect.x < bloque.rect.x - 90:
 

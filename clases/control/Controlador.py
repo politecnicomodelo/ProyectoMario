@@ -61,9 +61,18 @@ class Controlador(object):
         for item in Base.sprites:
             if item.rect.x < -25:
                 if item is not mario:
+
                     Base.sprites.remove(item)
                     if item in Base.bloques:
+
                         Base.bloques.remove(item)
+                        if item in Base.ladrillos:
+                            Base.ladrillos.remove(item)
+                        elif item in Base.ladrillos2:
+                            Base.ladrillos2.remove(item)
+                        else:
+                            Base.signos.remove(item)
+
                     elif item in Base.piso:
                         Base.piso.remove(item)
 
