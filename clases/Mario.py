@@ -1,4 +1,4 @@
-from clases.control.Base import *
+from clases.control.Controlador import *
 from clases import *
 import pygame
 
@@ -120,31 +120,23 @@ class Mario(Base):
         if self.colision(Base.piso) is not False:
             self.terminar_salto()
 
-        objeto = self.colision(Base.bloques)
-
-        objeto2 = False
         #Colisiona con dos objetos?
-        if objeto in Base.bloques:
-            objeto2 = self.colision(Base.ladrillos2)
-            if objeto2 is False:
-                objeto2 = self.colision(Base.signos)
-                if objeto2 is False:
-                    objeto2 = self.colision(Base.ladrillos)
+        bloque, bloque2 = Controlador.buscar_objetos(self)
 
-        if objeto2 is not False:
+        if bloque2 is not False:
             #Cuál está mas cerca de rect.x
-            comparacion = self.rect.x - objeto.rect.x
-            comparacion2 = self.rect.x - objeto2.rect.x
+            comparacion = self.rect.x - bloque.rect.x
+            comparacion2 = self.rect.x - bloque2.rect.x
             if comparacion < 0:
                 comparacion = comparacion + -(comparacion) + comparacion
             if comparacion2 < 0:
-                comparacion2 = comparacion2 + -(comparacion2) + comparacion2
+                comparacion2 = comparacion2 + comparacion2 + comparacion2
             if comparacion > comparacion2:
-                objeto = objeto2
+                bloque = bloque2
 
         #Chocó con un bloque?
-        if objeto is not False:
-            self.colision_bloques_salto(objeto)
+        if bloque is not False:
+            self.colision_bloques_salto(bloque)
 
     def colision_bloques_salto(self, objeto):
 
@@ -175,17 +167,7 @@ class Mario(Base):
         if bloque is not False:
 
             #Me crucé con un bloque mientras caminaba?
-            if bloque in Base.signos:
-                bloque2 = self.colision(Base.ladrillos)
-                if bloque2 is False:
-                    bloque2 = self.colision(Base.ladrillos2)
-            else:
-                if bloque in Base.ladrillos:
-                    bloque2 = self.colision(Base.ladrillos2)
-                elif bloque in Base.ladrillos2:
-                    bloque2 = self.colision(Base.ladrillos)
-                if bloque2 is False:
-                    bloque2 = self.colision(Base.signos)
+            bloque, bloque2 = Controlador.buscar_objetos(self)
 
             if bloque is not False and bloque2 is not False:
                 return False
@@ -202,6 +184,9 @@ class Mario(Base):
 
     def colision_bloques_caida(self, bloque):
 
+        #print(bloque.rect.x)
+        #print(bloque.rect.y)
+        #print(self.rect.y)
         #Chocó estando en la hitbox?
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
 

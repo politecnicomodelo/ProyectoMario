@@ -103,3 +103,22 @@ class Controlador(object):
                 if mario.bajando:
                     mario.detenerse()
                     mario.bajando = False
+
+    @classmethod
+    def buscar_objetos(cls, mario):
+        bloque = mario.colision(Base.bloques)
+        bloque2 = False
+
+        if bloque in Base.signos:
+            bloque2 = mario.colision(Base.ladrillos)
+            if bloque2 is False:
+                bloque2 = mario.colision(Base.ladrillos2)
+        else:
+            if bloque in Base.ladrillos:
+                bloque2 = mario.colision(Base.ladrillos2)
+            elif bloque in Base.ladrillos2:
+                bloque2 = mario.colision(Base.ladrillos)
+            if bloque2 is False:
+                bloque2 = mario.colision(Base.signos)
+
+        return bloque, bloque2
