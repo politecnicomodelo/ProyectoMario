@@ -10,11 +10,28 @@ class Signo(Bloque):
         Base.signos.add(self)
         self.bajando = True
         self.original = None
+        self.proceso = False
+        self.unico = True
+
+    def activar_tocado(self):
+        if self.unico:
+            self.proceso = True
+            self.bajando = False
+            self.original = self.rect.y
+            self.image = pygame.image.load("imagenes/signotocado.png")
+            self.image = pygame.transform.scale(self.image, (73, 71))
+            self.unico = False
+
+    def terminar_tocado(self):
+        self.proceso = False
 
     def tocado(self):
-        if self.rect.y - 30 == self.original:
+        if self.bajando:
+            self.rect.y += 2
+        elif self.rect.y + 16 == self.original:
             self.bajando = True
-        if self.bajando is False:
-            self.rect.y -= 10
         else:
-            self.rect.y += 10
+            self.rect.y -= 2
+
+        if self.rect.y == self.original:
+            self.terminar_tocado()

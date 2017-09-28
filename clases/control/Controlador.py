@@ -122,3 +122,9 @@ class Controlador(object):
                 bloque2 = mario.colision(Base.signos)
 
         return bloque, bloque2
+
+    @classmethod
+    def mover_bloques(cls):
+        for item in Base.signos:
+            if item.proceso:
+                item.tocado()

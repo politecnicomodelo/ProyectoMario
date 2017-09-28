@@ -152,8 +152,8 @@ class Mario(Base):
                 if self.rect.y > objeto.rect.y + 65:
                     self.bajando = True
                     if objeto in Base.signos:
-                        if objeto.bajando:
-                            objeto.tocado()
+                        if objeto.proceso is False:
+                            objeto.activar_tocado()
                 elif self.rect.y >= objeto.rect.y + 55 and objeto in Base.signos:
                     self.bajando = True
 
