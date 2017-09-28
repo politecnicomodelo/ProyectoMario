@@ -31,7 +31,7 @@ class Signo(Bloque):
             self.rect.y += 2
         elif self.rect.y + 16 == self.original:
             self.bajando = True
-            moneda = Moneda(self.rect.x + 20, self.rect.y - 10, True)
+            moneda = Moneda(self.rect.x + 20, self.rect.y - 20, True)
             moneda.activar_movimiento()
         else:
             self.rect.y -= 2

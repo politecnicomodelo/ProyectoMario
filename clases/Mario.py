@@ -147,8 +147,6 @@ class Mario(Base):
             if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
 
                 #Está debajo del bloque?
-                print(self.rect.y)
-                print(objeto.rect.y)
                 if self.rect.y > objeto.rect.y + 65:
                     self.bajando = True
                     if objeto in Base.signos:
@@ -191,9 +189,6 @@ class Mario(Base):
 
     def colision_bloques_caida(self, bloque):
 
-        #print(bloque.rect.x)
-        #print(bloque.rect.y)
-        #print(self.rect.y)
         #Chocó estando en la hitbox?
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
 

@@ -16,7 +16,7 @@ class Moneda(Base):
     def activar_movimiento(self):
         self.proceso = True
         self.bajando = False
-        self.original = self.rect.y - 40
+        self.original = self.rect.y
 
     def terminar_movimiento(self):
         self.proceso = False
@@ -24,6 +24,7 @@ class Moneda(Base):
         Base.sprites.remove(self)
 
     def movimiento(self):
+
         if self.bajando:
             self.rect.y += 8
 
@@ -32,5 +33,5 @@ class Moneda(Base):
         else:
             self.rect.y -= 8
 
-        if self.rect.y == self.original + 40:
+        if self.rect.y == self.original + - 40 and self.bajando:
             self.terminar_movimiento()
