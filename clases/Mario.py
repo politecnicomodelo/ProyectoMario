@@ -1,4 +1,4 @@
-from clases.control.Controlador import *
+from clases.control.Controlador import Controlador
 from clases import *
 import pygame
 
@@ -147,7 +147,14 @@ class Mario(Base):
             if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
 
                 #Está debajo del bloque?
+                print(self.rect.y)
+                print(objeto.rect.y)
                 if self.rect.y > objeto.rect.y + 65:
+                    self.bajando = True
+                    if objeto in Base.signos:
+                        if objeto.bajando:
+                            objeto.tocado()
+                elif self.rect.y >= objeto.rect.y + 55 and objeto in Base.signos:
                     self.bajando = True
 
                 #Está a la derecha del bloque?

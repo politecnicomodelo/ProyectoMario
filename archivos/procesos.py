@@ -4,7 +4,7 @@ import pygame
 def procesos(reloj, mario, FPS, frames_totales, fondo):
 
     Controlador.set_fps(reloj, FPS)
-    print(FPS)
+
     Controlador.buscar_eventos(mario)
 
     teclas = pygame.key.get_pressed()
