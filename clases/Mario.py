@@ -132,9 +132,9 @@ class Mario(Base):
             comparacion = self.rect.x - bloque.rect.x
             comparacion2 = self.rect.x - bloque2.rect.x
             if comparacion < 0:
-                comparacion = comparacion + -(comparacion) + comparacion
+                comparacion = comparacion + comparacion * -1 + comparacion * -1
             if comparacion2 < 0:
-                comparacion2 = comparacion2 + comparacion2 + comparacion2
+                comparacion2 = comparacion2 + comparacion2 * -1 + comparacion2 * -1
             if comparacion > comparacion2:
                 bloque = bloque2
 
@@ -200,7 +200,6 @@ class Mario(Base):
             if bloque.rect.y >= self.rect.y + 90:
                 self.terminar_salto()
 
-            #Chocó estando fuera de la hitbox?
             #Chocó en la derecha?
             elif self.rect.x > bloque.rect.x:
                 self.rect.x = bloque.rect.x + 70
@@ -280,19 +279,25 @@ class Mario(Base):
                 self.rect.x = tuberia.rect.x - 90
 
         else:
+            hola = self.colision_tuberia_caida(tuberia)
+
+    def colision_tuberia_caida(self, tuberia):
 
             #Chocó estando sobre el bloque?
-            if tuberia.alto == 1 or tuberia.alto == 2:
-                if tuberia.rect.y >= self.rect.y + 80:
-                    self.terminar_salto()
-            elif tuberia.alto == 3:
-                if tuberia.rect.y >= self.rect.y + 75:
-                    self.terminar_salto()
+            if self.rect.x - 120 <= tuberia.rect.x and self.rect.x + 60 >= tuberia.rect.x:
+                if tuberia.alto == 1 or tuberia.alto == 2:
+                    if tuberia.rect.y >= self.rect.y + 80:
+                        self.terminar_salto()
+                elif tuberia.alto == 3:
+                    if tuberia.rect.y >= self.rect.y + 75:
+                        self.terminar_salto()
+                return False
 
             #Chocó estando fuera de la hitbox?
-            elif self.rect.x > tuberia.rect.x:
-                self.rect.x = tuberia.rect.x + 145
-                print("derecha")
-            elif self.rect.x < tuberia.rect.x:
-                print("izquierda")
-                self.rect.x = tuberia.rect.x - 90
+            else:
+                if self.rect.x > tuberia.rect.x:
+                    self.rect.x = tuberia.rect.x + 145
+                elif self.rect.x < tuberia.rect.x:
+                    self.rect.x = tuberia.rect.x - 90
+                return True
+

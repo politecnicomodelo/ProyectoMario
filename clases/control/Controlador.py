@@ -62,19 +62,24 @@ class Controlador(object):
             if item.rect.x < -25:
                 if item is not mario:
 
-                    Base.sprites.remove(item)
-                    if item in Base.bloques:
+                    if item in Base.tuberias:
+                        if item.rect.x < -75:
+                            Base.sprites.remove(item)
+                            Base.tuberias.remove(item)
+                    else:
+                        Base.sprites.remove(item)
+                        if item in Base.bloques:
 
-                        Base.bloques.remove(item)
-                        if item in Base.ladrillos:
-                            Base.ladrillos.remove(item)
-                        elif item in Base.ladrillos2:
-                            Base.ladrillos2.remove(item)
-                        else:
-                            Base.signos.remove(item)
+                            Base.bloques.remove(item)
+                            if item in Base.ladrillos:
+                                Base.ladrillos.remove(item)
+                            elif item in Base.ladrillos2:
+                                Base.ladrillos2.remove(item)
+                            else:
+                                Base.signos.remove(item)
 
-                    elif item in Base.piso:
-                        Base.piso.remove(item)
+                        elif item in Base.piso:
+                            Base.piso.remove(item)
 
     @classmethod
     def salto_mario(cls, mario):
@@ -96,16 +101,19 @@ class Controlador(object):
             if mario.colision_piso() is False:
 
                 #Hay colision con la tuberia?
-                if mario.colision(Base.tuberias) is False:
+                objeto = mario.colision(Base.tuberias)
 
+                if mario.colision(Base.tuberias) is not False:
+                    if mario.colision_tuberia_caida(objeto):
+                        mario.caerse()
+                else:
+
+                    #Hay colision con algun bloque?
                     objeto = mario.colision(Base.bloques)
                     if objeto is not False:
                         mario.colision_bloques_caida(objeto)
-
-                    #Hay colision con algun bloque?
                     if mario.colision_bloques(objeto):
                         mario.caerse()
-
             else:
                 tuberia = mario.colision(Base.tuberias)
                 if tuberia is not False:
