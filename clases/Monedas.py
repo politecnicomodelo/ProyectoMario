@@ -5,7 +5,7 @@ class Moneda(Base):
 
     def __init__(self, x, y, movible):
 
-        Base.__init__(self, x, y, 40, 40, "imagenes/moneda.png")
+        Base.__init__(self, x, y, 40, 40, "imagenes/monedas/inicial.png")
         Base.sprites.add(self)
         Base.monedas.add(self)
 
