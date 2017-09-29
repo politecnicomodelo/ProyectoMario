@@ -92,7 +92,7 @@ class Mario(Base):
     def activar_salto(self):
 
         self.original = self.rect.y
-        self.maximo = self.rect.y - 320
+        self.maximo = self.rect.y - 340
         self.salto = True
         self.cambiar_sprite(self.movimientos[4])
         if self.direccion is False:
@@ -119,6 +119,10 @@ class Mario(Base):
 
         if self.colision(Base.piso) is not False:
             self.terminar_salto()
+
+        tuberia = self.colision(Base.tuberias)
+        if tuberia is not False:
+            self.colision_tuberia_salto(tuberia)
 
         #Colisiona con dos objetos?
         bloque, bloque2 = Controlador.buscar_objetos(self)
@@ -194,7 +198,6 @@ class Mario(Base):
 
             #Chocó estando sobre el bloque?
             if bloque.rect.y >= self.rect.y + 90:
-
                 self.terminar_salto()
 
             #Chocó estando fuera de la hitbox?
@@ -261,3 +264,35 @@ class Mario(Base):
             self.rect.x = tuberia.rect.x - 90
         else:
             self.rect.x = tuberia.rect.x + 145
+
+    def colision_tuberia_salto(self, tuberia):
+
+        #Está subiendo?
+        if self.bajando is False:
+
+            #Está colisionando con un borde?
+            #Está a la derecha del bloque?
+            if self.rect.x >= tuberia.rect.x:
+                self.rect.x = tuberia.rect.x + 145
+
+            #Está a la izquierda del bloque?
+            elif self.rect.x < tuberia.rect.x:
+                self.rect.x = tuberia.rect.x - 90
+
+        else:
+
+            #Chocó estando sobre el bloque?
+            if tuberia.alto == 1 or tuberia.alto == 2:
+                if tuberia.rect.y >= self.rect.y + 80:
+                    self.terminar_salto()
+            elif tuberia.alto == 3:
+                if tuberia.rect.y >= self.rect.y + 75:
+                    self.terminar_salto()
+
+            #Chocó estando fuera de la hitbox?
+            elif self.rect.x > tuberia.rect.x:
+                self.rect.x = tuberia.rect.x + 145
+                print("derecha")
+            elif self.rect.x < tuberia.rect.x:
+                print("izquierda")
+                self.rect.x = tuberia.rect.x - 90

@@ -44,6 +44,10 @@ def inicializacion():
 
     #CREACION DE TUBERIAS
 
-    tuberia = Tuberia(1000, 540, 1)
+    tuberia = Tuberia(1000, 1)
+
+    tuberia = Tuberia(1500, 2)
+
+    tuberia = Tuberia(2000, 3)
 
     #TERMINA CREACION DE TUBERIAS
