@@ -4,3 +4,4 @@ from .Monedas import *
 from .Piso import *
 from .Signos import *
 from .Ladrillos import *
+from .Tuberia import *

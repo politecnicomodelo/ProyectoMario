@@ -104,6 +104,10 @@ class Controlador(object):
                     mario.caerse()
 
             else:
+                tuberia = mario.colision(Base.tuberias)
+                if tuberia is not False:
+                    mario.colision_tuberia(tuberia)
+
                 if mario.bajando:
                     mario.detenerse()
                     mario.bajando = False

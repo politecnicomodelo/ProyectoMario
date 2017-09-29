@@ -40,8 +40,10 @@ def inicializacion():
 
     moneda = Moneda(190, 350, False)
 
-    moneda = Moneda(230, 250, False)
-
-    moneda = Moneda(1000, 300, False)
-
     #TERMINA CREACION DE MONEDAS
+
+    #CREACION DE TUBERIAS
+
+    tuberia = Tuberia(1000, 540, 1)
+
+    #TERMINA CREACION DE TUBERIAS

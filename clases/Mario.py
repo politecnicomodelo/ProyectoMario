@@ -254,3 +254,10 @@ class Mario(Base):
         if self.colision(Base.piso) is False:
             return False
         return True
+
+    def colision_tuberia(self, tuberia):
+
+        if tuberia.rect.x > self.rect.x:
+            self.rect.x = tuberia.rect.x - 90
+        else:
+            self.rect.x = tuberia.rect.x + 145
