@@ -100,25 +100,32 @@ class Controlador(object):
             #Hay colision con el piso?
             if mario.colision_piso() is False:
 
-                #Hay colision con la tuberia?
-                objeto = mario.colision(Base.tuberias)
+                objeto = mario.colision(Base.escaleras)
 
-                if objeto is not False:
-                    bajar = mario.colision_tuberia_caida(objeto)
-                    if bajar is False:
-                        mario.caerse()
-                else:
-                    #Hay colision con algun bloque?
-                    objeto = mario.colision(Base.bloques)
+                if objeto is False:
+                    #Hay colision con la tuberia?
+                    objeto = mario.colision(Base.tuberias)
+
                     if objeto is not False:
-                        mario.colision_bloques_caida(objeto)
+                        bajar = mario.colision_tuberia_caida(objeto)
+                        if bajar is False:
+                            mario.caerse()
+                    else:
+                        #Hay colision con algun bloque?
+                        objeto = mario.colision(Base.bloques)
+                        if objeto is not False:
+                            mario.colision_bloques_caida(objeto)
 
-                    if mario.colision_bloques(objeto):
-                        mario.caerse()
+                        if mario.colision_bloques(objeto):
+                            mario.caerse()
             else:
                 tuberia = mario.colision(Base.tuberias)
                 if tuberia is not False:
                     mario.colision_tuberia(tuberia)
+
+                escalera = mario.colision(Base.escaleras)
+                if escalera is not False:
+                    mario.colision_escalera(escalera)
 
                 if mario.bajando:
                     mario.detenerse()

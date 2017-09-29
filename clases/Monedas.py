@@ -32,12 +32,12 @@ class Moneda(Base):
     def movimiento(self):
 
         if self.bajando:
-            self.rect.y += 20
+            self.rect.y += 15
 
-        elif self.rect.y + 300 == self.original:
+        elif self.rect.y + 225 == self.original:
             self.bajando = True
         else:
-            self.rect.y -= 20
+            self.rect.y -= 15
 
         if self.rect.y == self.original - 60 and self.bajando:
             self.terminar_movimiento()

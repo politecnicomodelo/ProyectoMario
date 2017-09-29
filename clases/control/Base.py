@@ -12,6 +12,7 @@ class Base(pygame.sprite.Sprite):
     signos = Sprites()
     monedas = Sprites()
     tuberias = Sprites()
+    escaleras = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 

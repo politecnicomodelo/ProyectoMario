@@ -301,3 +301,19 @@ class Mario(Base):
                     self.rect.x = tuberia.rect.x - 90
                 return False
 
+    def colision_escalera(self, escalera):
+
+        #Voy caminando y me la crucé?
+
+        if escalera.rect.x > self.rect.x:
+            self.rect.x = escalera.rect.x - 90
+        else:
+            self.rect.x = escalera.rect.x + 70
+
+        #Caí sobre la escalera?
+        print(self.rect.x)
+        print(escalera.rect.x)
+        if self.rect.x + 90 <= escalera.rect.x and self.rect.x - 70 <= escalera.rect.x:
+            if escalera.rect.y >= self.rect.y + 20:
+                print("estoy")
+                self.terminar_salto()
