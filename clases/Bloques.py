@@ -6,4 +6,4 @@ alto = 720
 class Bloque(Base):
 
     def __init__(self, x, y, ruta):
-        Base.__init__(self, x, y, 73, 71, ruta)
+        Base.__init__(self, x, y, 73, 73, ruta)

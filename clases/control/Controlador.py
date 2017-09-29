@@ -59,11 +59,11 @@ class Controlador(object):
     @classmethod
     def eliminar_sprites(cls, mario):
         for item in Base.sprites:
-            if item.rect.x < -25:
+            if item.rect.x < -40:
                 if item is not mario:
 
                     if item in Base.tuberias:
-                        if item.rect.x < -75:
+                        if item.rect.x < -85:
                             Base.sprites.remove(item)
                             Base.tuberias.remove(item)
                     else:
@@ -144,10 +144,11 @@ class Controlador(object):
         return bloque, bloque2
 
     @classmethod
-    def mover_bloques(cls):
+    def actualizar_secundarios(cls, frames_totales):
         for moneda in Base.monedas:
             if moneda.movible:
                 moneda.movimiento()
+                moneda.animacion(frames_totales)
         for item in Base.signos:
             if item.proceso:
                 item.tocado()

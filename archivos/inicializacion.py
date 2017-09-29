@@ -30,7 +30,7 @@ def inicializacion():
 
     bloque = Ladrillo(180,450, True)
 
-    bloque = Ladrillo(256, 450, False)
+    bloque = Ladrillo(253, 450, False)
 
     bloque = Signo(332, 450)
 

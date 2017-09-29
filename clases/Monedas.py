@@ -12,6 +12,11 @@ class Moneda(Base):
         self.bajando = None
         self.proceso = None
         self.movible = movible
+        if self.movible:
+            self.frame = 0
+            self.estado = 0
+            self.animaciones = ("imagenes/monedas/1.png", "imagenes/monedas/2.png",
+                                "imagenes/monedas/3.png", "imagenes/monedas/inicial.png",)
 
     def activar_movimiento(self):
         self.proceso = True
@@ -27,12 +32,12 @@ class Moneda(Base):
     def movimiento(self):
 
         if self.bajando:
-            self.rect.y += 15
+            self.rect.y += 20
 
         elif self.rect.y + 300 == self.original:
             self.bajando = True
         else:
-            self.rect.y -= 15
+            self.rect.y -= 20
 
         if self.rect.y == self.original - 60 and self.bajando:
             self.terminar_movimiento()
@@ -42,3 +47,21 @@ class Moneda(Base):
         Base.sprites.remove(self)
         Base.monedas.remove(self)
         #TODO: Sumar uno a las monedas de Mario
+
+    def animacion(self, frames_totales):
+
+        if frames_totales - self.frame > 6:
+
+            if self.estado >= 0 and self.estado <= 2:
+                self.estado += 1
+                self.frame = frames_totales
+                self.cambiar_sprite(self.animaciones[self.estado])
+
+            elif self.estado == 3:
+                self.estado = 1
+                self.frame = frames_totales
+                self.cambiar_sprite(self.animaciones[self.estado])
+
+    def cambiar_sprite(self, movimiento):
+        self.image = pygame.image.load(movimiento)
+        self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))

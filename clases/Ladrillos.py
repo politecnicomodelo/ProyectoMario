@@ -3,7 +3,7 @@ from clases.Bloques import *
 class Ladrillo(Bloque):
 
     def __init__(self, x, y, posicion):
-        Bloque.__init__(self, x, y, "imagenes/bloque.png")
+        Bloque.__init__(self, x, y, "imagenes/bloques.png")
 
         Base.sprites.add(self)
         Base.bloques.add(self)
