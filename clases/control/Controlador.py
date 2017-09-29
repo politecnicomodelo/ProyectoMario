@@ -1,6 +1,6 @@
 from clases import *
 import pygame.locals
-from clases.control import *
+from clases.control.Base import *
 
 class Controlador(object):
 
@@ -103,15 +103,16 @@ class Controlador(object):
                 #Hay colision con la tuberia?
                 objeto = mario.colision(Base.tuberias)
 
-                if mario.colision(Base.tuberias) is not False:
-                    if mario.colision_tuberia_caida(objeto):
+                if objeto is not False:
+                    bajar = mario.colision_tuberia_caida(objeto)
+                    if bajar is False:
                         mario.caerse()
                 else:
-
                     #Hay colision con algun bloque?
                     objeto = mario.colision(Base.bloques)
                     if objeto is not False:
                         mario.colision_bloques_caida(objeto)
+
                     if mario.colision_bloques(objeto):
                         mario.caerse()
             else:

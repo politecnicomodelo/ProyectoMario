@@ -1,4 +1,5 @@
 from clases.control.Controlador import Controlador
+from clases.control.Base import *
 from clases import *
 import pygame
 
@@ -75,12 +76,12 @@ class Mario(Base):
     def invertir(self):
 
         self.image = pygame.transform.flip(self.image, True, False)
-        self.image = pygame.transform.scale(self.image, (100, 100))
+        self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def cambiar_sprite(self, movimiento):
 
         self.image = pygame.image.load(movimiento)
-        self.image = pygame.transform.scale(self.image, (100, 100))
+        self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def detenerse(self):
 
@@ -279,7 +280,7 @@ class Mario(Base):
                 self.rect.x = tuberia.rect.x - 90
 
         else:
-            hola = self.colision_tuberia_caida(tuberia)
+            self.colision_tuberia_caida(tuberia)
 
     def colision_tuberia_caida(self, tuberia):
 
@@ -291,13 +292,12 @@ class Mario(Base):
                 elif tuberia.alto == 3:
                     if tuberia.rect.y >= self.rect.y + 75:
                         self.terminar_salto()
-                return False
-
-            #Chocó estando fuera de la hitbox?
+                return True
             else:
+                #Chocó estando fuera de la hitbox?
                 if self.rect.x > tuberia.rect.x:
                     self.rect.x = tuberia.rect.x + 145
                 elif self.rect.x < tuberia.rect.x:
                     self.rect.x = tuberia.rect.x - 90
-                return True
+                return False
 
