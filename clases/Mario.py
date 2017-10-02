@@ -125,7 +125,7 @@ class Mario(Base):
         if tuberia is not False:
             self.colision_tuberia_salto(tuberia)
 
-        escalera = self.colision(Base.escaleras)
+        escalera = self.colision(Base.escalera)
         if escalera is not False:
             self.colision_escalera_salto(escalera)
 
@@ -314,6 +314,7 @@ class Mario(Base):
                 escalera2 = self.colision(Base.escaleras2)
             else:
                 escalera2 = self.colision(Base.escaleras)
+
             if escalera2 is not False:
                 escalera = escalera2
 
@@ -326,14 +327,13 @@ class Mario(Base):
     def colision_escalera_salto(self, escalera):
 
         if self.bajando is False:
-
             #Está a la derecha del bloque?
             if self.rect.x >= escalera.rect.x:
                 self.rect.x = escalera.rect.x + 70
 
             #Está a la izquierda del bloque?
             elif self.rect.x < escalera.rect.x:
-                self.rect.x = escalera.rect.x - 90
+                self.rect.x = escalera.rect.x - 100
 
         else:
             self.colision_escalera_caida(escalera)

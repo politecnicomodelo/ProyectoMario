@@ -32,7 +32,10 @@ def inicializacion():
     bloque = Signo(450, 450)
     escalera = Escalera(700,620, True)
     escalera = Escalera(776,620, False)
-    escalera = Escalera(776,545, True)
+    escalera = Escalera(776,545, False)
+    escalera = Escalera(852,620, True)
+    escalera = Escalera(852,545, True)
+    escalera = Escalera(852,469, True)
 
 
     #TERMINA CREACION DE BLOQUES
