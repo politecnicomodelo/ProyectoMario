@@ -13,6 +13,8 @@ class Base(pygame.sprite.Sprite):
     monedas = Sprites()
     tuberias = Sprites()
     escaleras = Sprites()
+    escaleras2 = Sprites()
+    escalera = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 

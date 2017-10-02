@@ -26,12 +26,13 @@ def inicializacion():
 
     #TERMINA CREACION DE PISO
 
-    #CREACION DE BLOQUES (escalera = 620)
+    #CREACION DE BLOQUES (escalera = 619)
 
     bloque = Ladrillo(350, 450, True)
     bloque = Signo(450, 450)
-    escalera = Escalera(700,619)
-
+    escalera = Escalera(700,620, True)
+    escalera = Escalera(776,620, False)
+    escalera = Escalera(776,545, True)
 
 
     #TERMINA CREACION DE BLOQUES
@@ -41,13 +42,3 @@ def inicializacion():
     moneda = Moneda(190, 350, False)
 
     #TERMINA CREACION DE MONEDAS
-
-    #CREACION DE TUBERIAS
-
-    #tuberia = Tuberia(1000, 1)
-
-    tuberia = Tuberia(1500, 2)
-
-    tuberia = Tuberia(2000, 3)
-
-    #TERMINA CREACION DE TUBERIAS
