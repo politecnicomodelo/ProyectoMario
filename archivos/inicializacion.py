@@ -29,7 +29,7 @@ def inicializacion():
     #CREACION DE BLOQUES (escalera = 620)
 
     bloque = Ladrillo(350, 450, True)
-    bloque = Signo(600, 450)
+    bloque = Signo(450, 450)
     escalera = Escalera(700,619)
 
 

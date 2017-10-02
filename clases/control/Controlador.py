@@ -102,8 +102,8 @@ class Controlador(object):
 
                 objeto = mario.colision(Base.escaleras)
                 if objeto is not False:
-                    print(objeto)
-                    mario.colision_escalera_caida(objeto)
+                    if mario.colision_escalera_caida(objeto) is False:
+                        objeto = False
 
                 if objeto is False:
                     #Hay colision con la tuberia?

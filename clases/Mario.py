@@ -125,6 +125,10 @@ class Mario(Base):
         if tuberia is not False:
             self.colision_tuberia_salto(tuberia)
 
+        escalera = self.colision(Base.escaleras)
+        if escalera is not False:
+            self.colision_escalera_salto(escalera)
+
         #Colisiona con dos objetos?
         bloque, bloque2 = Controlador.buscar_objetos(self)
 
@@ -310,12 +314,34 @@ class Mario(Base):
         else:
             self.rect.x = escalera.rect.x + 70
 
+    def colision_escalera_salto(self, escalera):
+
+        if self.bajando is False:
+
+            #Está a la derecha del bloque?
+            if self.rect.x >= escalera.rect.x:
+                self.rect.x = escalera.rect.x + 70
+
+            #Está a la izquierda del bloque?
+            elif self.rect.x < escalera.rect.x:
+                self.rect.x = escalera.rect.x - 90
+
+        else:
+            self.colision_escalera_caida(escalera)
+
     def colision_escalera_caida(self, escalera):
 
         #Caí sobre la escalera?
-        print(self.rect.x)
-        print(escalera.rect.x)
-        if self.rect.x + 93 >= escalera.rect.x and self.rect.x - 59 <= escalera.rect.x:
+        if self.rect.x + 93 >= escalera.rect.x and self.rect.x - 58 <= escalera.rect.x:
             if escalera.rect.y >= self.rect.y + 79:
-                print("estoy")
                 self.terminar_salto()
+                return True
+        else:
+            #Está a la derecha del bloque?
+            if self.rect.x >= escalera.rect.x:
+                self.rect.x = escalera.rect.x + 70
+
+            #Está a la izquierda del bloque?
+            elif self.rect.x < escalera.rect.x:
+                self.rect.x = escalera.rect.x - 90
+            return False
