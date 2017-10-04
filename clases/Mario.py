@@ -187,9 +187,10 @@ class Mario(Base):
                 return False
 
             #Me caí de un bloque?
-            if self.rect.x > bloque.rect.x + 60 or self.rect.x < bloque.rect.x - 90:
-
+            if self.colision_bloques_caida(bloque):
                 return True
+            else:
+                return False
 
         if bloque is False:
             return True
@@ -204,6 +205,7 @@ class Mario(Base):
             #Chocó estando sobre el bloque?
             if bloque.rect.y >= self.rect.y + 90:
                 self.terminar_salto()
+                return False
 
             #Chocó en la derecha?
             elif self.rect.x > bloque.rect.x:
@@ -211,6 +213,8 @@ class Mario(Base):
             #Chocó en la izquierda?
             elif self.rect.x < bloque.rect.x:
                 self.rect.x = bloque.rect.x - 95
+
+        return True
 
     def terminar_salto(self):
         if self.bajando:
@@ -296,14 +300,14 @@ class Mario(Base):
                 elif tuberia.alto == 3:
                     if tuberia.rect.y >= self.rect.y + 75:
                         self.terminar_salto()
-                return True
+                return False
+            #Chocó estando fuera de la hitbox?
             else:
-                #Chocó estando fuera de la hitbox?
                 if self.rect.x > tuberia.rect.x:
                     self.rect.x = tuberia.rect.x + 145
                 elif self.rect.x < tuberia.rect.x:
                     self.rect.x = tuberia.rect.x - 90
-                return False
+                return True
 
     def colision_escalera(self, escalera):
 
@@ -347,7 +351,7 @@ class Mario(Base):
             if escalera.rect.y >= self.rect.y + 79:
                 self.rect.y = escalera.rect.y - 93
                 self.terminar_salto()
-            return True
+            return False
         else:
             #Está a la derecha del bloque?
             if self.rect.x >= escalera.rect.x:
@@ -356,4 +360,4 @@ class Mario(Base):
             #Está a la izquierda del bloque?
             elif self.rect.x < escalera.rect.x:
                 self.rect.x = escalera.rect.x - 90
-            return False
+            return True

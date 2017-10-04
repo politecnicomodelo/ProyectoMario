@@ -37,7 +37,6 @@ def inicializacion():
     escalera = Escalera(852,545, True)
     escalera = Escalera(852,469, True)
 
-
     #TERMINA CREACION DE BLOQUES
 
     #CREACION DE MONEDAS
@@ -45,3 +44,5 @@ def inicializacion():
     moneda = Moneda(190, 350, False)
 
     #TERMINA CREACION DE MONEDAS
+
+    tuberia = Tuberia(1050, 3)

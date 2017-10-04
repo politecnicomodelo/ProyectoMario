@@ -97,32 +97,10 @@ class Controlador(object):
         #Mientras anda a pie
         if mario.salto is False:
 
-            #Hay colision con el piso?
             if mario.colision_piso() is False:
-
-                objeto = mario.colision(Base.escalera)
-                if objeto is not False:
-                    if mario.colision_escalera_caida(objeto) is False:
-                        objeto = False
-                    else:
-                        mario.colision_escalera(objeto)
-                        #Si está cayendo, evitar buscar colision y evitar que solape
-
-                if objeto is False:
-                    #Hay colision con la tuberia?
-                    objeto = mario.colision(Base.tuberias)
-
-                    if objeto is not False:
-                        bajar = mario.colision_tuberia_caida(objeto)
-                        if bajar is False:
-                            mario.caerse()
-                    else:
-                        #Hay colision con algun bloque?
-                        objeto = mario.colision(Base.bloques)
-                        if objeto is not False:
-                            mario.colision_bloques_caida(objeto)
-
-                        if mario.colision_bloques(objeto):
+                if Controlador.colision_escaleras(mario) is False:
+                    if Controlador.colision_tuberias(mario) is False:
+                        if Controlador.colision_bloques(mario) is False:
                             mario.caerse()
             else:
                 tuberia = mario.colision(Base.tuberias)
@@ -135,6 +113,7 @@ class Controlador(object):
 
                 if mario.bajando:
                     mario.detenerse()
+                    mario.rect.y += 5
                     mario.bajando = False
 
     @classmethod
@@ -165,3 +144,31 @@ class Controlador(object):
         for item in Base.signos:
             if item.proceso:
                 item.tocado()
+
+    @classmethod
+    def colision_escaleras(cls, mario):
+        escalera = mario.colision(Base.escalera)
+
+        if escalera is not False:
+            if mario.colision_escalera_caida(escalera) is False:
+                return True
+                #Si está cayendo, evitar buscar colision y evitar que solape
+        return False
+
+    @classmethod
+    def colision_tuberias(cls, mario):
+        tuberia = mario.colision(Base.tuberias)
+
+        if tuberia is not False:
+            if mario.colision_tuberia_caida(tuberia) is False:
+                return True
+        return False
+
+    @classmethod
+    def colision_bloques(cls, mario):
+        bloque = mario.colision(Base.bloques)
+
+        if bloque is not False:
+            if mario.colision_bloques(bloque) is False:
+                return True
+        return False
