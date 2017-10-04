@@ -30,19 +30,15 @@ def inicializacion():
 
     bloque = Ladrillo(350, 450, True)
     bloque = Signo(450, 450)
-    escalera = Escalera(700,620, True)
-    escalera = Escalera(776,620, False)
-    escalera = Escalera(776,545, False)
-    escalera = Escalera(852,620, True)
-    escalera = Escalera(852,545, True)
-    escalera = Escalera(852,469, True)
+
+    escalera = Escalera(725,620, True)
 
     #TERMINA CREACION DE BLOQUES
 
     #CREACION DE MONEDAS
 
-    moneda = Moneda(190, 350, False)
+    #moneda = Moneda(190, 350, False)
 
     #TERMINA CREACION DE MONEDAS
 
-    tuberia = Tuberia(1050, 3)
+    tuberia = Tuberia(1000, 1)

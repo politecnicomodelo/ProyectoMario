@@ -113,7 +113,6 @@ class Controlador(object):
 
                 if mario.bajando:
                     mario.detenerse()
-                    mario.rect.y += 5
                     mario.bajando = False
 
     @classmethod
@@ -150,9 +149,9 @@ class Controlador(object):
         escalera = mario.colision(Base.escalera)
 
         if escalera is not False:
-            if mario.colision_escalera_caida(escalera) is False:
+            if mario.colision_escalera(escalera) is False:
                 return True
-                #Si está cayendo, evitar buscar colision y evitar que solape
+        #Si está cayendo, evitar buscar colision y evitar que solape
         return False
 
     @classmethod
