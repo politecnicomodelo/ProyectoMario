@@ -90,6 +90,8 @@ class Controlador(object):
     @classmethod
     def colisiones(cls, mario):
 
+        control = False
+
         moneda = mario.colision(Base.monedas)
         if moneda is not False:
             moneda.agarrada()
@@ -101,7 +103,14 @@ class Controlador(object):
                 if Controlador.colision_escaleras(mario) is False:
                     if Controlador.colision_tuberias(mario) is False:
                         if Controlador.colision_bloques(mario) is False:
+                            control = True
                             mario.caerse()
+
+                if control is False:
+                    if mario.bajando:
+                        mario.detenerse()
+                        mario.bajando = False
+
             else:
                 tuberia = mario.colision(Base.tuberias)
                 if tuberia is not False:

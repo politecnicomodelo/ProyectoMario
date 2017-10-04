@@ -156,7 +156,7 @@ class Mario(Base):
             if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
 
                 #Está debajo del bloque?
-                if self.rect.y > objeto.rect.y + 65:
+                if self.rect.y + 65 >= objeto.rect.y:
                     self.bajando = True
                     if objeto in Base.signos:
                         if objeto.proceso is False:
@@ -203,7 +203,8 @@ class Mario(Base):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
 
             #Chocó estando sobre el bloque?
-            if bloque.rect.y >= self.rect.y + 90:
+            if bloque.rect.y >= self.rect.y + 82:
+                self.rect.y -= 8
                 self.terminar_salto()
                 return False
 
@@ -278,7 +279,6 @@ class Mario(Base):
         #Está subiendo?
         if self.bajando is False:
 
-            #Está colisionando con un borde?
             #Está a la derecha del bloque?
             if self.rect.x >= tuberia.rect.x:
                 self.rect.x = tuberia.rect.x + 145
