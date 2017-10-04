@@ -32,7 +32,6 @@ def inicializacion():
     bloque = Signo(428, 450)
     bloque = Ladrillo(504, 450, True)
     bloque = Ladrillo(580, 450, False)
-    bloque = Ladrillo(700, 250, True)
 
     escalera = Escalera(765,620, True)
     escalera = Escalera(842,620, False)

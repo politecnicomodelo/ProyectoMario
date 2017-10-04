@@ -203,9 +203,9 @@ class Mario(Base):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
 
             #Chocó estando sobre el bloque?
-            if bloque.rect.y >= self.rect.y + 82:
-                self.rect.y -= 8
-                self.terminar_salto()
+            if bloque.rect.y >= self.rect.y + 90:
+                if self.bajando:
+                    self.terminar_salto()
                 return False
 
             #Chocó en la derecha?

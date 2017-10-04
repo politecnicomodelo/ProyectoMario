@@ -27,3 +27,5 @@ def procesos(reloj, mario, FPS, frames_totales, fondo):
     Controlador.salto_mario(mario)
 
     Controlador.colisiones(mario)
+
+    print(mario.rect.y)
