@@ -88,7 +88,7 @@ class Controlador(object):
             mario.saltar()
 
     @classmethod
-    def colisiones(cls, mario):
+    def colisiones(cls, mario, frames_totales):
 
         control = False
 
@@ -96,9 +96,12 @@ class Controlador(object):
         if moneda is not False:
             moneda.agarrada()
 
-        goomba = mario.colision(Base.goombas)
-        if goomba is not False and mario.bajando is False:
-            mario.perder_vida()
+        if mario.inmune is False:
+            goomba = mario.colision(Base.goombas)
+            if goomba is not False and mario.bajando is False:
+                # TODO: Perder una vida
+                mario.inmune = True
+                mario.frame_inmune = frames_totales
 
         #Mientras anda a pie
         if mario.salto is False:
@@ -148,7 +151,11 @@ class Controlador(object):
         return bloque, bloque2
 
     @classmethod
-    def actualizar_secundarios(cls, frames_totales):
+    def actualizar_secundarios(cls, frames_totales, mario):
+        if mario.inmune:
+            print(".....................")
+        else:
+            print("----------------")
         for moneda in Base.monedas:
             if moneda.movible:
                 moneda.movimiento()
@@ -159,6 +166,8 @@ class Controlador(object):
 
         for goomba in Base.goombas:
             goomba.movimiento(frames_totales)
+
+        mario.verificar_inmunidad(frames_totales)
 
     @classmethod
     def colision_escaleras(cls, mario):

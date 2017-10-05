@@ -21,6 +21,8 @@ class Mario(Base):
         self.maximo = 0
         self.salto = False
         self.bajando = False
+        self.inmune = False
+        self.frame_inmune = 0
 
         Base.sprites.add(self)
 
@@ -116,7 +118,7 @@ class Mario(Base):
 
         self.colisiones_con_salto()
 
-    def colisiones_con_salto(self):
+    def colisiones_con_salto(self, goomba):
 
         if self.colision(Base.piso) is not False:
             self.terminar_salto()
@@ -128,6 +130,11 @@ class Mario(Base):
         escalera = self.colision(Base.escalera)
         if escalera is not False:
             self.colision_escalera_salto(escalera)
+
+        if self.inmune is False:
+            goomba = self.colision(Base.goombas)
+            if goomba is not False:
+                self.colision_goomba(goomba)
 
         #Colisiona con dos objetos?
         bloque, bloque2 = Controlador.buscar_objetos(self)
@@ -368,6 +375,11 @@ class Mario(Base):
                 self.rect.x = escalera.rect.x - 90
             return True
 
-    def perder_vida(self):
+    def colision_goomba(self, goomba)
 
-        print("PERDISTE VIDA JAJAJJAJAJAJAJAJAJAJAJAJAJAJA")
+        print("Estoy arriba")
+
+    def verificar_inmunidad(self, frames_totales):
+        if self.inmune:
+            if self.frame_inmune + 90 < frames_totales:
+                self.inmune = False

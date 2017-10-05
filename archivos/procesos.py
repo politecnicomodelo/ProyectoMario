@@ -20,10 +20,10 @@ def procesos(reloj, mario, FPS, frames_totales, fondo):
     if teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.salto is False:
         mario.activar_salto()
 
-    Controlador.actualizar_secundarios(frames_totales)
+    Controlador.actualizar_secundarios(frames_totales, mario)
 
     Controlador.eliminar_sprites(mario)
 
     Controlador.salto_mario(mario)
 
-    Controlador.colisiones(mario)
+    Controlador.colisiones(mario, frames_totales)
