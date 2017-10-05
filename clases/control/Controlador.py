@@ -59,7 +59,7 @@ class Controlador(object):
     @classmethod
     def eliminar_sprites(cls, mario):
         for item in Base.sprites:
-            if item.rect.x < -40:
+            if item.rect.x < -85:
                 if item is not mario:
 
                     if item in Base.tuberias:

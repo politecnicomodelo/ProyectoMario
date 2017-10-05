@@ -33,8 +33,8 @@ def inicializacion():
     bloque = Ladrillo(504, 450, True)
     bloque = Ladrillo(580, 450, False)
 
-    escalera = Escalera(765,620, True)
-    escalera = Escalera(842,620, False)
+    escalera = Escalera(765,617, True)
+    escalera = Escalera(842,617, False)
     escalera = Escalera(842,545, False)
     escalera = Escalera(919,620, True)
     escalera = Escalera(919,545, True)
@@ -52,4 +52,4 @@ def inicializacion():
 
     #TERMINA CREACION DE MONEDAS
 
-    tuberia = Tuberia(1600, 3)
+    tuberia = Tuberia(1200, 3)
