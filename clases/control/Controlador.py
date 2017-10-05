@@ -96,6 +96,10 @@ class Controlador(object):
         if moneda is not False:
             moneda.agarrada()
 
+        goomba = mario.colision(Base.goombas)
+        if goomba is not False and mario.bajando is False:
+            mario.perder_vida()
+
         #Mientras anda a pie
         if mario.salto is False:
 
@@ -153,6 +157,9 @@ class Controlador(object):
             if item.proceso:
                 item.tocado()
 
+        for goomba in Base.goombas:
+            goomba.movimiento(frames_totales)
+
     @classmethod
     def colision_escaleras(cls, mario):
         escalera = mario.colision(Base.escalera)
@@ -160,7 +167,6 @@ class Controlador(object):
         if escalera is not False:
             if mario.colision_escalera(escalera) is False:
                 return True
-        #Si está cayendo, evitar buscar colision y evitar que solape
         return False
 
     @classmethod

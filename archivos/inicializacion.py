@@ -28,22 +28,6 @@ def inicializacion():
 
     #CREACION DE BLOQUES (escalera = 620, 76 de diferencia entre escaleras)
 
-    bloque = Ladrillo(350, 450, True)
-    bloque = Signo(428, 450)
-    bloque = Ladrillo(504, 450, True)
-    bloque = Ladrillo(580, 450, False)
-
-    escalera = Escalera(765,617, True)
-    escalera = Escalera(842,617, False)
-    escalera = Escalera(842,545, False)
-    escalera = Escalera(919,620, True)
-    escalera = Escalera(919,545, True)
-    escalera = Escalera(919,469, True)
-    escalera = Escalera(996,620, False)
-    escalera = Escalera(996,545, False)
-    escalera = Escalera(996,469, False)
-    escalera = Escalera(996,393, False)
-
     #TERMINA CREACION DE BLOQUES
 
     #CREACION DE MONEDAS
@@ -53,3 +37,7 @@ def inicializacion():
     #TERMINA CREACION DE MONEDAS
 
     tuberia = Tuberia(1200, 3)
+
+    escalera = Escalera(500, 620, True)
+
+    goomba = Goomba(700, 630)

@@ -329,7 +329,7 @@ class Mario(Base):
                 self.rect.x = escalera.rect.x + 70
             return False
 
-        if self.colision_escalera_caida(escalera) is False:
+        if self.colision_escalera_caida() is False:
             return False
 
         return True
@@ -346,9 +346,9 @@ class Mario(Base):
                 self.rect.x = escalera.rect.x - 100
 
         else:
-            self.colision_escalera_caida(escalera)
+            self.colision_escalera_caida()
 
-    def colision_escalera_caida(self, escalera):
+    def colision_escalera_caida(self):
 
         escalera = self.colision(Base.escalera)
 
@@ -367,3 +367,7 @@ class Mario(Base):
             elif self.rect.x < escalera.rect.x:
                 self.rect.x = escalera.rect.x - 90
             return True
+
+    def perder_vida(self):
+
+        print("PERDISTE VIDA JAJAJJAJAJAJAJAJAJAJAJAJAJAJA")
