@@ -41,3 +41,7 @@ def inicializacion():
     escalera = Escalera(500, 620, True)
 
     goomba = Goomba(700, 630)
+
+    ladrillo = Signo(720, 350)
+    ladrillo = Ladrillo(800, 350, False)
+    ladrillo = Ladrillo(640, 350, False)

@@ -14,25 +14,28 @@ class Goomba(Base):
 
         self.direccion = False
         self.frame = 0
+        self.muerto = False
+        self.frame_muerto = None
 
     def movimiento(self, frames_totales):
 
-        objeto = self.colision(Base.tuberias)
-        if objeto is False:
-            objeto = self.colision(Base.escalera)
+        if self.muerto is False:
+            objeto = self.colision(Base.tuberias)
+            if objeto is False:
+                objeto = self.colision(Base.escalera)
 
-        if objeto is not False:
+            if objeto is not False:
+                if self.direccion:
+                    self.direccion = False
+                else:
+                    self.direccion = True
+
             if self.direccion:
-                self.direccion = False
+                self.rect.x += 5
             else:
-                self.direccion = True
+                self.rect.x -= 5
 
-        if self.direccion:
-            self.rect.x += 5
-        else:
-            self.rect.x -= 5
-
-        self.animacion(frames_totales)
+            self.animacion(frames_totales)
 
     def animacion(self, frames_totales):
 
@@ -51,3 +54,20 @@ class Goomba(Base):
             return elemento
         else:
             return False
+
+    def achicar(self):
+
+        self.image = pygame.transform.scale(self.image, (self.ancho, 15))
+        self.rect.y += 45
+
+    def morir(self, frames_totales):
+
+        self.muerto = True
+        self.frame_muerto = frames_totales
+
+    def verificar_muerte(self, frames_totales):
+
+        if self.muerto:
+            if frames_totales - self.frame_muerto > 40:
+                Base.sprites.remove(self)
+

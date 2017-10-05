@@ -17,7 +17,7 @@ class Controlador(object):
     def configurar_pantalla(cls, ancho, alto):
 
         display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
-        pygame.display.set_caption("Super Mega Mario Bros")
+        pygame.display.set_caption("Super Poli Bros")
         return display
 
     @classmethod
@@ -82,10 +82,14 @@ class Controlador(object):
                             Base.piso.remove(item)
 
     @classmethod
-    def salto_mario(cls, mario):
+    def salto_mario(cls, mario, frames_totales):
 
         if mario.salto:
-            mario.saltar()
+            mario.saltar(frames_totales)
+        if mario.rebote:
+            mario.rebote = False
+            mario.terminar_salto()
+            mario.activar_salto(200)
 
     @classmethod
     def colisiones(cls, mario, frames_totales):
@@ -102,10 +106,13 @@ class Controlador(object):
                 # TODO: Perder una vida
                 mario.inmune = True
                 mario.frame_inmune = frames_totales
+            elif goomba is not False and mario.bajando:
+                if goomba.muerto is False:
+                    goomba.morir(frames_totales)
+                    mario.colision_goomba(goomba)
 
         #Mientras anda a pie
         if mario.salto is False:
-
             if mario.colision_piso() is False:
                 if Controlador.colision_escaleras(mario) is False:
                     if Controlador.colision_tuberias(mario) is False:
@@ -152,10 +159,6 @@ class Controlador(object):
 
     @classmethod
     def actualizar_secundarios(cls, frames_totales, mario):
-        if mario.inmune:
-            print(".....................")
-        else:
-            print("----------------")
         for moneda in Base.monedas:
             if moneda.movible:
                 moneda.movimiento()
@@ -166,7 +169,7 @@ class Controlador(object):
 
         for goomba in Base.goombas:
             goomba.movimiento(frames_totales)
-
+            goomba.verificar_muerte(frames_totales)
         mario.verificar_inmunidad(frames_totales)
 
     @classmethod

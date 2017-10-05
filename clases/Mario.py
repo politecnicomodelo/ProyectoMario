@@ -21,8 +21,10 @@ class Mario(Base):
         self.maximo = 0
         self.salto = False
         self.bajando = False
+
         self.inmune = False
         self.frame_inmune = 0
+        self.rebote = False
 
         Base.sprites.add(self)
 
@@ -92,16 +94,15 @@ class Mario(Base):
             if self.direccion is False:
                 self.invertir()
 
-    def activar_salto(self):
+    def activar_salto(self, cantidad):
 
-        self.original = self.rect.y
-        self.maximo = self.rect.y - 340
+        self.maximo = self.rect.y - cantidad
         self.salto = True
         self.cambiar_sprite(self.movimientos[4])
         if self.direccion is False:
             self.invertir()
 
-    def saltar(self):
+    def saltar(self, frames_totales):
 
         if self.maximo == self.rect.y:
             self.bajando = True
@@ -116,9 +117,9 @@ class Mario(Base):
         if self.bajando is True:
             self.rect.y += 20
 
-        self.colisiones_con_salto()
+        self.colisiones_con_salto(frames_totales)
 
-    def colisiones_con_salto(self, goomba):
+    def colisiones_con_salto(self, frames_totales):
 
         if self.colision(Base.piso) is not False:
             self.terminar_salto()
@@ -134,7 +135,9 @@ class Mario(Base):
         if self.inmune is False:
             goomba = self.colision(Base.goombas)
             if goomba is not False:
-                self.colision_goomba(goomba)
+                if goomba.muerto is False:
+                    goomba.morir(frames_totales)
+                    self.colision_goomba(goomba)
 
         #Colisiona con dos objetos?
         bloque, bloque2 = Controlador.buscar_objetos(self)
@@ -210,7 +213,7 @@ class Mario(Base):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
 
             #Chocó estando sobre el bloque?
-            if bloque.rect.y >= self.rect.y + 90:
+            if bloque.rect.y >= self.rect.y + 82:
                 if self.bajando:
                     self.terminar_salto()
                 return False
@@ -375,9 +378,9 @@ class Mario(Base):
                 self.rect.x = escalera.rect.x - 90
             return True
 
-    def colision_goomba(self, goomba)
-
-        print("Estoy arriba")
+    def colision_goomba(self, goomba):
+        goomba.achicar()
+        self.rebote = True
 
     def verificar_inmunidad(self, frames_totales):
         if self.inmune:
