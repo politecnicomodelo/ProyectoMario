@@ -1,9 +1,10 @@
-# Proyecto Mario
+# Super Poli Bros
 
-### Un proyecto escolar en el que se recrea el famoso videojuego de Mario para Nintendo NES
+### Un proyecto escolar en el que se recrea el juego Super Mario Bros
 
-El objetivo final es conseguir un juego funcional y libre de errores.
-Debe contener colisiones, movimientos, enemigos, vidas y objetos adicionales.
-Tiene que tener un contador de Highscore.
-Debe funcionar en paralelo a un proceso de controles.
-Este proceso recibirá información vía Bluetooth desde un Arduino y lo transformará a informacion útil.
+##### Proyecto:
+
+   El juego debe ser fiel al original Mario, pero con una vuelta de rosca que demuestre que fue hecho por alumnos del Poli.
+   El personaje será controlado por una rodillera que contiene un acelerómentro y un giroscopio.
+   El nivel será cargado de una base de datos basada en MySql que estará cargada en el servidor local.
+   La puntuación de los usuarios se guardará con sus nombres en la misma base y se expondrá en la pantalla principal.
