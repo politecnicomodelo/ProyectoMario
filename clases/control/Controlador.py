@@ -33,12 +33,14 @@ class Controlador(object):
         ventana.blit(fondo.image, fondo.rect)
 
     @classmethod
-    def buscar_eventos(cls):
+    def buscar_eventos(cls, mario):
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 cls.terminar()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
                 cls.terminar()
+            if evento.type == pygame.KEYUP:
+                mario.detenerse()
 
     @classmethod
     def buscar_teclas(cls):
