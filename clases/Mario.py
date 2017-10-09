@@ -1,6 +1,7 @@
 from clases.control.Controlador import Controlador
 from clases.control.Base import *
 from clases import *
+from clases.control.Corazon import *
 import pygame
 
 ancho = 1280
@@ -25,6 +26,8 @@ class Mario(Base):
         self.inmune = False
         self.frame_inmune = 0
         self.rebote = False
+
+        self.vidas = 3
 
         Base.sprites.add(self)
 
@@ -387,3 +390,12 @@ class Mario(Base):
         if self.inmune:
             if self.frame_inmune + 90 < frames_totales:
                 self.inmune = False
+
+    def empiezo_inmunidad(self, frames_totales):
+        self.inmune = True
+        self.frame_inmune = frames_totales
+
+    def inicializar_vidas(self):
+
+        for i in range(self.vidas):
+            vida = Corazon()

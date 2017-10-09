@@ -11,7 +11,7 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     segundo = 0
 
-    inicializacion()
+    inicializacion(mario)
 
     while True:
 

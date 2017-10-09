@@ -1,8 +1,9 @@
 from clases import *
+from clases.control.Corazon import Corazon
 
 # Separacion entre bloques de piso: 72
 
-def inicializacion():
+def inicializacion(mario):
 
     # CREACION DE PISO
 
@@ -41,7 +42,11 @@ def inicializacion():
     escalera = Escalera(500, 620, True)
 
     goomba = Goomba(700, 630)
+    goomba = Goomba(630, 630)
+    goomba = Goomba(780, 630)
 
     ladrillo = Signo(720, 350)
     ladrillo = Ladrillo(800, 350, False)
     ladrillo = Ladrillo(640, 350, False)
+
+    mario.inicializar_vidas()

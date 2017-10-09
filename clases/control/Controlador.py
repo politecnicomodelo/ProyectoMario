@@ -38,7 +38,8 @@ class Controlador(object):
         fondo.rect.x -= 20
         for item in Base.sprites:
             if item is not mario:
-                item.rect.x -= 20
+                if item not in Base.corazon.sprites():
+                    item.rect.x -= 20
 
 
     @classmethod
@@ -100,16 +101,15 @@ class Controlador(object):
         if moneda is not False:
             moneda.agarrada()
 
-        if mario.inmune is False:
             goomba = mario.colision(Base.goombas)
             if goomba is not False and mario.bajando is False:
-                # TODO: Perder una vida
-                mario.inmune = True
-                mario.frame_inmune = frames_totales
-            elif goomba is not False and mario.bajando:
-                if goomba.muerto is False:
-                    goomba.morir(frames_totales)
-                    mario.colision_goomba(goomba)
+                if mario.inmune is False:
+                    # TODO: Perder una vida
+                    mario.empiezo_inmunidad(frames_totales)
+                elif goomba is not False and mario.bajando:
+                    if goomba.muerto is False:
+                        goomba.morir(frames_totales)
+                        mario.colision_goomba(goomba)
 
         #Mientras anda a pie
         if mario.salto is False:
