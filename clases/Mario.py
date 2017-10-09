@@ -162,8 +162,8 @@ class Mario(Base):
         #Chocó mientras estaba subiendo?
         if self.bajando is False:
 
-            #Está dentro de la hitbox del bloque?
-            if self.rect.x < objeto.rect.x + 60 and self.rect.x > objeto.rect.x - 90:
+            #Está dentro de la hitbox del bloqe?
+            if self.rect.x < objeto.rect.x + 45 and self.rect.x > objeto.rect.x - 80:
 
                 #Está debajo del bloque?
                 if self.rect.y + 65 >= objeto.rect.y:
@@ -174,8 +174,9 @@ class Mario(Base):
                 elif self.rect.y >= objeto.rect.y + 55 and objeto in Base.signos:
                     self.bajando = True
 
+            else:
                 #Está a la derecha del bloque?
-                elif self.rect.x >= objeto.rect.x:
+                if self.rect.x >= objeto.rect.x:
                     self.rect.x = objeto.rect.x + 70
 
                 #Está a la izquierda del bloque?
