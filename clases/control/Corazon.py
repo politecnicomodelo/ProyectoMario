@@ -4,7 +4,7 @@ class Corazon(Base):
 
     def __init__(self):
 
-        Base.__init__(self, 40, 40, 60, 53, "imagenes/corazon.png")
+        Base.__init__(self, 40, 40, 50, 42, "imagenes/corazon.png")
 
         Base.sprites.add(self)
 
@@ -20,4 +20,4 @@ class Corazon(Base):
         for corazon in Base.corazon:
             if corazon.rect.x > maximo:
                 maximo = corazon.rect.x
-        return maximo + 70
+        return maximo + 60

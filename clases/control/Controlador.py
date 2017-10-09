@@ -45,6 +45,7 @@ class Controlador(object):
     @classmethod
     def buscar_eventos(cls, mario):
         for evento in pygame.event.get():
+
             if evento.type == pygame.QUIT:
                 cls.terminar()
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
@@ -96,20 +97,19 @@ class Controlador(object):
     def colisiones(cls, mario, frames_totales):
 
         control = False
-
         moneda = mario.colision(Base.monedas)
         if moneda is not False:
             moneda.agarrada()
 
-            goomba = mario.colision(Base.goombas)
-            if goomba is not False and mario.bajando is False:
-                if mario.inmune is False:
-                    # TODO: Perder una vida
-                    mario.empiezo_inmunidad(frames_totales)
-                elif goomba is not False and mario.bajando:
-                    if goomba.muerto is False:
-                        goomba.morir(frames_totales)
-                        mario.colision_goomba(goomba)
+        goomba = mario.colision(Base.goombas)
+        if goomba is not False and mario.salto is False and mario.bajando is False:
+            if mario.inmune is False:
+                mario.perder_vida()
+                mario.empiezo_inmunidad(frames_totales)
+        if goomba is not False and mario.bajando:
+            if goomba.muerto is False:
+                goomba.morir(frames_totales)
+                mario.colision_goomba(goomba)
 
         #Mientras anda a pie
         if mario.salto is False:

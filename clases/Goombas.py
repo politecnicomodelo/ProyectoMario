@@ -1,4 +1,5 @@
 from clases import *
+from clases.control.Base import Base
 
 ancho = 1280
 alto = 720
@@ -64,6 +65,7 @@ class Goomba(Base):
 
         self.muerto = True
         self.frame_muerto = frames_totales
+        Base.goombas.remove(self)
 
     def verificar_muerte(self, frames_totales):
 

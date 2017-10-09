@@ -399,3 +399,16 @@ class Mario(Base):
 
         for i in range(self.vidas):
             vida = Corazon()
+
+    def perder_vida(self):
+
+        maximo = 0
+        for corazon in Base.corazon:
+            if corazon.rect.x > maximo:
+                maximo = corazon.rect.x
+
+        for corazon in Base.corazon:
+            if corazon.rect.x == maximo:
+                Base.corazon.remove(corazon)
+                Base.sprites.remove(corazon)
+
