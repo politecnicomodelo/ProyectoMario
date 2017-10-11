@@ -1,6 +1,7 @@
 from clases import *
 import pygame.locals
 from clases.control.Base import *
+from clases.Goombas import Goomba
 
 class Controlador(object):
 
@@ -167,9 +168,10 @@ class Controlador(object):
             if item.proceso:
                 item.tocado()
 
-        for goomba in Base.goombas:
-            goomba.movimiento(frames_totales)
-            goomba.verificar_muerte(frames_totales)
+        for goomba in Base.sprites:
+            if isinstance(goomba, Goomba):
+                goomba.movimiento(frames_totales)
+                goomba.verificar_muerte(frames_totales)
         mario.verificar_inmunidad(frames_totales)
 
     @classmethod

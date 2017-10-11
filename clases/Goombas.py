@@ -1,5 +1,6 @@
 from clases import *
 from clases.control.Base import Base
+import pygame
 
 ancho = 1280
 alto = 720

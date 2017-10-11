@@ -11,7 +11,7 @@ class Mario(Base):
 
     def __init__(self):
 
-        Base.__init__(self, ancho-1260, 600, 100, 100, "imagenes/mario/mario.png")
+        Base.__init__(self, 20, 550, 100, 100, "imagenes/mario/mario.png")
         self.estado = 0
         self.direccion = True
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
@@ -27,7 +27,7 @@ class Mario(Base):
         self.frame_inmune = 0
         self.rebote = False
 
-        self.vidas = 3
+        self.vidas = 5
 
         Base.sprites.add(self)
 
