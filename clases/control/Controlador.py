@@ -126,7 +126,7 @@ class Controlador(object):
                         mario.detenerse()
                         mario.bajando = False
 
-            else:
+            elif mario.colision_piso():
                 tuberia = mario.colision(Base.tuberias)
                 if tuberia is not False:
                     mario.colision_tuberia(tuberia)
@@ -200,3 +200,10 @@ class Controlador(object):
             if mario.colision_bloques(bloque) is False:
                 return True
         return False
+
+    @classmethod
+    def redondear(cls, rect):
+        numero = rect
+        while numero > 10:
+            numero -= 10
+        return numero

@@ -37,16 +37,19 @@ def inicializacion(mario):
 
     #TERMINA CREACION DE MONEDAS
 
-    tuberia = Tuberia(1200, 3)
+    tuberia = Tuberia(1200, 2)
 
     escalera = Escalera(500, 620, True)
+    escalera = Escalera(576, 620, False)
+    escalera = Escalera(576, 544, False)
+    escalera = Escalera(652, 620, True)
+    escalera = Escalera(652, 544, True)
+    escalera = Escalera(652, 468, True)
 
-    goomba = Goomba(700, 630)
-    goomba = Goomba(630, 630)
-    goomba = Goomba(780, 630)
+    goomba = Goomba(850, 630)
 
-    ladrillo = Signo(720, 350)
-    ladrillo = Ladrillo(800, 350, False)
-    ladrillo = Ladrillo(640, 350, False)
+    #ladrillo = Signo(720, 350)
+    #ladrillo = Ladrillo(800, 350, False)
+    #ladrillo = Ladrillo(640, 350, False)
 
     mario.inicializar_vidas()
