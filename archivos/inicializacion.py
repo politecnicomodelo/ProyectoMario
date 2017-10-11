@@ -33,8 +33,6 @@ def inicializacion(mario):
 
     #CREACION DE MONEDAS
 
-    moneda = Moneda(190, 350, False)
-
     #TERMINA CREACION DE MONEDAS
 
     tuberia = Tuberia(1200, 2)
