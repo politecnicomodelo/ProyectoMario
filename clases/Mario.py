@@ -17,7 +17,7 @@ class Mario(Base):
         self.detenido = False
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
-                            "imagenes/mario/mario_salto.png",)
+                            "imagenes/mario/mario_salto.png", "imagenes/invisible.png")
 
         self.movimientos_invisibles = ("imagenes/mario/invisible/mario_invisible.png",
                                        "imagenes/mario/invisible/mario_correr_invisible.png",
@@ -131,6 +131,9 @@ class Mario(Base):
         self.cambiar_sprite(4)
 
     def saltar(self, frames_totales):
+        print("Y: " + str(self.rect.y))
+
+        self.colisiones_con_salto(frames_totales)
 
         self.detenido = False
         if self.maximo == self.rect.y:
@@ -142,11 +145,8 @@ class Mario(Base):
                 self.rect.y -= 10
             else:
                 self.rect.y -= 20
-
         if self.bajando is True:
             self.rect.y += 20
-
-        self.colisiones_con_salto(frames_totales)
 
     def colisiones_con_salto(self, frames_totales):
 
@@ -243,11 +243,10 @@ class Mario(Base):
         if self.rect.x < bloque.rect.x + 60 and self.rect.x > bloque.rect.x - 90:
 
             #Chocó estando sobre el bloque?
-            if bloque.rect.y >= self.rect.y + 81 and bloque.rect.y < self.rect.y + 90:
-                self.rect.y -= Controlador.redondear(self.rect.y)
-            if bloque.rect.y >= self.rect.y + 90:
+            if bloque.rect.y >= self.rect.y + 80:
                 if self.bajando:
                     self.terminar_salto()
+                    self.rect.y = bloque.rect.y - 95
                 return False
 
 
@@ -308,11 +307,8 @@ class Mario(Base):
 
         if self.colision(Base.piso) is False:
             return False
-        if self.rect.y + 95 <= piso.rect.y and self.rect.y <= piso.rect.y - 85:
-            return True
-        else:
-            redondeo = self.rect.y
-            self.rect.y -= Controlador.redondear(self.rect.y)
+        if self.rect.y <= piso.rect.y - 85:
+            self.rect.y = piso.rect.y - 95
             return True
 
     def colision_tuberia(self, tuberia):
@@ -326,31 +322,28 @@ class Mario(Base):
 
         #Está subiendo?
         if self.bajando is False:
+            if self.rect.x - 120 >= tuberia.rect.x or self.rect.x + 60 <= tuberia.rect.x:
 
-            #Está a la derecha del bloque?
-            if self.rect.x >= tuberia.rect.x:
-                self.rect.x = tuberia.rect.x + 145
+                #Está a la derecha del bloque?
+                if self.rect.x >= tuberia.rect.x:
+                    self.rect.x = tuberia.rect.x + 145
 
-            #Está a la izquierda del bloque?
-            elif self.rect.x < tuberia.rect.x:
-                self.rect.x = tuberia.rect.x - 90
+                #Está a la izquierda del bloque?
+                elif self.rect.x < tuberia.rect.x:
+                    self.rect.x = tuberia.rect.x - 90
 
         else:
             self.colision_tuberia_caida(tuberia)
 
     def colision_tuberia_caida(self, tuberia):
 
-            #Chocó estando sobre el bloque?
+            # Chocó estando sobre el bloque?
             if self.rect.x - 120 <= tuberia.rect.x and self.rect.x + 60 >= tuberia.rect.x:
-                if tuberia.rect.y >= self.rect.y + 75 and tuberia.rect.y < self.rect.y + 90:
-                    self.rect.y -= Controlador.redondear(self.rect.y)
-                if tuberia.alto == 1 or tuberia.alto == 2:
-                    if tuberia.rect.y >= self.rect.y + 90:
-                        self.terminar_salto()
-                elif tuberia.alto == 3:
-                    if tuberia.rect.y >= self.rect.y + 80:
-                        self.terminar_salto()
+                if tuberia.rect.y >= self.rect.y + 80:
+                    self.terminar_salto()
+                    self.rect.y = tuberia.rect.y - 92
                 return False
+
             #Chocó estando fuera de la hitbox?
             else:
                 if self.rect.x > tuberia.rect.x:
@@ -387,13 +380,14 @@ class Mario(Base):
     def colision_escalera_salto(self, escalera):
 
         if self.bajando is False:
-            #Está a la derecha del bloque?
-            if self.rect.x >= escalera.rect.x:
-                self.rect.x = escalera.rect.x + 70
+            if self.rect.x + 85 <= escalera.rect.x or self.rect.x - 50 >= escalera.rect.x:
+                #Está a la derecha del bloque?
+                if self.rect.x >= escalera.rect.x:
+                    self.rect.x = escalera.rect.x + 70
 
-            #Está a la izquierda del bloque?
-            elif self.rect.x < escalera.rect.x:
-                self.rect.x = escalera.rect.x - 100
+                #Está a la izquierda del bloque?
+                elif self.rect.x < escalera.rect.x:
+                    self.rect.x = escalera.rect.x - 105
 
         else:
             self.colision_escalera_caida()
@@ -404,10 +398,9 @@ class Mario(Base):
 
         #Caí sobre la escalera?
         if self.rect.x + 85 >= escalera.rect.x and self.rect.x - 50 <= escalera.rect.x:
-            if self.rect.y + 60 <= escalera.rect.y and self.rect.y + 97 >= escalera.rect.y:
-                self.rect.y = escalera.rect.y - 98
-            if escalera.rect.y >= self.rect.y + 98:
+            if escalera.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
+                self.rect.y = escalera.rect.y - 98
             return False
         else:
             #Está a la derecha del bloque?
@@ -429,7 +422,7 @@ class Mario(Base):
             #Ya termina la inmunidad?
             if self.frame_inmune + 100 < frames_totales:
                 self.inmune = False
-                self.cambiar_sprite(self.estado)
+                self.cambiar_sprite(0)
             #Tengo que actualizar el titileo?
             elif self.frame_invisible + 15 < frames_totales:
                 if self.invisible == 0:

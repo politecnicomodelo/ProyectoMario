@@ -21,6 +21,12 @@ def inicializacion(mario):
 
     x = 5760
 
+    for i in range(52):
+        piso = Piso(x,695)
+        x += 72
+
+    x = 9720
+
     for i in range(6):
         piso = Piso(x,695)
         x += 72
@@ -29,25 +35,15 @@ def inicializacion(mario):
 
     #CREACION DE BLOQUES (escalera = 620, 76 de diferencia entre escaleras)
 
+    ladri = Ladrillo(1100, 300, True)
+
     #TERMINA CREACION DE BLOQUES
 
     #CREACION DE MONEDAS
-
     #TERMINA CREACION DE MONEDAS
 
-    tuberia = Tuberia(1200, 2)
+    tuberia = Tuberia(1250, 3)
 
-    escalera = Escalera(500, 620, True)
-    escalera = Escalera(576, 620, False)
-    escalera = Escalera(576, 544, False)
-    escalera = Escalera(652, 620, True)
-    escalera = Escalera(652, 544, True)
-    escalera = Escalera(652, 468, True)
-
-    goomba = Goomba(850, 630)
-
-    #ladrillo = Signo(720, 350)
-    #ladrillo = Ladrillo(800, 350, False)
-    #ladrillo = Ladrillo(640, 350, False)
+    escalera = Escalera(300,620, True)
 
     mario.inicializar_vidas()

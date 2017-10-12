@@ -7,7 +7,6 @@ mario = Mario()
 
 def main():
 
-    mario.inmune = True
     juego(colores, mario)
 
 main()
