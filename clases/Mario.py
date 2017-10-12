@@ -14,6 +14,7 @@ class Mario(Base):
         Base.__init__(self, 20, 550, 100, 100, "imagenes/mario/mario.png")
         self.estado = 0
         self.direccion = True
+        self.detenido = False
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
                             "imagenes/mario/mario_salto.png",)
@@ -47,6 +48,7 @@ class Mario(Base):
 
     def mover_derecha(self, velocidad, frames_totales):
 
+        self.detenido = False
         if self.direccion is False:
             self.direccion = True
             self.invertir()
@@ -83,13 +85,11 @@ class Mario(Base):
                     self.estado += 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
-                    self.invertir()
 
                 elif self.estado == 3:
                     self.estado = 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
-                    self.invertir()
 
         if self.rect.x > -10:
             self.rect.x -= velocidad
@@ -105,30 +105,34 @@ class Mario(Base):
             if self.invisible == 0:
                 self.image = pygame.image.load(self.movimientos_invisibles[estado])
                 self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+                if self.direccion is False:
+                    self.invertir()
             else:
                 self.image = pygame.image.load(self.movimientos_muy_invisibles[estado])
                 self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+                if self.direccion is False:
+                    self.invertir()
         else:
             self.image = pygame.image.load(self.movimientos[estado])
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-
-    def detenerse(self):
-
-        if self.salto is False:
-            self.cambiar_sprite(0)
             if self.direccion is False:
                 self.invertir()
+
+    def detenerse(self):
+        if self.detenido is False:
+            self.detenido = True
+        if self.salto is False:
+            self.cambiar_sprite(0)
 
     def activar_salto(self, cantidad):
 
         self.maximo = self.rect.y - cantidad
         self.salto = True
         self.cambiar_sprite(4)
-        if self.direccion is False:
-            self.invertir()
 
     def saltar(self, frames_totales):
 
+        self.detenido = False
         if self.maximo == self.rect.y:
             self.bajando = True
 
@@ -280,8 +284,6 @@ class Mario(Base):
         if self.bajando is False:
             self.bajando = True
             self.cambiar_sprite(4)
-            if self.direccion is False:
-                self.invertir()
 
     def calcular_caida(self):
 
@@ -422,15 +424,23 @@ class Mario(Base):
         self.rebote = True
 
     def verificar_inmunidad(self, frames_totales):
+        #Si es inmune
         if self.inmune:
-            if self.frame_inmune + 90 < frames_totales:
+            #Ya termina la inmunidad?
+            if self.frame_inmune + 100 < frames_totales:
                 self.inmune = False
-            elif self.frame_invisible + 10 < frames_totales:
+                self.cambiar_sprite(self.estado)
+            #Tengo que actualizar el titileo?
+            elif self.frame_invisible + 15 < frames_totales:
                 if self.invisible == 0:
                     self.invisible = 1
                 else:
                     self.invisible = 0
                 self.frame_invisible = frames_totales
+                if self.detenido:
+                    self.cambiar_sprite(0)
+                elif self.salto:
+                    self.cambiar_sprite(4)
 
     def empiezo_inmunidad(self, frames_totales):
         self.inmune = True

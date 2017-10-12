@@ -119,6 +119,7 @@ class Controlador(object):
                     if Controlador.colision_tuberias(mario) is False:
                         if Controlador.colision_bloques(mario) is False:
                             control = True
+                            mario.detenido = False
                             mario.caerse()
 
                 if control is False:
