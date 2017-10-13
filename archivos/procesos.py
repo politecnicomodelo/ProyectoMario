@@ -29,3 +29,7 @@ def procesos(reloj, mario, FPS, frames_totales, fondo):
     Controlador.actualizar_secundarios(frames_totales, mario)
 
     Controlador.eliminar_sprites(mario)
+
+    if Controlador.verificar_muerte(mario):
+        return True
+    return False

@@ -105,9 +105,7 @@ class Controlador(object):
         goomba = mario.colision(Base.goombas)
         if goomba is not False and mario.salto is False and mario.bajando is False:
             if mario.inmune is False:
-                mario.perder_vida()
-                if mario.muerto is False:
-                    mario.empiezo_inmunidad(frames_totales)
+                mario.perder_vida(frames_totales, 345)
         if goomba is not False and mario.bajando:
             if goomba.muerto is False:
                 goomba.morir(frames_totales)
@@ -122,6 +120,8 @@ class Controlador(object):
                             control = True
                             mario.detenido = False
                             mario.caerse()
+                            if mario.bajo_tierra():
+                                mario.perder_vida(frames_totales, 495)
 
                 if control is False:
                     if mario.bajando:
@@ -202,3 +202,22 @@ class Controlador(object):
             if mario.colision_bloques(bloque) is False:
                 return True
         return False
+
+    @classmethod
+    def verificar_muerte(cls, mario):
+
+        if mario.muerto and mario.bajo_tierra and mario.animacion is False:
+            return True
+        return False
+
+    @classmethod
+    def quitar_corazones(cls):
+        maximo = 0
+        for corazon in Base.corazon:
+            if corazon.rect.x > maximo:
+                maximo = corazon.rect.x
+
+        for corazon in Base.corazon:
+            if corazon.rect.x == maximo:
+                Base.corazon.remove(corazon)
+                Base.sprites.remove(corazon)

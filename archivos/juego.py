@@ -16,3 +16,5 @@ def juego(colores, mario):
     fondo = Fondo()
 
     nivel(reloj, mario, ventana, colores, fondo)
+
+    Controlador.terminar()

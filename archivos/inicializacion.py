@@ -9,7 +9,7 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(57):
+    for i in range(15):
         piso = Piso(x,695)
         x += 72
 
@@ -30,15 +30,5 @@ def inicializacion(mario):
     for i in range(6):
         piso = Piso(x,695)
         x += 72
-
-    #TERMINA CREACION DE PISO
-
-    #CREACION DE BLOQUES (escalera = 620, 76 de diferencia entre escaleras)
-    goomba = Goomba(400, 630)
-
-    #TERMINA CREACION DE BLOQUES
-
-    #CREACION DE MONEDAS
-    #TERMINA CREACION DE MONEDAS
 
     mario.inicializar_vidas()

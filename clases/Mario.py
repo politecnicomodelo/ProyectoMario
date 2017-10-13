@@ -47,6 +47,7 @@ class Mario(Base):
 
         self.vidas = 1
         self.muerto = False
+        self.animacion = False
 
         Base.sprites.add(self)
 
@@ -458,24 +459,20 @@ class Mario(Base):
         for i in range(self.vidas):
             vida = Corazon()
 
-    def perder_vida(self):
+    def perder_vida(self, frames_totales, cantidad):
 
         self.vidas -= 1
-        maximo = 0
-        for corazon in Base.corazon:
-            if corazon.rect.x > maximo:
-                maximo = corazon.rect.x
 
-        for corazon in Base.corazon:
-            if corazon.rect.x == maximo:
-                Base.corazon.remove(corazon)
-                Base.sprites.remove(corazon)
+        Controlador.quitar_corazones()
 
         if self.vidas == 0:
-            self.muerte()
+            self.animacion = True
+            self.muerte(cantidad)
+
+        if self.muerto is False:
+            self.empiezo_inmunidad(frames_totales)
 
         #TODO llamar a funcion inicializar_vidas cuando se sume una vida, si se suma
-
 
     def terminar_caida(self):
         if self.detenido is False:
@@ -483,15 +480,16 @@ class Mario(Base):
         if self.salto is False:
             self.cambiar_sprite(0)
 
-    def muerte(self):
+    def muerte(self, cantidad):
 
         self.muerto = True
         self.cambiar_sprite(6)
-        self.maximo = self.rect.y - 345
+        self.maximo = self.rect.y - cantidad
+        self.bajando = False
 
     def animacion_muerte(self):
 
-        if self.muerto:
+        if self.animacion:
 
             if self.maximo == self.rect.y:
                 self.bajando = True
@@ -504,3 +502,12 @@ class Mario(Base):
 
             if self.bajando is True:
                 self.rect.y += 15
+
+            if self.bajo_tierra() and self.bajando:
+                self.animacion = False
+
+    def bajo_tierra(self):
+        if self.rect.y > 850:
+            return True
+        return False
+

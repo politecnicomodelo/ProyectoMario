@@ -5,6 +5,8 @@ from archivos.inicializacion import *
 
 def nivel(reloj, mario, ventana, colores, fondo):
 
+    terminar = False
+
     FPS = 120
 
     frames_totales = 0
@@ -15,7 +17,8 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     while True:
 
-        procesos(reloj, mario, FPS, frames_totales, fondo)
+        if procesos(reloj, mario, FPS, frames_totales, fondo):
+            break
 
         if frames_totales % (FPS / 4) == 0:
 
@@ -24,6 +27,3 @@ def nivel(reloj, mario, ventana, colores, fondo):
         dibujo(fondo, ventana, colores)
 
         frames_totales += 1
-
-
-
