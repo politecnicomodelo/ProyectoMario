@@ -34,16 +34,11 @@ def inicializacion(mario):
     #TERMINA CREACION DE PISO
 
     #CREACION DE BLOQUES (escalera = 620, 76 de diferencia entre escaleras)
-
-    ladri = Ladrillo(500, 450, True)
-    signo = Signo(750, 250)
-    ladri = Ladrillo(400, 100, True)
+    goomba = Goomba(400, 630)
 
     #TERMINA CREACION DE BLOQUES
 
     #CREACION DE MONEDAS
     #TERMINA CREACION DE MONEDAS
-
-    escalera = Escalera(300,620, True)
 
     mario.inicializar_vidas()

@@ -52,7 +52,7 @@ class Controlador(object):
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
                 cls.terminar()
             if evento.type == pygame.KEYUP:
-                if mario.bajando is False:
+                if mario.bajando is False and mario.muerto is False:
                     mario.terminar_caida()
 
     @classmethod
@@ -106,7 +106,8 @@ class Controlador(object):
         if goomba is not False and mario.salto is False and mario.bajando is False:
             if mario.inmune is False:
                 mario.perder_vida()
-                mario.empiezo_inmunidad(frames_totales)
+                if mario.muerto is False:
+                    mario.empiezo_inmunidad(frames_totales)
         if goomba is not False and mario.bajando:
             if goomba.muerto is False:
                 goomba.morir(frames_totales)
@@ -173,6 +174,7 @@ class Controlador(object):
                 goomba.movimiento(frames_totales)
                 goomba.verificar_muerte(frames_totales)
         mario.verificar_inmunidad(frames_totales)
+        mario.animacion_muerte()
 
     @classmethod
     def colision_escaleras(cls, mario):

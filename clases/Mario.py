@@ -17,7 +17,8 @@ class Mario(Base):
         self.detenido = False
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
-                            "imagenes/mario/mario_salto.png", "imagenes/invisiblex.png")
+                            "imagenes/mario/mario_salto.png", "imagenes/invisiblex.png",
+                            "imagenes/mario/mario_muerto.png")
 
         self.movimientos_invisibles = ("imagenes/mario/invisible/mario_invisible.png",
                                        "imagenes/mario/invisible/mario_correr_invisible.png",
@@ -44,7 +45,8 @@ class Mario(Base):
 
         self.rebote = False
 
-        self.vidas = 3
+        self.vidas = 1
+        self.muerto = False
 
         Base.sprites.add(self)
 
@@ -116,6 +118,9 @@ class Mario(Base):
                 if self.direccion is False:
                     self.invertir()
         else:
+            if estado == 6:
+                self.ancho = 80
+                self.alto = 80
             self.image = pygame.image.load(self.movimientos[estado])
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
             if self.direccion is False:
@@ -149,6 +154,7 @@ class Mario(Base):
                 self.rect.y -= 10
             else:
                 self.rect.y -= 20
+
         if self.bajando is True:
             self.rect.y += 20
 
@@ -454,6 +460,7 @@ class Mario(Base):
 
     def perder_vida(self):
 
+        self.vidas -= 1
         maximo = 0
         for corazon in Base.corazon:
             if corazon.rect.x > maximo:
@@ -464,8 +471,36 @@ class Mario(Base):
                 Base.corazon.remove(corazon)
                 Base.sprites.remove(corazon)
 
+        if self.vidas == 0:
+            self.muerte()
+
+        #TODO llamar a funcion inicializar_vidas cuando se sume una vida, si se suma
+
+
     def terminar_caida(self):
         if self.detenido is False:
             self.detenido = True
         if self.salto is False:
             self.cambiar_sprite(0)
+
+    def muerte(self):
+
+        self.muerto = True
+        self.cambiar_sprite(6)
+        self.maximo = self.rect.y - 345
+
+    def animacion_muerte(self):
+
+        if self.muerto:
+
+            if self.maximo == self.rect.y:
+                self.bajando = True
+
+            if self.bajando is False:
+                if self.rect.y <= self.maximo + 60:
+                    self.rect.y -= 10
+                else:
+                    self.rect.y -= 15
+
+            if self.bajando is True:
+                self.rect.y += 15
