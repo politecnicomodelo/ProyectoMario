@@ -11,7 +11,7 @@ class Mario(Base):
 
     def __init__(self):
 
-        Base.__init__(self, 20, 590, 100, 100, "imagenes/mario/mario.png")
+        Base.__init__(self, 20, 600, 100, 100, "imagenes/mario/mario.png")
         self.estado = 0
         self.direccion = True
         self.detenido = False
@@ -45,7 +45,7 @@ class Mario(Base):
 
         self.rebote = False
 
-        self.vidas = 3
+        self.vidas = 2
         self.muerto = False
         self.animacion = False
         self.frame_caida = 0
@@ -108,26 +108,29 @@ class Mario(Base):
         self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def cambiar_sprite(self, estado):
-
-        if self.inmune:
-            if self.invisible == 0:
-                self.image = pygame.image.load(self.movimientos_invisibles[estado])
-                self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-                if self.direccion is False:
-                    self.invertir()
-            else:
-                self.image = pygame.image.load(self.movimientos_muy_invisibles[estado])
-                self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-                if self.direccion is False:
-                    self.invertir()
-        else:
-            if estado == 6:
-                self.ancho = 80
-                self.alto = 80
-            self.image = pygame.image.load(self.movimientos[estado])
+        if estado == 6:
+            self.ancho = 80
+            self.alto = 80
+            self.image = pygame.image.load(self.movimientos_invisibles[6])
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-            if self.direccion is False:
-                self.invertir()
+        else:
+            if self.inmune:
+                if self.invisible == 0:
+                    self.image = pygame.image.load(self.movimientos_invisibles[estado])
+                    self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+                    if self.direccion is False:
+                        self.invertir()
+                else:
+                    self.image = pygame.image.load(self.movimientos_muy_invisibles[estado])
+                    self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+                    if self.direccion is False:
+                        self.invertir()
+            else:
+                self.image = pygame.image.load(self.movimientos[estado])
+                self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+                if self.direccion is False:
+                    self.invertir()
+
 
     def detenerse(self, objeto, cantidad):
 
@@ -162,7 +165,7 @@ class Mario(Base):
             self.rect.y += 20
 
         if self.bajo_tierra():
-            self.perder_vida(frames_totales, 495)
+            self.perder_vida(frames_totales, 645)
 
         self.colisiones_con_salto(frames_totales)
 
@@ -288,7 +291,6 @@ class Mario(Base):
         return False
 
     def colision(self, grupo):
-
         elemento = pygame.sprite.spritecollideany(self, grupo, collided = None)
         if elemento is not None:
             return elemento
@@ -524,7 +526,7 @@ class Mario(Base):
                 self.animacion = False
 
     def bajo_tierra(self):
-        if self.rect.y > 850:
+        if self.rect.y > 1000:
             return True
         return False
 
@@ -536,3 +538,10 @@ class Mario(Base):
             self.rect.y = 600
             self.empiezo_inmunidad(frames_totales)
             self.flanco = False
+
+    def colision_piso_caida(self):
+        piso = self.colision(Base.piso)
+        if piso is not False:
+            if self.rect.x > piso.rect.x:
+                if self.rect.y > piso.rect.y - 75:
+                    self.rect.x = piso.rect.x + 80

@@ -9,8 +9,8 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(35):
-        piso = Piso(x,695)
+    for i in range(7):
+        piso = Piso(x,690)
         x += 72
 
     x = 4320
@@ -30,6 +30,7 @@ def inicializacion(mario):
     for i in range(6):
         piso = Piso(x,695)
         x += 72
+
     '''
     l = Ladrillo(500, 450, False)
     l = Ladrillo(580, 450, True)
