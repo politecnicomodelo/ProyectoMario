@@ -11,7 +11,7 @@ class Mario(Base):
 
     def __init__(self):
 
-        Base.__init__(self, 20, 550, 100, 100, "imagenes/mario/mario.png")
+        Base.__init__(self, 20, 590, 100, 100, "imagenes/mario/mario.png")
         self.estado = 0
         self.direccion = True
         self.detenido = False
@@ -45,9 +45,11 @@ class Mario(Base):
 
         self.rebote = False
 
-        self.vidas = 1
+        self.vidas = 3
         self.muerto = False
         self.animacion = False
+        self.frame_caida = 0
+        self.flanco = False
 
         Base.sprites.add(self)
 
@@ -156,8 +158,11 @@ class Mario(Base):
             else:
                 self.rect.y -= 20
 
-        if self.bajando is True:
+        if self.bajando:
             self.rect.y += 20
+
+        if self.bajo_tierra():
+            self.perder_vida(frames_totales, 495)
 
         self.colisiones_con_salto(frames_totales)
 
@@ -174,7 +179,7 @@ class Mario(Base):
         if escalera is not False:
             self.colision_escalera_salto(escalera)
 
-        if self.inmune is False:
+        if self.inmune is False and self.bajando:
             goomba = self.colision(Base.goombas)
             if goomba is not False:
                 if goomba.muerto is False:
@@ -466,11 +471,24 @@ class Mario(Base):
         Controlador.quitar_corazones()
 
         if self.vidas == 0:
-            self.animacion = True
             self.muerte(cantidad)
+            self.cambiar_sprite(6)
+            self.animacion = True
 
         if self.muerto is False:
-            self.empiezo_inmunidad(frames_totales)
+
+            if self.bajando is False:
+                self.empiezo_inmunidad(frames_totales)
+
+            elif self.bajando and self.flanco is False and self.salto is False:
+                self.flanco = True
+                self.frame_caida = frames_totales
+
+            elif self.bajando and self.flanco is False and self.salto:
+                self.bajando = False
+                self.salto = False
+                self.flanco = True
+                self.frame_caida = frames_totales
 
         #TODO llamar a funcion inicializar_vidas cuando se sume una vida, si se suma
 
@@ -483,7 +501,6 @@ class Mario(Base):
     def muerte(self, cantidad):
 
         self.muerto = True
-        self.cambiar_sprite(6)
         self.maximo = self.rect.y - cantidad
         self.bajando = False
 
@@ -511,3 +528,11 @@ class Mario(Base):
             return True
         return False
 
+    def verificar_flanco(self, frames_totales):
+
+        if self.flanco and self.frame_caida + 60 < frames_totales:
+            self.bajando = False
+            self.rect.x = 50
+            self.rect.y = 600
+            self.empiezo_inmunidad(frames_totales)
+            self.flanco = False

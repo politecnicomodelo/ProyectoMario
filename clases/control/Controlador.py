@@ -108,6 +108,7 @@ class Controlador(object):
                 mario.perder_vida(frames_totales, 345)
         if goomba is not False and mario.bajando:
             if goomba.muerto is False:
+                print("hola")
                 goomba.morir(frames_totales)
                 mario.colision_goomba(goomba)
 
@@ -120,7 +121,7 @@ class Controlador(object):
                             control = True
                             mario.detenido = False
                             mario.caerse()
-                            if mario.bajo_tierra():
+                            if mario.bajo_tierra() and mario.flanco is False:
                                 mario.perder_vida(frames_totales, 495)
 
                 if control is False:
@@ -175,6 +176,7 @@ class Controlador(object):
                 goomba.verificar_muerte(frames_totales)
         mario.verificar_inmunidad(frames_totales)
         mario.animacion_muerte()
+        mario.verificar_flanco(frames_totales)
 
     @classmethod
     def colision_escaleras(cls, mario):
