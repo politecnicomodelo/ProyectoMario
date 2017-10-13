@@ -53,7 +53,7 @@ class Controlador(object):
                 cls.terminar()
             if evento.type == pygame.KEYUP:
                 if mario.bajando is False:
-                    mario.detenerse()
+                    mario.terminar_caida()
 
     @classmethod
     def buscar_teclas(cls):
@@ -124,7 +124,7 @@ class Controlador(object):
 
                 if control is False:
                     if mario.bajando:
-                        mario.detenerse()
+                        mario.terminar_caida()
                         mario.bajando = False
 
             elif mario.colision_piso():
@@ -137,7 +137,7 @@ class Controlador(object):
                     mario.colision_escalera(escalera)
 
                 if mario.bajando:
-                    mario.detenerse()
+                    mario.terminar_caida()
                     mario.bajando = False
 
     @classmethod
@@ -156,7 +156,6 @@ class Controlador(object):
                 bloque2 = mario.colision(Base.ladrillos)
             if bloque2 is False:
                 bloque2 = mario.colision(Base.signos)
-
         return bloque, bloque2
 
     @classmethod
@@ -201,10 +200,3 @@ class Controlador(object):
             if mario.colision_bloques(bloque) is False:
                 return True
         return False
-
-    @classmethod
-    def redondear(cls, rect):
-        numero = rect
-        while numero > 10:
-            numero -= 10
-        return numero

@@ -35,14 +35,14 @@ def inicializacion(mario):
 
     #CREACION DE BLOQUES (escalera = 620, 76 de diferencia entre escaleras)
 
-    ladri = Ladrillo(1100, 300, True)
+    ladri = Ladrillo(500, 450, True)
+    signo = Signo(750, 250)
+    ladri = Ladrillo(400, 100, True)
 
     #TERMINA CREACION DE BLOQUES
 
     #CREACION DE MONEDAS
     #TERMINA CREACION DE MONEDAS
-
-    tuberia = Tuberia(1250, 3)
 
     escalera = Escalera(300,620, True)
 

@@ -17,19 +17,21 @@ class Mario(Base):
         self.detenido = False
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
-                            "imagenes/mario/mario_salto.png", "imagenes/invisible.png")
+                            "imagenes/mario/mario_salto.png", "imagenes/invisiblex.png")
 
         self.movimientos_invisibles = ("imagenes/mario/invisible/mario_invisible.png",
                                        "imagenes/mario/invisible/mario_correr_invisible.png",
                                        "imagenes/mario/invisible/mario_turbio_invisible.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible.png",
-                                       "imagenes/mario/invisible/mario_salto_invisible.png",)
+                                       "imagenes/mario/invisible/mario_salto_invisible.png",
+                                       "imagenes/invisiblex.png")
 
         self.movimientos_muy_invisibles = ("imagenes/mario/invisible/mario_invisible2.png",
                                        "imagenes/mario/invisible/mario_correr_invisible2.png",
                                        "imagenes/mario/invisible/mario_turbio_invisible2.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible2.png",
-                                       "imagenes/mario/invisible/mario_salto_invisible2.png",)
+                                       "imagenes/mario/invisible/mario_salto_invisible2.png",
+                                        "imagenes/invisiblex.png")
         self.frame = 0
         self.maximo = 0
         self.salto = False
@@ -118,10 +120,12 @@ class Mario(Base):
             if self.direccion is False:
                 self.invertir()
 
-    def detenerse(self):
+    def detenerse(self, objeto, cantidad):
         if self.detenido is False:
             self.detenido = True
         if self.salto is False:
+            self.cambiar_sprite(5)
+            self.rect.y = objeto.rect.y - cantidad
             self.cambiar_sprite(0)
 
     def activar_salto(self, cantidad):
@@ -131,9 +135,6 @@ class Mario(Base):
         self.cambiar_sprite(4)
 
     def saltar(self, frames_totales):
-        print("Y: " + str(self.rect.y))
-
-        self.colisiones_con_salto(frames_totales)
 
         self.detenido = False
         if self.maximo == self.rect.y:
@@ -147,6 +148,8 @@ class Mario(Base):
                 self.rect.y -= 20
         if self.bajando is True:
             self.rect.y += 20
+
+        self.colisiones_con_salto(frames_totales)
 
     def colisiones_con_salto(self, frames_totales):
 
@@ -244,9 +247,8 @@ class Mario(Base):
 
             #Chocó estando sobre el bloque?
             if bloque.rect.y >= self.rect.y + 80:
-                if self.bajando:
-                    self.terminar_salto()
-                    self.rect.y = bloque.rect.y - 95
+                self.terminar_salto()
+                self.detenerse(bloque, 95)
                 return False
 
 
@@ -263,7 +265,7 @@ class Mario(Base):
         if self.bajando:
             self.bajando = False
             self.salto = False
-            self.detenerse()
+            self.terminar_caida()
 
     def mover_pantalla(self):
         if self.rect.x > 680:
@@ -307,7 +309,7 @@ class Mario(Base):
 
         if self.colision(Base.piso) is False:
             return False
-        if self.rect.y <= piso.rect.y - 85:
+        if self.rect.y <= piso.rect.y - 80:
             self.rect.y = piso.rect.y - 95
             return True
 
@@ -341,7 +343,7 @@ class Mario(Base):
             if self.rect.x - 120 <= tuberia.rect.x and self.rect.x + 60 >= tuberia.rect.x:
                 if tuberia.rect.y >= self.rect.y + 80:
                     self.terminar_salto()
-                    self.rect.y = tuberia.rect.y - 92
+                    self.detenerse(tuberia, 92)
                 return False
 
             #Chocó estando fuera de la hitbox?
@@ -400,7 +402,7 @@ class Mario(Base):
         if self.rect.x + 85 >= escalera.rect.x and self.rect.x - 50 <= escalera.rect.x:
             if escalera.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
-                self.rect.y = escalera.rect.y - 98
+                self.detenerse(escalera, 98)
             return False
         else:
             #Está a la derecha del bloque?
@@ -459,3 +461,8 @@ class Mario(Base):
                 Base.corazon.remove(corazon)
                 Base.sprites.remove(corazon)
 
+    def terminar_caida(self):
+        if self.detenido is False:
+            self.detenido = True
+        if self.salto is False:
+            self.cambiar_sprite(0)
