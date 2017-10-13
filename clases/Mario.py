@@ -75,6 +75,7 @@ class Mario(Base):
 
     def mover_izquierda(self, velocidad, frames_totales):
 
+        self.detenido = False
         if self.direccion is True:
             self.direccion = False
             self.invertir()
@@ -121,12 +122,14 @@ class Mario(Base):
                 self.invertir()
 
     def detenerse(self, objeto, cantidad):
-        if self.detenido is False:
-            self.detenido = True
-        if self.salto is False:
-            self.cambiar_sprite(5)
-            self.rect.y = objeto.rect.y - cantidad
-            self.cambiar_sprite(0)
+
+        if self.detenido:
+            if self.detenido is False:
+                self.detenido = True
+            if self.salto is False:
+                self.cambiar_sprite(5)
+                self.rect.y = objeto.rect.y - cantidad
+                self.cambiar_sprite(0)
 
     def activar_salto(self, cantidad):
 
