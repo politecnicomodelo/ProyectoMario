@@ -9,7 +9,7 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(15):
+    for i in range(35):
         piso = Piso(x,695)
         x += 72
 
@@ -30,7 +30,20 @@ def inicializacion(mario):
     for i in range(6):
         piso = Piso(x,695)
         x += 72
-
-
+    '''
+    l = Ladrillo(500, 450, False)
+    l = Ladrillo(580, 450, True)
+    s = Signo(660, 450)
+    s = Signo(820, 450)
+    l = Ladrillo(740, 450, True)
+    m = Moneda(650, 300, False)
+    t = Tuberia(1000, 2)
+    t = Tuberia(1600, 3)
+    g = Goomba(1300, 630)
+    m = Mastil(2000)
+    e = Escalera(2300, 620, False)
+    e = Escalera(2375, 620, True)
+    e = Escalera(2375, 545, True)
+    '''
 
     mario.inicializar_vidas()

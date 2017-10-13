@@ -1,12 +1,14 @@
 from clases.control.Base import *
-from clases import *
+from clases.Bandera import Bandera
+from clases.Escaleras import Escalera
 
 class Mastil(Base):
 
-    def __init__(self, x, y):
+    def __init__(self, x):
 
-        Base.__init__(self, x, y, 25, 400, "imagenes/poste.png")
+        Base.__init__(self, x, 220, 25, 400, "imagenes/poste.png")
 
-        bloque = Escalera(x - 25, 620, True)
+        escalera = Escalera(x - 25, 620, True)
+        bandera = Bandera(self.rect.x - 65)
 
         Base.sprites.add(self)
