@@ -7,3 +7,4 @@ from .Ladrillos import *
 from .Tuberia import *
 from .Escaleras import *
 from .Goombas import *
+from .Mastil import *

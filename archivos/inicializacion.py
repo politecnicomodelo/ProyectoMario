@@ -31,7 +31,6 @@ def inicializacion(mario):
         piso = Piso(x,695)
         x += 72
 
-    g = Goomba(500,630)
-    t = Tuberia(600, 3)
+
 
     mario.inicializar_vidas()

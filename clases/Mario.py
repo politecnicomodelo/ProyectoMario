@@ -18,21 +18,21 @@ class Mario(Base):
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
                             "imagenes/mario/mario_salto.png", "imagenes/invisiblex.png",
-                            "imagenes/mario/mario_muerto.png")
+                            "imagenes/mario/mario_muerto.png",)
 
         self.movimientos_invisibles = ("imagenes/mario/invisible/mario_invisible.png",
                                        "imagenes/mario/invisible/mario_correr_invisible.png",
                                        "imagenes/mario/invisible/mario_turbio_invisible.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible.png",
                                        "imagenes/mario/invisible/mario_salto_invisible.png",
-                                       "imagenes/invisiblex.png")
+                                       "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png")
 
         self.movimientos_muy_invisibles = ("imagenes/mario/invisible/mario_invisible2.png",
                                        "imagenes/mario/invisible/mario_correr_invisible2.png",
                                        "imagenes/mario/invisible/mario_turbio_invisible2.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible2.png",
                                        "imagenes/mario/invisible/mario_salto_invisible2.png",
-                                        "imagenes/invisiblex.png")
+                                        "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png")
         self.frame = 0
         self.maximo = 0
         self.salto = False
