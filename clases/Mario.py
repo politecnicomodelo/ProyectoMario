@@ -108,6 +108,7 @@ class Mario(Base):
         self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def cambiar_sprite(self, estado):
+
         if self.inmune:
             if self.invisible == 0:
                 self.image = pygame.image.load(self.movimientos_invisibles[estado])
@@ -431,7 +432,7 @@ class Mario(Base):
 
     def verificar_inmunidad(self, frames_totales):
         #Si es inmune
-        if self.inmune:
+        if self.inmune and self.muerto is False:
             #Ya termina la inmunidad?
             if self.frame_inmune + 100 < frames_totales:
                 self.inmune = False
