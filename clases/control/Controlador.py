@@ -223,3 +223,22 @@ class Controlador(object):
             if corazon.rect.x == maximo:
                 Base.corazon.remove(corazon)
                 Base.sprites.remove(corazon)
+
+    @classmethod
+    def pausa(cls, mario, ventana):
+
+        control = False
+
+        pygame.draw.rect(ventana, (65,105,225), (375,260, 500, 150), 10)
+        Base.letras.draw(ventana)
+        pygame.display.flip()
+
+
+        while control is False:
+
+            Controlador.buscar_eventos(mario)
+
+            teclas = Controlador.buscar_teclas()
+
+            if teclas[pygame.K_F2]:
+                control = True

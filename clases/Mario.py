@@ -129,13 +129,10 @@ class Mario(Base):
 
     def detenerse_bloque_bloque(self, objeto, cantidad):
 
-        if self.detenido:
-            if self.detenido is False:
-                self.detenido = True
-            if self.salto is False:
-                self.cambiar_sprite(5)
-                self.rect.y = objeto.rect.y - cantidad
-                self.cambiar_sprite(0)
+        if self.detenido and self.salto is False:
+            self.cambiar_sprite(5)
+            self.rect.y = objeto.rect.y - cantidad
+            self.cambiar_sprite(0)
 
     def activar_salto(self, cantidad):
 

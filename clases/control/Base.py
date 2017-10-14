@@ -17,6 +17,7 @@ class Base(pygame.sprite.Sprite):
     escalera = Sprites()
     goombas = Sprites()
     corazon = Sprites()
+    letras = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 

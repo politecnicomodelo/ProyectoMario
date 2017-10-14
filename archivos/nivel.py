@@ -17,7 +17,7 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     while True:
 
-        if procesos(reloj, mario, FPS, frames_totales, fondo):
+        if procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
             break
 
         if frames_totales % (FPS / 4) == 0:

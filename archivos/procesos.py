@@ -1,7 +1,7 @@
 from clases.control import *
 import pygame
 
-def procesos(reloj, mario, FPS, frames_totales, fondo):
+def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
 
     Controlador.set_fps(reloj, FPS)
 
@@ -21,6 +21,9 @@ def procesos(reloj, mario, FPS, frames_totales, fondo):
 
         if teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.salto is False:
             mario.activar_salto(340)
+
+        if teclas[pygame.K_F1]:
+            Controlador.pausa(mario, ventana)
 
         Controlador.colisiones(mario, frames_totales)
 
