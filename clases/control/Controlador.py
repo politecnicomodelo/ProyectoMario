@@ -42,7 +42,6 @@ class Controlador(object):
                 if item not in Base.corazon.sprites():
                     item.rect.x -= 20
 
-
     @classmethod
     def buscar_eventos(cls, mario):
         for evento in pygame.event.get():
@@ -53,7 +52,7 @@ class Controlador(object):
                 cls.terminar()
             if evento.type == pygame.KEYUP:
                 if mario.bajando is False and mario.muerto is False:
-                    mario.terminar_caida()
+                    mario.detenerse()
 
     @classmethod
     def buscar_teclas(cls):
@@ -127,7 +126,7 @@ class Controlador(object):
 
                 if control is False:
                     if mario.bajando:
-                        mario.terminar_caida()
+                        mario.detenerse()
                         mario.bajando = False
 
             elif mario.colision_piso():
@@ -140,7 +139,7 @@ class Controlador(object):
                     mario.colision_escalera(escalera)
 
                 if mario.bajando:
-                    mario.terminar_caida()
+                    mario.detenerse()
                     mario.bajando = False
 
     @classmethod

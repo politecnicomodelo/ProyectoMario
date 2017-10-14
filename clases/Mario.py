@@ -108,31 +108,25 @@ class Mario(Base):
         self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
 
     def cambiar_sprite(self, estado):
-        if estado == 6:
-            self.ancho = 80
-            self.alto = 80
-            self.image = pygame.image.load(self.movimientos_invisibles[6])
-            self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-        else:
-            if self.inmune:
-                if self.invisible == 0:
-                    self.image = pygame.image.load(self.movimientos_invisibles[estado])
-                    self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-                    if self.direccion is False:
-                        self.invertir()
-                else:
-                    self.image = pygame.image.load(self.movimientos_muy_invisibles[estado])
-                    self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
-                    if self.direccion is False:
-                        self.invertir()
-            else:
-                self.image = pygame.image.load(self.movimientos[estado])
+        if self.inmune:
+            if self.invisible == 0:
+                self.image = pygame.image.load(self.movimientos_invisibles[estado])
                 self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
                 if self.direccion is False:
                     self.invertir()
+            else:
+                self.image = pygame.image.load(self.movimientos_muy_invisibles[estado])
+                self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+                if self.direccion is False:
+                    self.invertir()
+        else:
+            self.image = pygame.image.load(self.movimientos[estado])
+            self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
+            if self.direccion is False:
+                self.invertir()
 
 
-    def detenerse(self, objeto, cantidad):
+    def detenerse_bloque_bloque(self, objeto, cantidad):
 
         if self.detenido:
             if self.detenido is False:
@@ -164,7 +158,7 @@ class Mario(Base):
         if self.bajando:
             self.rect.y += 20
 
-        if self.bajo_tierra():
+        if self.bajo_tierra() and self.flanco is False:
             self.perder_vida(frames_totales, 645)
 
         self.colisiones_con_salto(frames_totales)
@@ -266,7 +260,7 @@ class Mario(Base):
             #Chocó estando sobre el bloque?
             if bloque.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
-                self.detenerse(bloque, 95)
+                self.detenerse_bloque_bloque(bloque, 95)
                 return False
 
 
@@ -283,7 +277,7 @@ class Mario(Base):
         if self.bajando:
             self.bajando = False
             self.salto = False
-            self.terminar_caida()
+            self.detenerse()
 
     def mover_pantalla(self):
         if self.rect.x > 680:
@@ -360,7 +354,7 @@ class Mario(Base):
             if self.rect.x - 120 <= tuberia.rect.x and self.rect.x + 60 >= tuberia.rect.x:
                 if tuberia.rect.y >= self.rect.y + 80:
                     self.terminar_salto()
-                    self.detenerse(tuberia, 92)
+                    self.detenerse_bloque_bloque(tuberia, 92)
                 return False
 
             #Chocó estando fuera de la hitbox?
@@ -419,7 +413,7 @@ class Mario(Base):
         if self.rect.x + 85 >= escalera.rect.x and self.rect.x - 50 <= escalera.rect.x:
             if escalera.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
-                self.detenerse(escalera, 98)
+                self.detenerse_bloque_bloque(escalera, 98)
             return False
         else:
             #Está a la derecha del bloque?
@@ -487,14 +481,13 @@ class Mario(Base):
                 self.frame_caida = frames_totales
 
             elif self.bajando and self.flanco is False and self.salto:
-                self.bajando = False
-                self.salto = False
                 self.flanco = True
                 self.frame_caida = frames_totales
 
+
         #TODO llamar a funcion inicializar_vidas cuando se sume una vida, si se suma
 
-    def terminar_caida(self):
+    def detenerse(self):
         if self.detenido is False:
             self.detenido = True
         if self.salto is False:
@@ -533,11 +526,12 @@ class Mario(Base):
     def verificar_flanco(self, frames_totales):
 
         if self.flanco and self.frame_caida + 60 < frames_totales:
-            self.bajando = False
+
             self.rect.x = 50
             self.rect.y = 600
             self.empiezo_inmunidad(frames_totales)
             self.flanco = False
+            self.terminar_salto()
 
     def colision_piso_caida(self):
         piso = self.colision(Base.piso)

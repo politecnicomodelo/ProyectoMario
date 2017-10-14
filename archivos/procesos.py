@@ -30,6 +30,14 @@ def procesos(reloj, mario, FPS, frames_totales, fondo):
 
     Controlador.eliminar_sprites(mario)
 
+    '''
+    print("Salto: " + str(mario.salto))
+    print("Bajando? :" + str(mario.bajando))
+    print("Pos Y: " + str(mario.rect.y))
+    print("Pos X: " + str(mario.rect.x))
+    print("Detenido? :" + str(mario.detenido))
+    print("Flanco: " + str(mario.flanco))
+    '''
     if Controlador.verificar_muerte(mario):
         return True
     return False
