@@ -1,14 +1,12 @@
-import pygame
-from pygame.locals import *
+from clases.control import *
 
 ancho = 1280
 alto = 720
 
-class Piso(pygame.sprite.Sprite):
+class Piso(Base):
 
-    def __init__(self, x, y, imagen):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load(imagen)
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
+    def __init__(self, x, y):
+        Base.__init__(self, x, y, 72, 71, "imagenes/piso_bloque.png")
+
+        Base.sprites.add(self)
+        Base.piso.add(self)
