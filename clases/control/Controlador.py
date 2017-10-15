@@ -63,11 +63,23 @@ class Controlador(object):
         for item in Base.sprites:
             if item.rect.x < -85:
                 if item is not mario:
-
                     if item in Base.tuberias:
-                        if item.rect.x < -85:
+                        if item.rect.x < -100:
                             Base.sprites.remove(item)
                             Base.tuberias.remove(item)
+                    elif item in Base.escalera:
+                        Base.sprites.remove(item)
+                        Base.escalera.remove(item)
+                        if item in Base.escaleras:
+                            Base.escaleras.remove(item)
+                        else:
+                            Base.escaleras2.remove(item)
+                    elif item in Base.goombas:
+                        Base.sprites.remove(item)
+                        Base.goombas.remove(item)
+                    elif item in Base.monedas:
+                        Base.sprites.remove(item)
+                        Base.monedas.remove(item)
                     else:
                         Base.sprites.remove(item)
                         if item in Base.bloques:
