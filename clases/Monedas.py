@@ -46,7 +46,6 @@ class Moneda(Base):
 
         Base.sprites.remove(self)
         Base.monedas.remove(self)
-        #TODO: Sumar uno a las monedas de Mario
 
     def animacion(self, frames_totales):
 

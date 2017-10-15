@@ -27,3 +27,5 @@ def nivel(reloj, mario, ventana, colores, fondo):
         dibujo(fondo, ventana, colores)
 
         frames_totales += 1
+
+        print (mario.monedas)

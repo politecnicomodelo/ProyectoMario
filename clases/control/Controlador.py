@@ -114,6 +114,7 @@ class Controlador(object):
         moneda = mario.colision(Base.monedas)
         if moneda is not False:
             moneda.agarrada()
+            mario.monedas += 1
 
         goomba = mario.colision(Base.goombas)
         if goomba is not False and mario.salto is False and mario.bajando is False:

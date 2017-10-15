@@ -45,6 +45,8 @@ class Mario(Base):
 
         self.rebote = False
 
+        self.monedas = 0
+
         self.vidas = 2
         self.muerto = False
         self.animacion = False
@@ -127,7 +129,7 @@ class Mario(Base):
                 self.invertir()
 
 
-    def detenerse_bloque_bloque(self, objeto, cantidad):
+    def detenerse_bloque(self, objeto, cantidad):
 
         if self.detenido and self.salto is False:
             self.cambiar_sprite(5)
@@ -213,6 +215,7 @@ class Mario(Base):
                     if objeto in Base.signos:
                         if objeto.proceso is False:
                             objeto.activar_tocado()
+                            self.monedas += 1
                 elif self.rect.y >= objeto.rect.y + 55 and objeto in Base.signos:
                     self.bajando = True
 
@@ -258,7 +261,7 @@ class Mario(Base):
             #Chocó estando sobre el bloque?
             if bloque.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
-                self.detenerse_bloque_bloque(bloque, 95)
+                self.detenerse_bloque(bloque, 95)
                 return False
 
 
@@ -352,7 +355,7 @@ class Mario(Base):
             if self.rect.x - 120 <= tuberia.rect.x and self.rect.x + 60 >= tuberia.rect.x:
                 if tuberia.rect.y >= self.rect.y + 80:
                     self.terminar_salto()
-                    self.detenerse_bloque_bloque(tuberia, 92)
+                    self.detenerse_bloque(tuberia, 92)
                 return False
 
             #Chocó estando fuera de la hitbox?
@@ -411,7 +414,7 @@ class Mario(Base):
         if self.rect.x + 85 >= escalera.rect.x and self.rect.x - 50 <= escalera.rect.x:
             if escalera.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
-                self.detenerse_bloque_bloque(escalera, 98)
+                self.detenerse_bloque(escalera, 98)
             return False
         else:
             #Está a la derecha del bloque?
