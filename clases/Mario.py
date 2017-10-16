@@ -2,6 +2,7 @@ from clases.control.Controlador import Controlador
 from clases.control.Base import *
 from clases import *
 from clases.control.Corazon import *
+from clases.Bandera import Bandera
 import pygame
 
 ancho = 1280
@@ -18,21 +19,24 @@ class Mario(Base):
         self.movimientos = ("imagenes/mario/mario.png", "imagenes/mario/mario_correr.png",
                             "imagenes/mario/mario_turbio.png", "imagenes/mario/mario_movimiento.png",
                             "imagenes/mario/mario_salto.png", "imagenes/invisiblex.png",
-                            "imagenes/mario/mario_muerto.png",)
+                            "imagenes/mario/mario_muerto.png",
+                            "imagenes/mario/mario_bandera.png",)
 
         self.movimientos_invisibles = ("imagenes/mario/invisible/mario_invisible.png",
                                        "imagenes/mario/invisible/mario_correr_invisible.png",
                                        "imagenes/mario/invisible/mario_turbio_invisible.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible.png",
                                        "imagenes/mario/invisible/mario_salto_invisible.png",
-                                       "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png")
+                                       "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png"
+                                        "imagenes/mario/mario_bandera.png",)
 
         self.movimientos_muy_invisibles = ("imagenes/mario/invisible/mario_invisible2.png",
                                        "imagenes/mario/invisible/mario_correr_invisible2.png",
                                        "imagenes/mario/invisible/mario_turbio_invisible2.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible2.png",
                                        "imagenes/mario/invisible/mario_salto_invisible2.png",
-                                        "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png")
+                                        "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png"
+                                        "imagenes/mario/mario_bandera.png",)
         self.frame = 0
         self.maximo = 0
         self.salto = False
@@ -52,6 +56,9 @@ class Mario(Base):
         self.animacion = False
         self.frame_caida = 0
         self.flanco = False
+
+        self.terminado = False
+        self.prohibir_mastil = False
 
         Base.sprites.add(self)
 
@@ -127,6 +134,8 @@ class Mario(Base):
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
             if self.direccion is False:
                 self.invertir()
+        if estado == 7:
+            self.image = pygame.transform.scale(self.image, (self.ancho - 30, self.alto - 10))
 
 
     def detenerse_bloque(self, objeto, cantidad):
@@ -370,7 +379,7 @@ class Mario(Base):
 
         escalera2 = False
         #Estoy sobre una escalera?
-        if escalera.rect.y >= self.rect.y + 79:
+        if escalera.rect.y >= self.rect.y + 75:
             if escalera in Base.escaleras:
                 escalera2 = self.colision(Base.escaleras2)
             else:
@@ -394,14 +403,14 @@ class Mario(Base):
     def colision_escalera_salto(self, escalera):
 
         if self.bajando is False:
-            if self.rect.x + 85 <= escalera.rect.x or self.rect.x - 50 >= escalera.rect.x:
+            if self.rect.x + 85 <= escalera.rect.x or self.rect.x - 45 >= escalera.rect.x:
                 #Está a la derecha del bloque?
                 if self.rect.x >= escalera.rect.x:
                     self.rect.x = escalera.rect.x + 70
 
                 #Está a la izquierda del bloque?
                 elif self.rect.x < escalera.rect.x:
-                    self.rect.x = escalera.rect.x - 105
+                    self.rect.x = escalera.rect.x - 100
 
         else:
             self.colision_escalera_caida()
@@ -540,3 +549,31 @@ class Mario(Base):
             if self.rect.x > piso.rect.x:
                 if self.rect.y > piso.rect.y - 75:
                     self.rect.x = piso.rect.x + 80
+
+    def animacion_final(self):
+
+        if self.terminado:
+
+            for item in Base.mastil:
+                if isinstance(item, Bandera):
+                    bandera = item
+
+            #La bandera está sobre Mario?
+
+            if bandera.rect.y - 40 < self.rect.y:
+                bandera.rect.y += 10
+
+            #La bandera está abajo de Mario?
+            elif bandera.rect.y > self.rect.y + 15:
+                self.rect.y += 15
+
+            #La bandera está similar a Mario?
+            else:
+                bandera.rect.y -= 10
+                self.rect.y += 10
+
+            if self.colision(Base.escalera):
+                self.terminado = False
+                self.prohibir_mastil = True
+                self.invertir()
+                self.rect.x += 40

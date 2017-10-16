@@ -2,6 +2,7 @@ from clases import *
 import pygame.locals
 from clases.control.Base import *
 from clases.Goombas import Goomba
+from clases.Mastil import Mastil
 
 class Controlador(object):
 
@@ -125,6 +126,16 @@ class Controlador(object):
                 goomba.morir(frames_totales)
                 mario.colision_goomba(goomba)
 
+        if mario.prohibir_mastil is False:
+            mastil = mario.colision(Base.mastil)
+            if mastil is not False:
+                if isinstance(mastil, Mastil):
+                    if mastil.tocado is None:
+                        mastil.tocado = mario.rect.y
+                        mario.terminado = True
+                        mario.cambiar_sprite(7)
+                        mario.rect.x += 30
+
         #Mientras anda a pie
         if mario.salto is False:
             if mario.colision_piso() is False:
@@ -190,6 +201,7 @@ class Controlador(object):
         mario.verificar_inmunidad(frames_totales)
         mario.animacion_muerte()
         mario.verificar_flanco(frames_totales)
+        mario.animacion_final()
 
     @classmethod
     def colision_escaleras(cls, mario):

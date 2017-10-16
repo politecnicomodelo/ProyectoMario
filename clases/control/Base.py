@@ -18,6 +18,7 @@ class Base(pygame.sprite.Sprite):
     goombas = Sprites()
     corazon = Sprites()
     letras = Sprites()
+    mastil = Sprites()
 
     def __init__(self, x, y, ancho, alto, ruta):
 
