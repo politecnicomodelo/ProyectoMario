@@ -577,3 +577,4 @@ class Mario(Base):
                 self.prohibir_mastil = True
                 self.invertir()
                 self.rect.x += 40
+                self.salto = False
