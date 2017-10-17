@@ -59,6 +59,9 @@ class Mario(Base):
 
         self.terminado = False
         self.prohibir_mastil = False
+        self.animacion_castillo = False
+        self.caminata_final = False
+        self.frame_caida = None
 
         Base.sprites.add(self)
 
@@ -72,8 +75,9 @@ class Mario(Base):
             return
 
         if self.salto is False and self.bajando is False:
+            print ("Frames totales: " + str(self.salto) + " el mio: " + str(self.bajando))
             if frames_totales - self.frame > 2:
-
+                print ("animacion")
                 if self.estado >= 0 and self.estado <= 2:
                     self.estado += 1
                     self.frame = frames_totales
@@ -84,7 +88,9 @@ class Mario(Base):
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
 
+        print ("hola")
         if self.mover_pantalla() is False:
+            print ("moverme")
             self.rect.x += velocidad
 
     def mover_izquierda(self, velocidad, frames_totales):
@@ -136,7 +142,6 @@ class Mario(Base):
                 self.invertir()
         if estado == 7:
             self.image = pygame.transform.scale(self.image, (self.ancho - 30, self.alto - 10))
-
 
     def detenerse_bloque(self, objeto, cantidad):
 
@@ -550,31 +555,46 @@ class Mario(Base):
                 if self.rect.y > piso.rect.y - 75:
                     self.rect.x = piso.rect.x + 80
 
-    def animacion_final(self):
+    def animacion_final_bandera(self, frames_totales):
+
+        for item in Base.mastil:
+            if isinstance(item, Bandera):
+                bandera = item
+
+        #La bandera está sobre Mario?
+
+        if bandera.rect.y - 40 < self.rect.y:
+            bandera.rect.y += 10
+
+        #La bandera está abajo de Mario?
+        elif bandera.rect.y > self.rect.y + 15:
+            self.rect.y += 15
+
+        #La bandera está similar a Mario?
+        else:
+            bandera.rect.y -= 10
+            self.rect.y += 10
+
+        if self.colision(Base.escalera):
+            self.terminado = False
+            self.prohibir_mastil = True
+            self.rect.x += 65
+            self.invertir()
+            self.image = pygame.transform.scale(self.image, (self.ancho - 30, self.alto - 10))
+            self.salto = False
+            self.caminata_final = True
+            self.frame_caida = frames_totales
+
+    def animacion_final_caminata(self, frames_totales):
+        for i in range(800):
+            if i < 200:
+                self.mover_derecha(15, frames_totales)
+
+    def animacion_final(self, frames_totales):
 
         if self.terminado:
-
-            for item in Base.mastil:
-                if isinstance(item, Bandera):
-                    bandera = item
-
-            #La bandera está sobre Mario?
-
-            if bandera.rect.y - 40 < self.rect.y:
-                bandera.rect.y += 10
-
-            #La bandera está abajo de Mario?
-            elif bandera.rect.y > self.rect.y + 15:
-                self.rect.y += 15
-
-            #La bandera está similar a Mario?
-            else:
-                bandera.rect.y -= 10
-                self.rect.y += 10
-
-            if self.colision(Base.escalera):
-                self.terminado = False
-                self.prohibir_mastil = True
-                self.invertir()
-                self.rect.x += 40
-                self.salto = False
+            self.animacion_final_bandera(frames_totales)
+        if self.caminata_final:
+            print ("final")
+            if self.frame_caida + 30 < frames_totales:
+                self.animacion_final_caminata(frames_totales)

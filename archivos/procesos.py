@@ -9,7 +9,7 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
 
     teclas = Controlador.buscar_teclas()
 
-    if mario.muerto is False and mario.terminado is False:
+    if mario.muerto is False and mario.animacion_castillo is False:
 
         if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
             if mario.mover_pantalla():
