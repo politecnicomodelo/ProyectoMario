@@ -197,7 +197,9 @@ class Controlador(object):
         mario.verificar_inmunidad(frames_totales)
         mario.animacion_muerte()
         mario.verificar_flanco(frames_totales)
-        mario.animacion_final(frames_totales, fondo)
+        if mario.animacion_final(frames_totales, fondo):
+            return True
+        return False
 
     @classmethod
     def colision_escaleras(cls, mario):

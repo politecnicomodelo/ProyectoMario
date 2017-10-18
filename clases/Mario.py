@@ -27,7 +27,7 @@ class Mario(Base):
                                        "imagenes/mario/invisible/mario_turbio_invisible.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible.png",
                                        "imagenes/mario/invisible/mario_salto_invisible.png",
-                                       "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png"
+                                       "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png",
                                         "imagenes/mario/mario_bandera.png",)
 
         self.movimientos_muy_invisibles = ("imagenes/mario/invisible/mario_invisible2.png",
@@ -35,7 +35,7 @@ class Mario(Base):
                                        "imagenes/mario/invisible/mario_turbio_invisible2.png",
                                        "imagenes/mario/invisible/mario_movimiento_invisible2.png",
                                        "imagenes/mario/invisible/mario_salto_invisible2.png",
-                                        "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png"
+                                        "imagenes/invisiblex.png", "imagenes/mario/mario_muerto.png",
                                         "imagenes/mario/mario_bandera.png",)
         self.frame = 0
         self.maximo = 0
@@ -596,16 +596,19 @@ class Mario(Base):
             self.mover_derecha(5, frames_totales)
         if self.numero_control == 65:
             self.detenerse()
-            #Menu de final
-            Controlador.terminar()
+            return True
+        return False
 
     def animacion_final(self, frames_totales, fondo):
         if self.terminado:
             self.animacion_final_bandera(frames_totales, 8)
         if self.caminata_final:
             if self.frame_caida + 30 < frames_totales:
-                self.animacion_final_caminata(frames_totales, fondo)
-                self.numero_control += 1
+                if self.animacion_final_caminata(frames_totales, fondo) is False:
+                    self.numero_control += 1
+                else:
+                    return  True
+        return False
 
     def mastil_tocado(self, mastil):
         if self.rect.y > mastil.rect.y - 120 and self.rect.y < mastil.rect.y + 300:

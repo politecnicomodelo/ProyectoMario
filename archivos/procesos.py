@@ -32,7 +32,8 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
 
             Controlador.colisiones(mario, frames_totales)
 
-    Controlador.actualizar_secundarios(frames_totales, mario, fondo)
+    if Controlador.actualizar_secundarios(frames_totales, mario, fondo):
+        return "Final"
 
     Controlador.eliminar_sprites(mario)
 
@@ -45,5 +46,5 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
     print("Flanco: " + str(mario.flanco))
     '''
     if Controlador.verificar_muerte(mario):
-        return True
+        return "Muerto"
     return False
