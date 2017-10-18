@@ -1,4 +1,6 @@
-from clases.control import *
+from clases.control.Base import Base
+from clases.control.Controlador import Controlador
+import pygame
 
 def dibujo(fondo, ventana, colores):
 

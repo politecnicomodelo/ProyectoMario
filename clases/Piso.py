@@ -1,4 +1,4 @@
-from clases.control import *
+from clases.control.Base import Base
 
 ancho = 1280
 alto = 720

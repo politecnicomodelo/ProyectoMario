@@ -1,4 +1,4 @@
-from clases import Base
+from clases.control import Base
 
 class Tuberia(Base):
 

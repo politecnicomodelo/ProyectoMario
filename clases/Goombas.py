@@ -1,4 +1,3 @@
-from clases import *
 from clases.control.Base import Base
 import pygame
 

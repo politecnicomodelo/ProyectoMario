@@ -1,4 +1,3 @@
-from .Bloques import *
 from .Mario import *
 from .Monedas import *
 from .Piso import *

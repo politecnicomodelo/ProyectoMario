@@ -1,8 +1,8 @@
-from clases import *
-import pygame.locals
-from clases.control.Base import *
 from clases.Goombas import Goomba
 from clases.Mastil import Mastil
+import pygame
+from clases.control.Base import *
+from clases.control.Conexion import Conexion
 
 class Controlador(object):
 
@@ -129,7 +129,6 @@ class Controlador(object):
         if mario.prohibir_mastil is False:
             mastil = mario.colision(Base.mastil)
             if mastil is not False:
-                mario.cambiar_sprite(5)
                 if isinstance(mastil, Mastil):
                     mario.mastil_tocado(mastil)
 
@@ -264,3 +263,12 @@ class Controlador(object):
 
             if teclas[pygame.K_F2]:
                 control = True
+
+    @classmethod
+    def iniciar_database(cls):
+        base = Conexion()
+        return base
+
+    @classmethod
+    def cargar_nivel(cls, base):
+        base.cargar_nivel()

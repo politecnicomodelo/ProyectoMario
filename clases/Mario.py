@@ -1,9 +1,7 @@
-from clases.control.Controlador import Controlador
 from clases.control.Base import *
-from clases import *
 from clases.control.Corazon import *
-from clases.Bandera import Bandera
-from clases.Mastil import Mastil
+from clases.control.Controlador import Controlador
+from clases import *
 
 import pygame
 
@@ -607,7 +605,7 @@ class Mario(Base):
                 self.numero_control += 1
 
     def mastil_tocado(self, mastil):
-        if self.rect.y > mastil.rect.y - 120:
+        if self.rect.y > mastil.rect.y - 120 and self.rect.y < mastil.rect.y + 300:
             if mastil.tocado is None:
                 mastil.tocado = self.rect.y
                 self.terminado = True

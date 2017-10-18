@@ -1,6 +1,5 @@
 from clases.control.Base import *
 
-
 class Moneda(Base):
 
     def __init__(self, x, y, movible):
