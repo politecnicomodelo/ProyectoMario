@@ -12,12 +12,12 @@ def inicializacion(mario):
 
     x = 3528
 
-    for i in range(20):
+    for i in range(35):
         piso = Piso(x,695)
         x += 72
 
     mario.inicializar_vidas()
-    m = Mastil(1000)
+    m = Mastil(4000)
 
     #LETRAS
 
@@ -26,7 +26,8 @@ def inicializacion(mario):
     U = Letra(600, 300, "imagenes/letras/U.png")
     S = Letra(700, 300, "imagenes/letras/S.png")
     A = Letra(800, 300, "imagenes/letras/A.png")
-'''
+
+
     l = Ladrillo(500, 450, False)
     l = Ladrillo(580, 450, True)
     s = Signo(660, 450)
@@ -43,4 +44,9 @@ def inicializacion(mario):
     g = Goomba(1300, 630)
     g = Goomba(1800, 630)
     s = Signo(1300, 350)
-'''
+    e = Escalera(2100, 620, True)
+    e = Escalera(2178, 542, False)
+    e = Escalera(2178, 620, False)
+    e = Escalera(2256, 542, True)
+    e = Escalera(2256, 464, True)
+    e = Escalera(2256, 620, True)

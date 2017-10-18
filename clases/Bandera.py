@@ -7,4 +7,4 @@ class Bandera(Base):
         Base.__init__(self, x, 210, 75, 60, "imagenes/banderita.png")
 
         Base.sprites.add(self)
-        Base.mastil.add(self)
+        Base.bandera.add(self)

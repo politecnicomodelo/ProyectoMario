@@ -129,13 +129,9 @@ class Controlador(object):
         if mario.prohibir_mastil is False:
             mastil = mario.colision(Base.mastil)
             if mastil is not False:
+                mario.cambiar_sprite(5)
                 if isinstance(mastil, Mastil):
-                    if mastil.tocado is None:
-                        mastil.tocado = mario.rect.y
-                        mario.terminado = True
-                        mario.animacion_castillo = True
-                        mario.cambiar_sprite(7)
-                        mario.rect.x += 30
+                    mario.mastil_tocado(mastil)
 
         #Mientras anda a pie
         if mario.salto is False:

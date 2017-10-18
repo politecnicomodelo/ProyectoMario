@@ -15,8 +15,6 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
         if teclas[pygame.K_F1]:
             Controlador.pausa(mario, ventana)
 
-        Controlador.colisiones(mario, frames_totales)
-
         if mario.animacion_castillo is False:
 
             if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
@@ -29,17 +27,20 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
 
             if teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.salto is False:
                 mario.activar_salto(340)
+
             Controlador.salto_mario(mario, frames_totales)
+
+            Controlador.colisiones(mario, frames_totales)
 
     Controlador.actualizar_secundarios(frames_totales, mario, fondo)
 
     Controlador.eliminar_sprites(mario)
 
-    print("Pos X: " + str(mario.rect.x))
     '''
+    print("Pos X: " + str(mario.rect.x))
+    print("Pos Y: " + str(mario.rect.y))
     print("Salto: " + str(mario.salto))
     print("Bajando? :" + str(mario.bajando))
-    print("Pos Y: " + str(mario.rect.y))
     print("Detenido? :" + str(mario.detenido))
     print("Flanco: " + str(mario.flanco))
     '''

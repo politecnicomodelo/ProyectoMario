@@ -3,6 +3,8 @@ from clases.control.Base import *
 from clases import *
 from clases.control.Corazon import *
 from clases.Bandera import Bandera
+from clases.Mastil import Mastil
+
 import pygame
 
 ancho = 1280
@@ -62,6 +64,7 @@ class Mario(Base):
         self.animacion_castillo = False
         self.caminata_final = False
         self.frame_caida = None
+        self.numero_control = 0
 
         Base.sprites.add(self)
 
@@ -76,7 +79,6 @@ class Mario(Base):
 
         if self.salto is False and self.bajando is False:
             if frames_totales - self.frame > 2:
-                print("animacion")
                 if self.estado <= 2:
                     self.estado += 1
                     self.frame = frames_totales
@@ -86,9 +88,7 @@ class Mario(Base):
                     self.estado = 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
-        print (self.mover_pantalla())
         if self.mover_pantalla() is False:
-            print("moverme")
             self.rect.x += velocidad
 
     def mover_izquierda(self, velocidad, frames_totales):
@@ -553,16 +553,17 @@ class Mario(Base):
                 if self.rect.y > piso.rect.y - 75:
                     self.rect.x = piso.rect.x + 80
 
-    def animacion_final_bandera(self, frames_totales):
+    def animacion_final_bandera(self, frames_totales, velocidad):
 
+        for item in Base.bandera:
+            bandera = item
         for item in Base.mastil:
-            if isinstance(item, Bandera):
-                bandera = item
+            mastil = item
 
         #La bandera está sobre Mario?
 
         if bandera.rect.y - 40 < self.rect.y:
-            bandera.rect.y += 10
+            bandera.rect.y += velocidad
 
         #La bandera está abajo de Mario?
         elif bandera.rect.y > self.rect.y + 15:
@@ -570,28 +571,46 @@ class Mario(Base):
 
         #La bandera está similar a Mario?
         else:
-            bandera.rect.y -= 10
-            self.rect.y += 10
+            bandera.rect.y -= velocidad
+            self.rect.y += velocidad
 
         if self.colision(Base.escalera):
             self.terminado = False
             self.prohibir_mastil = True
             self.rect.x += 65
+            self.rect.y = mastil.rect.y + 340
             self.invertir()
             self.image = pygame.transform.scale(self.image, (self.ancho - 30, self.alto - 10))
             self.salto = False
+            self.bajando = False
             self.caminata_final = True
             self.frame_caida = frames_totales
 
     def animacion_final_caminata(self, frames_totales, fondo):
-        if self.mover_pantalla():
-            Controlador.mover_pantalla(fondo, self)
-        self.mover_derecha(15, frames_totales)
+        if self.numero_control == 3:
+            self.rect.y += 65
+        if self.numero_control < 65:
+            if self.mover_pantalla():
+                Controlador.mover_pantalla(fondo, self)
+            self.mover_derecha(5, frames_totales)
+        if self.numero_control == 65:
+            self.detenerse()
+            #Menu de final
+            Controlador.terminar()
 
     def animacion_final(self, frames_totales, fondo):
-
         if self.terminado:
-            self.animacion_final_bandera(frames_totales)
+            self.animacion_final_bandera(frames_totales, 8)
         if self.caminata_final:
             if self.frame_caida + 30 < frames_totales:
                 self.animacion_final_caminata(frames_totales, fondo)
+                self.numero_control += 1
+
+    def mastil_tocado(self, mastil):
+        if self.rect.y > mastil.rect.y - 120:
+            if mastil.tocado is None:
+                mastil.tocado = self.rect.y
+                self.terminado = True
+                self.animacion_castillo = True
+                self.cambiar_sprite(7)
+                self.rect.x = mastil.rect.x - 55
