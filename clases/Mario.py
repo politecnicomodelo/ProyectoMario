@@ -404,7 +404,7 @@ class Mario(Base):
     def colision_escalera_salto(self, escalera):
 
         if self.bajando is False:
-            if self.rect.x + 85 <= escalera.rect.x or self.rect.x - 45 >= escalera.rect.x:
+            if self.rect.x + 75 <= escalera.rect.x or self.rect.x - 45 >= escalera.rect.x:
                 #Está a la derecha del bloque?
                 if self.rect.x >= escalera.rect.x:
                     self.rect.x = escalera.rect.x + 70
@@ -421,12 +421,15 @@ class Mario(Base):
         escalera = self.colision(Base.escalera)
 
         #Caí sobre la escalera?
-        if self.rect.x + 85 >= escalera.rect.x and self.rect.x - 50 <= escalera.rect.x:
+        print ("X: " + str(self.rect.x))
+        print ("Escalera X: " + str(escalera.rect.x))
+        if self.rect.x + 75 >= escalera.rect.x and self.rect.x - 45 <= escalera.rect.x:
             if escalera.rect.y >= self.rect.y + 80:
                 self.terminar_salto()
                 self.detenerse_bloque(escalera, 98)
             return False
         else:
+
             #Está a la derecha del bloque?
             if self.rect.x >= escalera.rect.x:
                 self.rect.x = escalera.rect.x + 70
