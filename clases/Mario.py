@@ -541,8 +541,7 @@ class Mario(Base):
 
         if self.flanco and self.frame_caida + 60 < frames_totales:
 
-            self.rect.x = 50
-            self.rect.y = 600
+            self.buscar_reaparicion()
             self.empiezo_inmunidad(frames_totales)
             self.flanco = False
             self.terminar_salto()
@@ -618,3 +617,15 @@ class Mario(Base):
                 self.animacion_castillo = True
                 self.cambiar_sprite(7)
                 self.rect.x = mastil.rect.x - 55
+
+    def buscar_reaparicion(self):
+
+        self.rect.y = 600
+        self.rect.x = 50
+        while self.rect.x < 1000:
+            if self.colision_piso():
+                piso = self.colision(Base.piso)
+                self.rect.x = piso.rect.x
+                return
+            else:
+                self.rect.x += 10

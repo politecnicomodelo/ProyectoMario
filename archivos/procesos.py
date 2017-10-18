@@ -37,8 +37,8 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
 
     Controlador.eliminar_sprites(mario)
 
-    print("Pos X: " + str(mario.rect.x))
     '''
+    print("Pos X: " + str(mario.rect.x))
     print("Pos Y: " + str(mario.rect.y))
     print("Salto: " + str(mario.salto))
     print("Bajando? :" + str(mario.bajando))
