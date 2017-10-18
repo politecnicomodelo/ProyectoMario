@@ -75,10 +75,9 @@ class Mario(Base):
             return
 
         if self.salto is False and self.bajando is False:
-            print ("Frames totales: " + str(self.salto) + " el mio: " + str(self.bajando))
             if frames_totales - self.frame > 2:
-                print ("animacion")
-                if self.estado >= 0 and self.estado <= 2:
+                print("animacion")
+                if self.estado <= 2:
                     self.estado += 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
@@ -87,10 +86,9 @@ class Mario(Base):
                     self.estado = 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
-
-        print ("hola")
+        print (self.mover_pantalla())
         if self.mover_pantalla() is False:
-            print ("moverme")
+            print("moverme")
             self.rect.x += velocidad
 
     def mover_izquierda(self, velocidad, frames_totales):
@@ -585,16 +583,15 @@ class Mario(Base):
             self.caminata_final = True
             self.frame_caida = frames_totales
 
-    def animacion_final_caminata(self, frames_totales):
-        for i in range(800):
-            if i < 200:
-                self.mover_derecha(15, frames_totales)
+    def animacion_final_caminata(self, frames_totales, fondo):
+        if self.mover_pantalla():
+            Controlador.mover_pantalla(fondo, self)
+        self.mover_derecha(15, frames_totales)
 
-    def animacion_final(self, frames_totales):
+    def animacion_final(self, frames_totales, fondo):
 
         if self.terminado:
             self.animacion_final_bandera(frames_totales)
         if self.caminata_final:
-            print ("final")
             if self.frame_caida + 30 < frames_totales:
-                self.animacion_final_caminata(frames_totales)
+                self.animacion_final_caminata(frames_totales, fondo)

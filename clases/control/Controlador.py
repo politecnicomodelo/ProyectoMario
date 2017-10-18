@@ -186,7 +186,7 @@ class Controlador(object):
         return bloque, bloque2
 
     @classmethod
-    def actualizar_secundarios(cls, frames_totales, mario):
+    def actualizar_secundarios(cls, frames_totales, mario, fondo):
         for moneda in Base.monedas:
             if moneda.movible:
                 moneda.movimiento()
@@ -202,7 +202,7 @@ class Controlador(object):
         mario.verificar_inmunidad(frames_totales)
         mario.animacion_muerte()
         mario.verificar_flanco(frames_totales)
-        mario.animacion_final(frames_totales)
+        mario.animacion_final(frames_totales, fondo)
 
     @classmethod
     def colision_escaleras(cls, mario):
