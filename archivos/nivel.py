@@ -21,15 +21,10 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     while True:
 
-        verificador = procesos(reloj, mario, FPS, frames_totales, fondo, ventana)
-
-        if verificador == "Muerto":
-            return None
-        elif verificador == "Final":
-            return segundo
-
+        if procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
+            mario.tiempo = segundo
+            return True
         if frames_totales % (FPS / 4) == 0:
-
             segundo += 1
 
         dibujo(fondo, ventana, colores)

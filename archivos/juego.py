@@ -15,6 +15,8 @@ def juego(colores, mario):
 
     fondo = Fondo()
 
-    tiempo = nivel(reloj, mario, ventana, colores, fondo)
+    if nivel(reloj, mario, ventana, colores, fondo):
+        if mario.animacion_castillo:
+            print(mario.tiempo)
 
     Controlador.terminar()

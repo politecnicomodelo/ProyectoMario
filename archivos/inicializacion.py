@@ -17,6 +17,7 @@ def inicializacion(mario):
         x += 72
 
     mario.inicializar_vidas()
+    m = Mastil(1000)
 
     #LETRAS
 

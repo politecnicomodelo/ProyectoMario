@@ -50,6 +50,7 @@ class Mario(Base):
         self.rebote = False
 
         self.monedas = 0
+        self.tiempo = 0
 
         self.vidas = 2
         self.muerto = False
