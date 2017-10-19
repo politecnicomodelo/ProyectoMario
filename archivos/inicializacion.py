@@ -18,6 +18,7 @@ def inicializacion(mario):
 
     mario.inicializar_vidas()
     m = Mastil(1000)
+    m = Moneda(400, 400, False)
 
     #LETRAS
 

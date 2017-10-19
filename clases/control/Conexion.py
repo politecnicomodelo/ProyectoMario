@@ -16,6 +16,7 @@ class Conexion(object):
         self.db = pymysql.connect(host ="172.16.2.250", user = "root", passwd = "alumno", autocommit = True)
         self.cursor_bloques = self.db.cursor(pymysql.cursors.DictCursor)
         self.cursor_tuberias = self.db.cursor(pymysql.cursors.DictCursor)
+        self.c = self.db.cursor(pymysql.cursors.DictCursor)
         self.cursor_tuberias.execute("Use Mario")
 
     def cargar_nivel(self):
@@ -32,13 +33,17 @@ class Conexion(object):
             if bloque["tipo"] == "Moneda":
                 m = Moneda(bloque["x"], bloque["y"], False)
             if bloque["tipo"] == "Goomba":
-                m = Goomba(bloque["x"], bloque["y"])
+                g = Goomba(bloque["x"], bloque["y"])
             if bloque["tipo"] == "Escalera":
-                m = Escalera(bloque["x"], bloque["y"], False)
+                e = Escalera(bloque["x"], bloque["y"], False)
             if bloque["tipo"] == "Escalera2":
-                m = Escalera(bloque["x"], bloque["y"], True)
+                e = Escalera(bloque["x"], bloque["y"], True)
 
         self.cursor_tuberias.execute("SELECT * FROM Tuberia")
 
         for tuberia in self.cursor_tuberias.fetchall():
             t = Tuberia(tuberia["x"], tuberia["altura"])
+
+    def insertar_datos(self, mario):
+        self.c.execute("insert into Partida values(NULL, 'Folgui', 10000, '"+str(mario.tiempo)+"', '"+str(mario.monedas)+"', '"+str(mario.vidas)+"', 8, 6)")
+

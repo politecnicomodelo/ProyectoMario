@@ -274,3 +274,7 @@ class Controlador(object):
     @classmethod
     def cargar_nivel(cls, base):
         base.cargar_nivel()
+
+    @classmethod
+    def cargar_datos(cls, db, mario):
+        db.insertar_datos(mario)

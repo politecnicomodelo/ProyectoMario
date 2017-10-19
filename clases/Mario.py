@@ -590,11 +590,11 @@ class Mario(Base):
     def animacion_final_caminata(self, frames_totales, fondo):
         if self.numero_control == 3:
             self.rect.y += 65
-        if self.numero_control < 65:
+        if self.numero_control < 30:
             if self.mover_pantalla():
                 Controlador.mover_pantalla(fondo, self)
             self.mover_derecha(5, frames_totales)
-        if self.numero_control == 65:
+        if self.numero_control == 30:
             self.detenerse()
             return True
         return False

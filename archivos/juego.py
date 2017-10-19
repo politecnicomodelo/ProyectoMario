@@ -9,6 +9,10 @@ def juego(colores, mario):
 
     Controlador.iniciar()
 
+    db = Controlador.iniciar_database()
+
+    #Controlador.cargar_nivel(db)
+
     ventana = Controlador.configurar_pantalla(ancho, alto)
 
     reloj = Controlador.iniciar_reloj()
@@ -17,6 +21,6 @@ def juego(colores, mario):
 
     if nivel(reloj, mario, ventana, colores, fondo):
         if mario.animacion_castillo:
-            print(mario.tiempo)
+            Controlador.cargar_datos(db, mario)
 
     Controlador.terminar()

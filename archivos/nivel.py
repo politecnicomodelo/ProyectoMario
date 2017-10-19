@@ -15,10 +15,6 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     inicializacion(mario)
 
-    #db = Controlador.iniciar_database()
-
-    #Controlador.cargar_nivel(db)
-
     while True:
 
         if procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
