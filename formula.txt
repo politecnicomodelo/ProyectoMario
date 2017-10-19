@@ -1,1 +1,1 @@
-TiempoRestante + Vidas Restantes x 1000 + Monedas x 100 + EnemigosMatados x 100 = Resultadogay
+((Vidas Restantes x 1000 + Monedas x 200 + EnemigosMatados x 150) / Tiempo) * 1200 = Resultado
