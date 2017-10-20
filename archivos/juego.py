@@ -4,8 +4,8 @@ from clases.control.Fondo import *
 
 def juego(colores, mario):
 
-    ancho = 1280
-    alto = 720
+    ancho = 1360
+    alto = 768
 
     Controlador.iniciar()
 

@@ -156,18 +156,22 @@ class Mario(Base):
     def saltar(self, frames_totales):
 
         self.detenido = False
-        if self.maximo == self.rect.y:
+
+        if self.maximo == self.rect.y + 5:
             self.bajando = True
 
         if self.bajando is False:
 
+            print (self.rect.y)
+            print (self.maximo)
+
             if self.rect.y <= self.maximo + 60:
                 self.rect.y -= 10
             else:
-                self.rect.y -= 20
+                self.rect.y -= 15
 
         if self.bajando:
-            self.rect.y += 20
+            self.rect.y += 15
 
         if self.bajo_tierra() and self.flanco is False:
             self.perder_vida(frames_totales, 645)
