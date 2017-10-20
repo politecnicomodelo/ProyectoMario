@@ -8,3 +8,4 @@ from .Escaleras import *
 from .Goombas import *
 from .Mastil import Mastil
 from .Bandera import Bandera
+from .Castillo import Castillo

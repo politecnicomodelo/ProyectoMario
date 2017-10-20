@@ -17,8 +17,12 @@ def inicializacion(mario):
         x += 72
 
     mario.inicializar_vidas()
-    m = Mastil(1000)
-    m = Moneda(400, 400, False)
+    e = Escalera(800,620,False)
+    e = Escalera(875,545,True)
+    e = Escalera(875,620,True)
+    e = Escalera(950,470,False)
+    e = Escalera(950,545,False)
+    e = Escalera(950,620,False)
 
     #LETRAS
 

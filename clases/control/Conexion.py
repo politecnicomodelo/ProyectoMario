@@ -35,9 +35,9 @@ class Conexion(object):
             if bloque["tipo"] == "Goomba":
                 g = Goomba(bloque["x"], bloque["y"])
             if bloque["tipo"] == "Escalera":
-                e = Escalera(bloque["x"], bloque["y"], False)
-            if bloque["tipo"] == "Escalera2":
                 e = Escalera(bloque["x"], bloque["y"], True)
+            if bloque["tipo"] == "Escalera2":
+                e = Escalera(bloque["x"], bloque["y"], False)
 
         self.cursor_tuberias.execute("SELECT * FROM Tuberia")
 

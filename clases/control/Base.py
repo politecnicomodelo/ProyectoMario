@@ -20,6 +20,7 @@ class Base(pygame.sprite.Sprite):
     letras = Sprites()
     mastil = Sprites()
     bandera = Sprites()
+    colegio = None
 
     def __init__(self, x, y, ancho, alto, ruta):
 
