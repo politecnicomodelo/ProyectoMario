@@ -15,6 +15,10 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     inicializacion(mario)
 
+    pygame.mixer.music.load("musica/juego.wav")
+    #pygame.mixer.music.play(10,0)
+    pygame.mixer.music.set_volume(0.5)
+
     while True:
 
         if procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
@@ -24,5 +28,6 @@ def nivel(reloj, mario, ventana, colores, fondo):
             segundo += 1
 
         dibujo(fondo, ventana, colores)
+
 
         frames_totales += 1

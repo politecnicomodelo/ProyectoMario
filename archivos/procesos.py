@@ -40,8 +40,8 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
     '''
     print("Pos X: " + str(mario.rect.x))
     print("Pos Y: " + str(mario.rect.y))
-    print("Salto: " + str(mario.salto))
     print("Bajando? :" + str(mario.bajando))
+    print("Salto: " + str(mario.salto))
     print("Detenido? :" + str(mario.detenido))
     print("Flanco: " + str(mario.flanco))
     '''

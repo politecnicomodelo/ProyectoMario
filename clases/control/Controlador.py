@@ -1,5 +1,6 @@
 from clases.Goombas import Goomba
 from clases.Mastil import Mastil
+from clases.Castillo import Castillo
 import pygame
 from clases.control.Base import *
 from clases.control.Conexion import Conexion
@@ -63,7 +64,7 @@ class Controlador(object):
     def eliminar_sprites(cls, mario):
         for item in Base.sprites:
             if item.rect.x < -85:
-                if item is not mario:
+                if item is not mario and isinstance(item, Castillo) is False:
                     if item in Base.tuberias:
                         if item.rect.x < -100:
                             Base.sprites.remove(item)
@@ -141,6 +142,7 @@ class Controlador(object):
                             control = True
                             mario.detenido = False
                             mario.caerse()
+                            print ("---------- cayendo -------------")
                             if mario.bajo_tierra() and mario.flanco is False:
                                 mario.perder_vida(frames_totales, 645)
 
@@ -156,7 +158,10 @@ class Controlador(object):
 
                 escalera = mario.colision(Base.escalera)
                 if escalera is not False:
-                    mario.colision_escalera(escalera)
+                    if escalera.rect.x > mario.rect.x:
+                        mario.rect.x = escalera.rect.x - 100
+                    else:
+                        mario.rect.x = escalera.rect.x + 70
 
                 if mario.bajando:
                     mario.detenerse()
@@ -204,10 +209,11 @@ class Controlador(object):
     @classmethod
     def colision_escaleras(cls, mario):
         escalera = mario.colision(Base.escalera)
-
         if escalera is not False:
-            if mario.colision_escalera(escalera) is False:
+            if mario.colision_escalera(escalera):
+                print("True")
                 return True
+        print ("False")
         return False
 
     @classmethod
