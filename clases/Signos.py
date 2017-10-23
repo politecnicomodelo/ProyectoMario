@@ -1,5 +1,6 @@
 from clases.Bloques import *
 from clases.Monedas import *
+from clases.Hongo import *
 
 class Signo(Bloque):
 
@@ -13,6 +14,7 @@ class Signo(Bloque):
         self.original = None
         self.proceso = False
         self.unico = True
+        self.tipo = True
 
     def activar_tocado(self):
         if self.unico:
@@ -31,8 +33,12 @@ class Signo(Bloque):
             self.rect.y += 2
         elif self.rect.y + 16 == self.original:
             self.bajando = True
-            moneda = Moneda(self.rect.x + 20, self.rect.y - 35, True)
-            moneda.activar_movimiento()
+            if self.tipo:
+                hongo = Hongo(self.rect.x + 20, self.rect.y - 60)
+                hongo.direccion = True
+            if self.tipo is False:
+                moneda = Moneda(self.rect.x + 20, self.rect.y - 35, True)
+                moneda.activar_movimiento()
         else:
             self.rect.y -= 2
 

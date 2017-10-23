@@ -9,3 +9,4 @@ from .Goombas import *
 from .Mastil import Mastil
 from .Bandera import Bandera
 from .Castillo import Castillo
+from .Hongo import Hongo

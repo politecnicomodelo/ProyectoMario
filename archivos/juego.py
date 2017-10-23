@@ -9,9 +9,9 @@ def juego(colores, mario):
 
     Controlador.iniciar()
 
-    db = Controlador.iniciar_database()
+    #db = Controlador.iniciar_database()
 
-    Controlador.cargar_nivel(db)
+    #Controlador.cargar_nivel(db)
 
     ventana = Controlador.configurar_pantalla(ancho, alto)
 

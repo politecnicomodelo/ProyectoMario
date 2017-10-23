@@ -24,6 +24,11 @@ def inicializacion(mario):
     # e = Escalera(750,620,False)
     # e = Escalera(750,543,False)
     # e = Escalera(750,466,False)
+    s = Signo(580, 300)
+    s = Ladrillo(507, 300, True)
+    s = Ladrillo(655, 300, True)
+    t = Tuberia(200,1)
+    e = Escalera(900, 620, False)
 
     #LETRAS
 

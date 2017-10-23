@@ -642,3 +642,12 @@ class Mario(Base):
                 return
             else:
                 self.rect.x += 10
+
+    def agarrar_hongo(self, hongo):
+
+        self.vidas += 1
+        for vida in Base.corazon:
+            Base.corazon.remove(vida)
+        self.inicializar_vidas()
+        Base.hongos.remove(hongo)
+        Base.sprites.remove(hongo)

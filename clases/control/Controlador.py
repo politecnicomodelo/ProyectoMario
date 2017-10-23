@@ -113,6 +113,11 @@ class Controlador(object):
         mario.colision_piso_caida()
 
         control = False
+
+        hongo = mario.colision(Base.hongos)
+        if hongo is not False:
+            mario.agarrar_hongo(hongo)
+
         moneda = mario.colision(Base.monedas)
         if moneda is not False:
             moneda.agarrada()
@@ -186,6 +191,8 @@ class Controlador(object):
 
     @classmethod
     def actualizar_secundarios(cls, frames_totales, mario, fondo):
+        for hongo in Base.hongos:
+            hongo.movimiento()
         for moneda in Base.monedas:
             if moneda.movible:
                 moneda.movimiento()
