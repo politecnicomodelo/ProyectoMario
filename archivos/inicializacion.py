@@ -6,7 +6,7 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(5):
+    for i in range(35):
         piso = Piso(x,695)
         x += 72
 
@@ -17,13 +17,7 @@ def inicializacion(mario):
         x += 72
 
     mario.inicializar_vidas()
-
-    # e = Escalera(600,620,False)
-    # e = Escalera(675,620,True)
-    # e = Escalera(675,543,True)
-    # e = Escalera(750,620,False)
-    # e = Escalera(750,543,False)
-    # e = Escalera(750,466,False)
+    s = Signo(600,400)
 
     #LETRAS
 

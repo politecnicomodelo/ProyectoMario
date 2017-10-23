@@ -19,7 +19,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -40,9 +40,11 @@ class Controlador(object):
     def mover_pantalla(cls, fondo, mario):
         fondo.rect.x -= 20
         for item in Base.sprites:
+            if item not in Base.corazon.sprites():
+                item.rect.x -= 20
+        for item in Base.sprites_principales:
             if item is not mario:
-                if item not in Base.corazon.sprites():
-                    item.rect.x -= 20
+                item.rect.x -= 20
 
     @classmethod
     def buscar_eventos(cls, mario):
@@ -67,7 +69,7 @@ class Controlador(object):
                 if item is not mario and isinstance(item, Castillo) is False:
                     if item in Base.tuberias:
                         if item.rect.x < -150:
-                            Base.sprites.remove(item)
+                            Base.sprites_principales.remove(item)
                             Base.tuberias.remove(item)
                     elif item in Base.hongos:
                         Base.hongos.remove(item)
@@ -86,15 +88,16 @@ class Controlador(object):
                         Base.sprites.remove(item)
                         Base.monedas.remove(item)
                     else:
-                        Base.sprites.remove(item)
                         if item in Base.bloques:
-
                             Base.bloques.remove(item)
                             if item in Base.ladrillos:
+                                Base.sprites.remove(item)
                                 Base.ladrillos.remove(item)
                             elif item in Base.ladrillos2:
+                                Base.sprites.remove(item)
                                 Base.ladrillos2.remove(item)
                             else:
+                                Base.sprites_principales.remove(item)
                                 Base.signos.remove(item)
 
                         elif item in Base.piso:
@@ -195,7 +198,7 @@ class Controlador(object):
     @classmethod
     def actualizar_secundarios(cls, frames_totales, mario, fondo):
         for hongo in Base.hongos:
-            hongo.movimiento()
+            hongo.movimiento(frames_totales)
         for moneda in Base.monedas:
             if moneda.movible:
                 moneda.movimiento()

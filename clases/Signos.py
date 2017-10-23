@@ -7,7 +7,7 @@ class Signo(Bloque):
     def __init__(self, x, y):
         Bloque.__init__(self, x, y, "imagenes/signo.png")
 
-        Base.sprites.add(self)
+        Base.sprites_principales.add(self)
         Base.bloques.add(self)
         Base.signos.add(self)
         self.bajando = True
@@ -34,7 +34,8 @@ class Signo(Bloque):
         elif self.rect.y + 16 == self.original:
             self.bajando = True
             if self.tipo:
-                hongo = Hongo(self.rect.x + 20, self.rect.y - 60)
+                hongo = Hongo(self.rect.x + 20, self.rect.y + 20)
+                hongo.estatico = True
                 hongo.direccion = True
             if self.tipo is False:
                 moneda = Moneda(self.rect.x + 20, self.rect.y - 35, True)

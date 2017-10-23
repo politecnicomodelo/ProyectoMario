@@ -5,6 +5,7 @@ from clases.control.Grupo_Sprites import *
 class Base(pygame.sprite.Sprite):
 
     sprites = Sprites()
+    sprites_principales = Sprites()
     piso = Sprites()
     bloques = Sprites()
     ladrillos = Sprites()

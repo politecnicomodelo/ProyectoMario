@@ -65,7 +65,7 @@ class Mario(Base):
         self.frame_caida = None
         self.numero_control = 0
 
-        Base.sprites.add(self)
+        Base.sprites_principales.add(self)
 
     def mover_derecha(self, velocidad, frames_totales):
 

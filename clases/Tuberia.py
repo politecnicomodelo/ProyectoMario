@@ -18,6 +18,6 @@ class Tuberia(Base):
             y = 405
 
         Base.__init__(self, x, y, 156, altura, ruta)
-        Base.sprites.add(self)
+        Base.sprites_principales.add(self)
         Base.tuberias.add(self)
         self.alto = alto
