@@ -18,6 +18,13 @@ def inicializacion(mario):
 
     mario.inicializar_vidas()
 
+    e = Escalera(450,620,False)
+    e = Escalera(525,620,True)
+    e = Escalera(525,543,True)
+    e = Escalera(600,620,False)
+    e = Escalera(600,543,False)
+    e = Escalera(600,466,False)
+
     #LETRAS
 
     P = Letra(400, 300, "imagenes/letras/P.png")

@@ -142,7 +142,6 @@ class Controlador(object):
                             control = True
                             mario.detenido = False
                             mario.caerse()
-                            print ("---------- cayendo -------------")
                             if mario.bajo_tierra() and mario.flanco is False:
                                 mario.perder_vida(frames_totales, 645)
 
@@ -211,9 +210,7 @@ class Controlador(object):
         escalera = mario.colision(Base.escalera)
         if escalera is not False:
             if mario.colision_escalera(escalera):
-                print("True")
                 return True
-        print ("False")
         return False
 
     @classmethod
