@@ -648,6 +648,7 @@ class Mario(Base):
         self.vidas += 1
         for vida in Base.corazon:
             Base.corazon.remove(vida)
+            Base.sprites.remove(vida)
         self.inicializar_vidas()
         Base.hongos.remove(hongo)
         Base.sprites.remove(hongo)

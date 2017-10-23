@@ -19,7 +19,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -69,6 +69,9 @@ class Controlador(object):
                         if item.rect.x < -150:
                             Base.sprites.remove(item)
                             Base.tuberias.remove(item)
+                    elif item in Base.hongos:
+                        Base.hongos.remove(item)
+                        Base.hongos.remove(item)
                     elif item in Base.escalera:
                         Base.sprites.remove(item)
                         Base.escalera.remove(item)
