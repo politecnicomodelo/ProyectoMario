@@ -390,12 +390,13 @@ class Mario(Base):
                 escalera2 = self.colision(Base.escaleras)
 
             if escalera2 is not False:
-                escalera = escalera2
+                if escalera2.rect.x > escalera.rect.x:
+                    escalera = escalera2
+
 
         if escalera is not False and escalera2 is not False:
             if escalera.rect.x > self.rect.x:
-                print ("Colision con otro mientras esta en uno")
-                self.rect.x = escalera.rect.x - 20
+                self.rect.x = escalera.rect.x - 100
             else:
                 self.rect.x = escalera.rect.x + 70
             return True
@@ -431,8 +432,6 @@ class Mario(Base):
             escalera2 = self.colision(Base.escaleras)
 
         if escalera2 is not False:
-            print (escalera.rect.x)
-            print (escalera2.rect.x)
             if escalera2.rect.x < escalera.rect.x:
                 escalera = escalera2
 
@@ -450,7 +449,6 @@ class Mario(Base):
                 self.rect.x = escalera.rect.x + 70
             #Está a la izquierda del bloque?
             elif self.rect.x < escalera.rect.x:
-                print ("Izquierda mientras caia")
                 self.rect.x = escalera.rect.x - 100
             return True
 

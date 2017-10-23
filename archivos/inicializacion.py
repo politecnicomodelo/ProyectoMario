@@ -18,12 +18,12 @@ def inicializacion(mario):
 
     mario.inicializar_vidas()
 
-    e = Escalera(450,620,False)
-    e = Escalera(525,620,True)
-    e = Escalera(525,543,True)
-    e = Escalera(600,620,False)
-    e = Escalera(600,543,False)
-    e = Escalera(600,466,False)
+    # e = Escalera(600,620,False)
+    # e = Escalera(675,620,True)
+    # e = Escalera(675,543,True)
+    # e = Escalera(750,620,False)
+    # e = Escalera(750,543,False)
+    # e = Escalera(750,466,False)
 
     #LETRAS
 

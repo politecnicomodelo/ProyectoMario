@@ -66,7 +66,7 @@ class Controlador(object):
             if item.rect.x < -85:
                 if item is not mario and isinstance(item, Castillo) is False:
                     if item in Base.tuberias:
-                        if item.rect.x < -100:
+                        if item.rect.x < -150:
                             Base.sprites.remove(item)
                             Base.tuberias.remove(item)
                     elif item in Base.escalera:
