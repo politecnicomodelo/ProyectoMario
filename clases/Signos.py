@@ -14,7 +14,7 @@ class Signo(Bloque):
         self.original = None
         self.proceso = False
         self.unico = True
-        self.tipo = True
+        self.tipo = False
 
     def activar_tocado(self):
         if self.unico:

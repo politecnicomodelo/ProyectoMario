@@ -2,6 +2,7 @@ from clases.control.Base import *
 from clases.control.Corazon import *
 from clases.control.Controlador import Controlador
 from clases.control.Suma_Corazon import Suma
+from clases.control.Moneda_Control import Moneda_c
 from clases import *
 
 import pygame
@@ -485,6 +486,7 @@ class Mario(Base):
 
         for i in range(self.vidas):
             vida = Corazon()
+        moneda = Moneda_c()
 
     def perder_vida(self, frames_totales, cantidad):
 

@@ -5,13 +5,14 @@ import pygame
 from clases.control.Base import *
 from clases.control.Conexion import Conexion
 from clases.control.Suma_Corazon import Suma
+from clases.control.Moneda_Control import Moneda_c
 
 class Controlador(object):
 
     @classmethod
     def iniciar(cls):
         pygame.init()
-        pygame.mouse.set_visible(False)
+        #pygame.mouse.set_visible(False)
 
     @classmethod
     def terminar(cls):
@@ -21,7 +22,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -45,7 +46,7 @@ class Controlador(object):
             if item not in Base.corazon.sprites():
                 item.rect.x -= 20
         for item in Base.sprites_principales:
-            if item is not mario:
+            if item is not mario and isinstance(item, Moneda_c) is False:
                 item.rect.x -= 20
 
     @classmethod
@@ -208,21 +209,23 @@ class Controlador(object):
         for item in Base.signos:
             if item.proceso:
                 item.tocado()
-
         for goomba in Base.sprites:
             if isinstance(goomba, Goomba):
                 goomba.movimiento(frames_totales)
                 goomba.verificar_muerte(frames_totales)
-
-        for suma in Base.sprites_principales:
-            if isinstance(suma, Suma):
-                suma.desaparecer(frames_totales)
+        for item in Base.sprites_principales:
+            if isinstance(item, Suma):
+                item.desaparecer(frames_totales)
         mario.verificar_inmunidad(frames_totales)
         mario.animacion_muerte()
         mario.verificar_flanco(frames_totales)
         if mario.animacion_final(frames_totales, fondo):
             return True
         return False
+
+    @classmethod
+    def actualizar_monedas(cls, mario, fuentes, textos):
+        textos[1] = fuentes[0].render(str(mario.monedas), False, (0,0,0))
 
     @classmethod
     def colision_escaleras(cls, mario):

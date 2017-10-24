@@ -2,7 +2,7 @@ from clases.control import *
 import pygame
 
 
-def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
+def procesos(reloj, mario, FPS, frames_totales, fondo, fuentes, textos):
 
     Controlador.set_fps(reloj, FPS)
 
@@ -31,6 +31,8 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, ventana):
             Controlador.salto_mario(mario, frames_totales)
 
             Controlador.colisiones(mario, frames_totales)
+
+            Controlador.actualizar_monedas(mario, fuentes, textos)
 
     if Controlador.actualizar_secundarios(frames_totales, mario, fondo):
         return True
