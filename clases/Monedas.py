@@ -31,14 +31,14 @@ class Moneda(Base):
     def movimiento(self):
 
         if self.bajando:
-            self.rect.y += 15
+            self.rect.y += 12
 
-        elif self.rect.y + 225 == self.original:
+        elif self.rect.y + 180 == self.original:
             self.bajando = True
         else:
-            self.rect.y -= 15
+            self.rect.y -= 12
 
-        if self.rect.y == self.original - 60 and self.bajando:
+        if self.rect.y == self.original - 48 and self.bajando:
             self.terminar_movimiento()
 
     def agarrada(self):
@@ -48,7 +48,7 @@ class Moneda(Base):
 
     def animacion(self, frames_totales):
 
-        if frames_totales - self.frame > 6:
+        if frames_totales - self.frame > 8:
 
             if self.estado >= 0 and self.estado <= 2:
                 self.estado += 1

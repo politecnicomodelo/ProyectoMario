@@ -1,6 +1,7 @@
 from clases.control.Base import *
 from clases.control.Corazon import *
 from clases.control.Controlador import Controlador
+from clases.control.Suma_Corazon import Suma
 from clases import *
 
 import pygame
@@ -52,7 +53,7 @@ class Mario(Base):
         self.monedas = 0
         self.tiempo = 0
 
-        self.vidas = 2
+        self.vidas = 3
         self.muerto = False
         self.animacion = False
         self.frame_caida = 0
@@ -462,7 +463,7 @@ class Mario(Base):
             #Ya termina la inmunidad?
             if self.frame_inmune + 100 < frames_totales:
                 self.inmune = False
-                self.cambiar_sprite(0)
+                #self.cambiar_sprite(0)
             #Tengo que actualizar el titileo?
             elif self.frame_invisible + 15 < frames_totales:
                 if self.invisible == 0:
@@ -470,9 +471,7 @@ class Mario(Base):
                 else:
                     self.invisible = 0
                 self.frame_invisible = frames_totales
-                if self.detenido:
-                    self.cambiar_sprite(0)
-                elif self.salto:
+                if self.salto:
                     self.cambiar_sprite(4)
 
     def empiezo_inmunidad(self, frames_totales):
@@ -643,9 +642,11 @@ class Mario(Base):
             else:
                 self.rect.x += 10
 
-    def agarrar_hongo(self, hongo):
+    def agarrar_hongo(self, hongo, frames_totales):
 
         self.vidas += 1
+        c = Suma(self.rect.x + 100, self.rect.y - 50)
+        c.frame = frames_totales
         for vida in Base.corazon:
             Base.corazon.remove(vida)
             Base.sprites.remove(vida)

@@ -1,1 +1,1 @@
-((Vidas Restantes x 1000 + Monedas x 200 + EnemigosMatados x 150) / Tiempo) * 1200 = Resultado
+((Vidas Restantes x 1000 + Monedas x 200 + mastil.tocado * 4 + 100 * (cantidad_signo) + 2500 (si mató a todos o no)) / tiempo) * 125 = Resultado

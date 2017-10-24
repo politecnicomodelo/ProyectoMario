@@ -17,7 +17,8 @@ def inicializacion(mario):
         x += 72
 
     mario.inicializar_vidas()
-    s = Signo(600,400)
+    s = Signo(500,400)
+    m = Moneda(550, 200, False)
 
     #LETRAS
 

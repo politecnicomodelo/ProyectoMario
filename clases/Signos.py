@@ -34,7 +34,7 @@ class Signo(Bloque):
         elif self.rect.y + 16 == self.original:
             self.bajando = True
             if self.tipo:
-                hongo = Hongo(self.rect.x + 20, self.rect.y + 20)
+                hongo = Hongo(self.rect.x + 13, self.rect.y + 20)
                 hongo.estatico = True
                 hongo.direccion = True
             if self.tipo is False:

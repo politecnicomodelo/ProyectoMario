@@ -4,12 +4,14 @@ from clases.Castillo import Castillo
 import pygame
 from clases.control.Base import *
 from clases.control.Conexion import Conexion
+from clases.control.Suma_Corazon import Suma
 
 class Controlador(object):
 
     @classmethod
     def iniciar(cls):
         pygame.init()
+        pygame.mouse.set_visible(False)
 
     @classmethod
     def terminar(cls):
@@ -19,7 +21,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -122,7 +124,7 @@ class Controlador(object):
 
         hongo = mario.colision(Base.hongos)
         if hongo is not False:
-            mario.agarrar_hongo(hongo)
+            mario.agarrar_hongo(hongo, frames_totales)
 
         moneda = mario.colision(Base.monedas)
         if moneda is not False:
@@ -211,6 +213,10 @@ class Controlador(object):
             if isinstance(goomba, Goomba):
                 goomba.movimiento(frames_totales)
                 goomba.verificar_muerte(frames_totales)
+
+        for suma in Base.sprites_principales:
+            if isinstance(suma, Suma):
+                suma.desaparecer(frames_totales)
         mario.verificar_inmunidad(frames_totales)
         mario.animacion_muerte()
         mario.verificar_flanco(frames_totales)
