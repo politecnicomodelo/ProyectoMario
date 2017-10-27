@@ -67,6 +67,9 @@ class Mario(Base):
         self.frame_caida = None
         self.numero_control = 0
 
+        self.permitir_derecha = False
+        self.permitir_salto = False
+
         Base.sprites_principales.add(self)
 
     def mover_derecha(self, velocidad, frames_totales):
@@ -89,7 +92,8 @@ class Mario(Base):
                     self.estado = 1
                     self.frame = frames_totales
                     self.cambiar_sprite(self.estado)
-        if self.mover_pantalla() is False:
+
+        if self.mover_pantalla() is False and self.permitir_derecha:
             self.rect.x += velocidad
 
     def mover_izquierda(self, velocidad, frames_totales):
@@ -154,6 +158,7 @@ class Mario(Base):
         self.maximo = self.rect.y - cantidad
         self.salto = True
         self.cambiar_sprite(4)
+        self.permitir_salto = False
 
     def saltar(self, frames_totales):
 
@@ -228,8 +233,7 @@ class Mario(Base):
                     self.bajando = True
                     if objeto in Base.signos:
                         if objeto.proceso is False:
-                            objeto.activar_tocado()
-                            self.monedas += 1
+                            objeto.activar_tocado(self)
                 elif self.rect.y >= objeto.rect.y + 55 and objeto in Base.signos:
                     self.bajando = True
 

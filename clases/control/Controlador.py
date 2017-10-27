@@ -22,7 +22,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -52,11 +52,17 @@ class Controlador(object):
     @classmethod
     def buscar_eventos(cls, mario):
         for evento in pygame.event.get():
-
-            if evento.type == pygame.QUIT:
-                cls.terminar()
-            if evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
-                cls.terminar()
+            if evento.type == pygame.KEYDOWN:
+                if evento.type == pygame.QUIT:
+                    cls.terminar()
+                if evento.key == pygame.K_ESCAPE:
+                    cls.terminar()
+                if evento.key == pygame.K_RIGHT:
+                    mario.permitir_derecha = True
+                if evento.key == pygame.K_u:
+                    mario.permitir_derecha = False
+                if evento.key == pygame.K_w:
+                    mario.permitir_salto = True
             if evento.type == pygame.KEYUP:
                 if mario.bajando is False and mario.muerto is False:
                     mario.detenerse()

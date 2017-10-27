@@ -16,7 +16,7 @@ class Signo(Bloque):
         self.unico = True
         self.tipo = False
 
-    def activar_tocado(self):
+    def activar_tocado(self, mario):
         if self.unico:
             self.proceso = True
             self.bajando = False
@@ -24,6 +24,7 @@ class Signo(Bloque):
             self.image = pygame.image.load("imagenes/signotocado.png")
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
             self.unico = False
+            mario.monedas += 1
 
     def terminar_tocado(self):
         self.proceso = False
