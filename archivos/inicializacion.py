@@ -6,7 +6,7 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(35):
+    for i in range(900):
         piso = Piso(x,695)
         x += 72
 

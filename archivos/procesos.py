@@ -8,24 +8,25 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, fuentes, textos):
 
     Controlador.buscar_eventos(mario)
 
-    teclas = Controlador.buscar_teclas()
+    #teclas = Controlador.buscar_teclas()
 
     if mario.muerto is False:
 
-        if teclas[pygame.K_F1]:
-            Controlador.pausa(mario, ventana)
+        #if teclas[pygame.K_F1]:
+            #Controlador.pausa(mario, ventana)
 
         if mario.animacion_castillo is False:
 
-            if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
+            #if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
+            if mario.permitir_derecha:
                 if mario.mover_pantalla():
                     Controlador.mover_pantalla(fondo, mario)
                 mario.mover_derecha(14, frames_totales)
 
-            elif teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
-                mario.mover_izquierda(14, frames_totales)
+            #elif teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
+            #    mario.mover_izquierda(14, frames_totales)
 
-            if teclas[pygame.K_w] or teclas[pygame.K_UP] and mario.salto is False:
+            if mario.permitir_salto and mario.salto is False:
                 mario.activar_salto(340)
 
             Controlador.salto_mario(mario, frames_totales)
