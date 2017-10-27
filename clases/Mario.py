@@ -68,6 +68,7 @@ class Mario(Base):
         self.numero_control = 0
 
         self.permitir_derecha = False
+        self.permitir_izquierda = False
         self.permitir_salto = False
 
         Base.sprites_principales.add(self)
@@ -75,14 +76,9 @@ class Mario(Base):
     def mover_derecha(self, velocidad, frames_totales):
 
         self.detenido = False
-        if self.direccion is False:
-            self.direccion = True
-            self.invertir()
-            self.estado = 0
-            return
 
         if self.salto is False and self.bajando is False:
-            if frames_totales - self.frame > 2:
+            if frames_totales - self.frame > 4:
                 if self.estado <= 2:
                     self.estado += 1
                     self.frame = frames_totales
@@ -96,16 +92,16 @@ class Mario(Base):
         if self.mover_pantalla() is False and self.permitir_derecha:
             self.rect.x += velocidad
 
+    def cambiarme_angulo(self):
+        self.invertir()
+        self.estado = 0
+
     def mover_izquierda(self, velocidad, frames_totales):
 
         self.detenido = False
-        if self.direccion is True:
-            self.direccion = False
-            self.invertir()
-            return
 
         if self.salto is False and self.bajando is False:
-            if (frames_totales - self.frame) > 2:
+            if (frames_totales - self.frame) > 4:
 
                 if self.estado == 0 or self.estado == 1 or self.estado == 2:
                     self.estado += 1

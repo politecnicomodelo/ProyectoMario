@@ -23,8 +23,8 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, fuentes, textos):
                     Controlador.mover_pantalla(fondo, mario)
                 mario.mover_derecha(7, frames_totales)
 
-            #elif teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
-            #    mario.mover_izquierda(14, frames_totales)
+            elif mario.permitir_izquierda:
+                mario.mover_izquierda(7, frames_totales)
 
             if mario.permitir_salto and mario.salto is False:
                 mario.activar_salto(340)

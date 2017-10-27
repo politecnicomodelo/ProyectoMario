@@ -22,7 +22,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -58,11 +58,28 @@ class Controlador(object):
                 if evento.key == pygame.K_ESCAPE:
                     cls.terminar()
                 if evento.key == pygame.K_RIGHT:
-                    mario.permitir_derecha = True
+
+                    if mario.direccion:
+                        mario.permitir_derecha = True
+                    if mario.direccion is False:
+                        mario.permitir_izquierda = True
+
                 if evento.key == pygame.K_u:
+
                     mario.permitir_derecha = False
+                    mario.permitir_izquierda = False
+
                 if evento.key == pygame.K_w:
                     mario.permitir_salto = True
+                if evento.key == pygame.K_p:
+
+                    if mario.direccion:
+                        mario.direccion = False
+                    else:
+                        mario.direccion = True
+
+                    mario.cambiarme_angulo()
+
             if evento.type == pygame.KEYUP:
                 if mario.bajando is False and mario.muerto is False:
                     mario.detenerse()
