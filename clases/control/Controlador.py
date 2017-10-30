@@ -73,12 +73,17 @@ class Controlador(object):
                     mario.permitir_salto = True
                 if evento.key == pygame.K_p:
 
-                    if mario.direccion:
-                        mario.direccion = False
-                    else:
-                        mario.direccion = True
+                    mario.detenerse()
 
-                    mario.cambiarme_angulo()
+                    if mario.detenido:
+
+                        mario.permitir_derecha = False
+                        mario.permitir_izquierda = False
+
+                        if mario.direccion:
+                            mario.direccion = False
+                        else:
+                            mario.direccion = True
 
             if evento.type == pygame.KEYUP:
                 if mario.bajando is False and mario.muerto is False:

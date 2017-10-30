@@ -27,6 +27,7 @@ def nivel(reloj, mario, ventana, colores, fondo):
         if procesos(reloj, mario, FPS, frames_totales, fondo, fuentes, textos):
             mario.tiempo = segundo
             return True
+
         if frames_totales % (FPS / 4) == 0:
             segundo += 1
 

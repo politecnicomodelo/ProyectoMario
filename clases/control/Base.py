@@ -23,6 +23,7 @@ class Base(pygame.sprite.Sprite):
     bandera = Sprites()
     hongos = Sprites()
     colegio = None
+    texto = None
 
     def __init__(self, x, y, ancho, alto, ruta):
 

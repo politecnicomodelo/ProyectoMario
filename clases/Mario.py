@@ -3,6 +3,7 @@ from clases.control.Corazon import *
 from clases.control.Controlador import Controlador
 from clases.control.Suma_Corazon import Suma
 from clases.control.Moneda_Control import Moneda_c
+from clases.control.texto_final import TextoFinal
 from clases import *
 
 import pygame
@@ -148,6 +149,8 @@ class Mario(Base):
             self.cambiar_sprite(5)
             self.rect.y = objeto.rect.y - cantidad
             self.cambiar_sprite(0)
+            mario.permitir_derecha = False
+            mario.permitir_izquierda = False
 
     def activar_salto(self, cantidad):
 
@@ -603,12 +606,19 @@ class Mario(Base):
     def animacion_final_caminata(self, frames_totales, fondo):
         if self.numero_control == 3:
             self.rect.y += 65
-        if self.numero_control < 30:
+        if self.numero_control < 40:
             if self.mover_pantalla():
                 Controlador.mover_pantalla(fondo, self)
             self.mover_derecha(5, frames_totales)
-        if self.numero_control == 30:
+        if self.numero_control == 40:
             self.detenerse()
+            self.invertir()
+        if self.numero_control == 70:
+            Base.colegio.image = pygame.image.load("imagenes/colegio_tori.png")
+            Base.colegio.image = pygame.transform.scale(Base.colegio.image, (Base.colegio.ancho, Base.colegio.alto))
+        if self.numero_control == 120:
+            t = TextoFinal(Base.colegio.rect.x - 300, Base.colegio.rect.y + 80)
+        if self.numero_control == 350:
             return True
         return False
 

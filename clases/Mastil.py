@@ -1,6 +1,7 @@
 from clases.control.Base import *
 from clases.Bandera import Bandera
 from clases.Escaleras import Escalera
+from clases.Castillo import Castillo
 
 class Mastil(Base):
 
@@ -10,6 +11,7 @@ class Mastil(Base):
 
         escalera = Escalera(x - 25, 620, True)
         bandera = Bandera(self.rect.x - 65)
+        castillo = Castillo(self.rect.x + 250)
         self.tocado = None
 
         Base.sprites.add(self)
