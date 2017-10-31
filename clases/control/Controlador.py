@@ -52,22 +52,22 @@ class Controlador(object):
     @classmethod
     def buscar_eventos(cls, mario):
         for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                cls.terminar()
             if evento.type == pygame.KEYDOWN:
-                if evento.type == pygame.QUIT:
-                    cls.terminar()
                 if evento.key == pygame.K_ESCAPE:
                     cls.terminar()
-                if evento.key == pygame.K_RIGHT:
+                if evento.key == pygame.K_q:
 
                     if mario.direccion:
                         mario.permitir_derecha = True
                     if mario.direccion is False:
                         mario.permitir_izquierda = True
 
-                if evento.key == pygame.K_u:
-
-                    mario.permitir_derecha = False
-                    mario.permitir_izquierda = False
+                if evento.key == pygame.K_e:
+                    if mario.salto is False:
+                        mario.permitir_derecha = False
+                        mario.permitir_izquierda = False
 
                 if evento.key == pygame.K_w:
                     mario.permitir_salto = True
@@ -86,7 +86,7 @@ class Controlador(object):
                             mario.direccion = True
 
             if evento.type == pygame.KEYUP:
-                if mario.bajando is False and mario.muerto is False:
+                if mario.bajando is False:
                     mario.detenerse()
 
     @classmethod

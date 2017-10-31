@@ -5,7 +5,7 @@ import pyautogui
 from pyautogui import press, typewrite, hotkey
 
 quieto = True
-estado_salto = 0
+salto = False
 vuelta = True
 while True:
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -14,11 +14,12 @@ while True:
     sock.bind(server_address)
     sock.listen(1)
 
-    print ("Escuchando xd")
+    print ("Escuchando")
     connection, client_address = sock.accept()
     connection.settimeout(2.0)
     print ("Conectado")
 
+    ultima = 0
     message=""
     while True:
         try:
@@ -29,11 +30,10 @@ while True:
         if data=="|":
             message=""
         elif data=="$":
-            datos=eval(message)
-
+            datos=eval(message.split("@")[0])
+            distancia=message.split("@")[1]
             if datos['GyX'] < 0:
                 datos['GyX'] = datos['GyX'] * -1
-            print(datos['GyX'])
             if datos['GyX'] > 17000 and vuelta is True:
                 vuelta = False
                 pyautogui.press('p')
@@ -42,27 +42,24 @@ while True:
             else:
                 vuelta = True
 
-            nuevo = 8000 + datos['AcX']
-            if nuevo >= 5000:
-              estado_salto += 1
+            print (distancia)
+            distancia = float(distancia)
+            if ultima < distancia + 35.0:
+                salto = True
+            ultima = distancia
+            ultima = str (ultima)
+            print (ultima)
+            ultima = float (ultima)
+            if salto:
+                pass
+                #print ("--------------SALTO---------------")
             else:
-               estado_salto = 0
-               salto = False
-            #print(nuevo)
-
-            if estado_salto >= 2:
-               estado_salto = 0
-               #print(" --- SALTO --- ")
-               pyautogui.press('w')
-            else:
-
+                salto = False
                 if datos['AcX'] > -16400 and datos['AcX'] < -14200:
-                    pyautogui.press('u')
-                    #print("quieto")
+                    pyautogui.press('e')
                 else:
                     if vuelta:
-                        pyautogui.press('right')
-                        #print("muevo")
+                        pyautogui.press('q')
         else:
             message=message+data
     print ("Desconectado")
