@@ -14,3 +14,4 @@ def juegos(colores, mario):
 
     if nivel(reloj, mario, ventana, colores):
         return True
+

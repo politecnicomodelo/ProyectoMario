@@ -96,20 +96,20 @@ class Controlador(object):
 
                 fuente = pygame.font.SysFont("mariokartds", 70)
                 mario.estado_texto = 2
-                mario.texto = fuente.render("agarra la nueva moneda", False, (0,0,0))
+                mario.texto = fuente.render("salta para agarrar la moneda", False, (0,0,0))
 
             if moneda.identificador == 2:
-                m = Moneda(350,600,3)
+                m = Moneda(550,600,3)
 
                 fuente = pygame.font.SysFont("mariokartds", 70)
-                mario.estado_texto = 2
+                mario.estado_texto = 3
                 mario.texto = fuente.render("agarra la ultima moneda", False, (0,0,0))
 
             if moneda.identificador == 3:
 
-                mario.estado_texto = 0
+                mario.estado_texto = 4
                 fuente = pygame.font.SysFont("mariokartds", 70)
-                mario.texto = fuente.render("tutorial", False, (0,0,0))
+                mario.texto = fuente.render("fin del tutorial", False, (0,0,0))
 
                 for item in Base.bloques:
                     Base.bloques.remove(item)

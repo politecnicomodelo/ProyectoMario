@@ -11,5 +11,9 @@ def dibujo(ventana, colores, mario):
     elif mario.estado_texto == 1:
         ventana.blit(mario.texto, (290, 100))
     elif mario.estado_texto == 2:
-        ventana.blit(mario.texto, (250, 100))
+        ventana.blit(mario.texto, (140, 100))
+    elif mario.estado_texto == 3:
+        ventana.blit(mario.texto, (225, 100))
+    elif mario.estado_texto == 4:
+        ventana.blit(mario.texto, (350, 100))
     pygame.display.flip()
