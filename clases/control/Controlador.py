@@ -22,7 +22,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -166,7 +166,7 @@ class Controlador(object):
                 mario.perder_vida(frames_totales, 345)
         if goomba is not False and mario.bajando:
             if goomba.muerto is False:
-                goomba.morir(frames_totales)
+                goomba.morir(frames_totales, mario)
                 mario.colision_goomba(goomba)
 
         if mario.prohibir_mastil is False:

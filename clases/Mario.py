@@ -54,6 +54,9 @@ class Mario(Base):
 
         self.monedas = 0
         self.tiempo = 0
+        self.puntos_mastil = 0
+        self.cantidad_signo = 0
+        self.cantidad_goombas = 0
 
         self.vidas = 3
         self.muerto = False
@@ -149,8 +152,8 @@ class Mario(Base):
             self.cambiar_sprite(5)
             self.rect.y = objeto.rect.y - cantidad
             self.cambiar_sprite(0)
-            mario.permitir_derecha = False
-            mario.permitir_izquierda = False
+            self.permitir_derecha = False
+            self.permitir_izquierda = False
 
     def activar_salto(self, cantidad):
 
@@ -198,7 +201,7 @@ class Mario(Base):
             goomba = self.colision(Base.goombas)
             if goomba is not False:
                 if goomba.muerto is False:
-                    goomba.morir(frames_totales)
+                    goomba.morir(frames_totales, self)
                     self.colision_goomba(goomba)
 
         #Colisiona con dos objetos?
@@ -345,9 +348,10 @@ class Mario(Base):
     def colision_tuberia(self, tuberia):
 
         if tuberia.rect.x > self.rect.x:
-            self.rect.x = tuberia.rect.x - 90
+            self.rect.x = tuberia.rect.x - 95
         else:
-            self.rect.x = tuberia.rect.x + 145
+            print ("hola1")
+            self.rect.x = tuberia.rect.x + 150
 
     def colision_tuberia_salto(self, tuberia):
 
@@ -357,11 +361,11 @@ class Mario(Base):
 
                 #Está a la derecha del bloque?
                 if self.rect.x >= tuberia.rect.x:
-                    self.rect.x = tuberia.rect.x + 145
+                    self.rect.x = tuberia.rect.x + 150
 
                 #Está a la izquierda del bloque?
                 elif self.rect.x < tuberia.rect.x:
-                    self.rect.x = tuberia.rect.x - 90
+                    self.rect.x = tuberia.rect.x - 95
 
         else:
             self.colision_tuberia_caida(tuberia)
@@ -378,9 +382,9 @@ class Mario(Base):
             #Chocó estando fuera de la hitbox?
             else:
                 if self.rect.x > tuberia.rect.x:
-                    self.rect.x = tuberia.rect.x + 145
+                    self.rect.x = tuberia.rect.x + 150
                 elif self.rect.x < tuberia.rect.x:
-                    self.rect.x = tuberia.rect.x - 90
+                    self.rect.x = tuberia.rect.x - 95
                 return True
 
     def colision_escalera(self, escalera):
@@ -630,13 +634,14 @@ class Mario(Base):
                 if self.animacion_final_caminata(frames_totales, fondo) is False:
                     self.numero_control += 1
                 else:
-                    return  True
+                    return True
         return False
 
     def mastil_tocado(self, mastil):
-        if self.rect.y > mastil.rect.y - 120 and self.rect.y < mastil.rect.y + 300:
+        if self.rect.y > mastil.rect.y - 120 and self.rect.y < mastil.rect.y + 350:
             if mastil.tocado is None:
                 mastil.tocado = self.rect.y
+                self.puntos_mastil = 550 - self.rect.y
                 self.terminado = True
                 self.animacion_castillo = True
                 self.cambiar_sprite(7)

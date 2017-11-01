@@ -24,7 +24,7 @@ def juego(colores):
 
     if nivel(reloj, mario, ventana, colores, fondo):
         if mario.animacion_castillo:
-            pass
+            return mario
             #Controlador.cargar_datos(db, mario)
 
     Controlador.terminar()

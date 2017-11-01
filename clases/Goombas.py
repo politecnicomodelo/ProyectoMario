@@ -61,9 +61,10 @@ class Goomba(Base):
         self.image = pygame.transform.scale(self.image, (self.ancho, 15))
         self.rect.y += 45
 
-    def morir(self, frames_totales):
+    def morir(self, frames_totales, mario):
 
         self.muerto = True
+        mario.cantidad_goombas += 1
         self.frame_muerto = frames_totales
         Base.goombas.remove(self)
 

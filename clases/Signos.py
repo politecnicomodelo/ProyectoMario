@@ -25,6 +25,7 @@ class Signo(Bloque):
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
             self.unico = False
             mario.monedas += 1
+            mario.cantidad_signo += 1
 
     def terminar_tocado(self):
         self.proceso = False

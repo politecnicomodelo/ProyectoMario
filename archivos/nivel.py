@@ -16,12 +16,11 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     inicializacion(mario)
 
-
     #pygame.mixer.music.load("musica/juego.wav")
     #pygame.mixer.music.play(10,0)
     #pygame.mixer.music.set_volume(0.5)
 
-    fuentes = (pygame.font.SysFont("mariokartds", 50), pygame.font.SysFont("mariokartds", 35))
+    fuentes = (pygame.font.SysFont("mariokartdsregular", 50), pygame.font.SysFont("mariokartdsregular", 35))
     textos = [fuentes[1].render("x", False, colores["Negro"]), fuentes[0].render("5", False, colores["Negro"])]
 
     while True:
@@ -33,6 +32,6 @@ def nivel(reloj, mario, ventana, colores, fondo):
         if frames_totales % (FPS / 4) == 0:
             segundo += 1
 
-        dibujo(fondo, ventana, colores, textos)
+        dibujo(fondo, ventana, colores, textos, mario)
 
         frames_totales += 1

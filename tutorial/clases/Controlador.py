@@ -94,21 +94,21 @@ class Controlador(object):
                 m = Moneda(120,290,2)
                 bloque = Bloque(100,400)
 
-                fuente = pygame.font.SysFont("mariokartds", 70)
+                fuente = pygame.font.SysFont("mariokartdsregular", 70)
                 mario.estado_texto = 2
                 mario.texto = fuente.render("salta para agarrar la moneda", False, (0,0,0))
 
             if moneda.identificador == 2:
                 m = Moneda(550,600,3)
 
-                fuente = pygame.font.SysFont("mariokartds", 70)
+                fuente = pygame.font.SysFont("mariokartdsregular", 70)
                 mario.estado_texto = 3
                 mario.texto = fuente.render("agarra la ultima moneda", False, (0,0,0))
 
             if moneda.identificador == 3:
 
                 mario.estado_texto = 4
-                fuente = pygame.font.SysFont("mariokartds", 70)
+                fuente = pygame.font.SysFont("mariokartdsregular", 70)
                 mario.texto = fuente.render("fin del tutorial", False, (0,0,0))
 
                 for item in Base.bloques:

@@ -11,12 +11,12 @@ colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 nombre = None
 
 def main():
-    if inicio():
+    #if inicio():
         #nombre = ingreso()
         #if tutorial():
-            # instrucciones():
-                if indicaciones():
-                    juego(colores)
+            #if instrucciones():
+                #if indicaciones():
+                    mario = juego(colores)
                     Controlador.terminar()
 
 main()
