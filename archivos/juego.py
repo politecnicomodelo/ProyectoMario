@@ -1,8 +1,11 @@
 from archivos.nivel import *
 from clases.control.Controlador import *
 from clases.control.Fondo import *
+from clases.Mario import Mario
 
-def juego(colores, mario):
+def juego(colores):
+
+    mario = Mario()
 
     ancho = 1280
     alto = 720
