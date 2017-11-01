@@ -90,15 +90,32 @@ class Controlador(object):
         if moneda is not False:
             moneda.agarrada()
             if moneda.identificador == 1:
+
                 m = Moneda(120,290,2)
                 bloque = Bloque(100,400)
+
+                fuente = pygame.font.SysFont("mariokartds", 70)
+                mario.estado_texto = 2
+                mario.texto = fuente.render("agarra la nueva moneda", False, (0,0,0))
+
             if moneda.identificador == 2:
                 m = Moneda(350,600,3)
+
+                fuente = pygame.font.SysFont("mariokartds", 70)
+                mario.estado_texto = 2
+                mario.texto = fuente.render("agarra la ultima moneda", False, (0,0,0))
+
             if moneda.identificador == 3:
+
+                mario.estado_texto = 0
+                fuente = pygame.font.SysFont("mariokartds", 70)
+                mario.texto = fuente.render("tutorial", False, (0,0,0))
+
                 for item in Base.bloques:
                     Base.bloques.remove(item)
                     Base.sprites.remove(item)
                 mario.permitir = False
+                mario.final = True
                 mario.frame_permitido = frames_totales
 
         # Mientras anda a pie
@@ -119,7 +136,7 @@ class Controlador(object):
                     mario.detenerse()
                     mario.bajando = False
 
-        if mario.frame_permitido + 120 < frames_totales and mario.permitir is False:
+        if mario.frame_permitido + 500 < frames_totales and mario.permitir is False and mario.final:
             return True
 
     @classmethod

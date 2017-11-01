@@ -28,13 +28,21 @@ def nivel(reloj, mario, ventana, colores):
     for i in range(40):
         piso = Piso(x,695)
         x += 72
-
+    mario.estado_texto = 0
+    fuente = pygame.font.SysFont("mariokartds", 70)
+    mario.texto = fuente.render("tutorial", False, colores["Negro"])
+    mario.permitir = False
 
     while True:
 
         if procesos(reloj, mario, FPS, frames_totales, ventana):
             return True
 
-        dibujo(ventana, colores)
+        dibujo(ventana, colores, mario)
 
         frames_totales += 1
+
+        if frames_totales == 300:
+            mario.estado_texto = 1
+            mario.texto = fuente.render("agarra la moneda", False, colores["Negro"])
+            mario.permitir = True

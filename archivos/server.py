@@ -42,14 +42,14 @@ while True:
             else:
                 vuelta = True
 
+            ultima = str (ultima)
+            print (ultima)
+            ultima = float (ultima)
             print (distancia)
             distancia = float(distancia)
             if ultima < distancia + 35.0:
                 salto = True
             ultima = distancia
-            ultima = str (ultima)
-            print (ultima)
-            ultima = float (ultima)
             if salto:
                 pass
                 #print ("--------------SALTO---------------")

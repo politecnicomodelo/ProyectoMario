@@ -33,6 +33,9 @@ class Mario_T(Base):
         self.permitir = True
         self.frame_permitido = 0
 
+        self.texto = 0
+        self.estado_texto = 0
+        self.final = False
         Base.sprites.add(self)
 
     def mover_derecha(self, velocidad, frames_totales):
