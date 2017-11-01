@@ -22,7 +22,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 

@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac2b9237-d8b1-4342-9603-fedaaa26b563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/archivos/ultrasonic.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/Base.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/Controlador.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/Fin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/Grupo_Sprites.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/Palabras.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/Sprites.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/Clases/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/instrucciones_1/instrucciones.py" />
+    <list default="true" id="ac2b9237-d8b1-4342-9603-fedaaa26b563" name="Default" comment="Agregado instrucciones">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Corazon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Enemigo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Moneda_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/hongo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/signo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/Base.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/Controlador.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/Fin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/Grupo_Sprites.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/Palabras.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/Sprites.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/Clases/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indicaciones/indic.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inicio" afterPath="$PROJECT_DIR$/inicio" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/nivel.py" afterPath="$PROJECT_DIR$/archivos/nivel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/control/Controlador.py" afterPath="$PROJECT_DIR$/clases/control/Controlador.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/archivos/dibujo.py" afterPath="$PROJECT_DIR$/tutorial/archivos/dibujo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/archivos/juegos.py" afterPath="$PROJECT_DIR$/tutorial/archivos/juegos.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/clases/Controlador.py" afterPath="$PROJECT_DIR$/tutorial/clases/Controlador.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +39,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -45,21 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/archivos/server.py">
+      <file leaf-file-name="indic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/indicaciones/indic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="instrucciones.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/instrucciones_1/instrucciones.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="113" column="77" lean-forward="true" selection-start-line="113" selection-start-column="77" selection-end-line="113" selection-end-column="77" />
+            <state relative-caret-position="231">
+              <caret line="165" column="49" lean-forward="false" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -76,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>transfo</find>
       <find>rint</find>
       <find>bandera</find>
       <find>5</find>
@@ -99,13 +91,14 @@
       <find>self.monedas</find>
       <find>mario.monedas</find>
       <find>activar_tocado</find>
-      <find>print</find>
       <find>Transicion_Final</find>
       <find>titulo</find>
       <find>Contador</find>
       <find>mario.estado</find>
       <find>.estado</find>
       <find>return</find>
+      <find>&quot;</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>self.estado</replace>
@@ -115,6 +108,7 @@
       <replace>inicio/Transicion_Final</replace>
       <replace>Letras</replace>
       <replace>Titulo</replace>
+      <replace>&quot;indicaciones/</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -128,9 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/clases/Goombas.py" />
-        <option value="$PROJECT_DIR$/clases/Piso.py" />
-        <option value="$PROJECT_DIR$/clases/Ladrillos.py" />
         <option value="$PROJECT_DIR$/clases/control/Conexion.py" />
         <option value="$PROJECT_DIR$/clases/__init__.py" />
         <option value="$PROJECT_DIR$/clases/Tuberia.py" />
@@ -149,12 +140,10 @@
         <option value="$PROJECT_DIR$/clases/control/texto_final.py" />
         <option value="$PROJECT_DIR$/clases/Mario.py" />
         <option value="$PROJECT_DIR$/archivos/ultrasonic.py" />
-        <option value="$PROJECT_DIR$/clases/control/Controlador.py" />
         <option value="$PROJECT_DIR$/archivos/server.py" />
         <option value="$PROJECT_DIR$/Inicio/Main.py" />
         <option value="$PROJECT_DIR$/inicio/Clases/Fondo.py" />
         <option value="$PROJECT_DIR$/archivos/inicializacion.py" />
-        <option value="$PROJECT_DIR$/archivos/nivel.py" />
         <option value="$PROJECT_DIR$/tutorial/main.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Bloque.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Letras.py" />
@@ -178,7 +167,12 @@
         <option value="$PROJECT_DIR$/tutorial/archivos/nivel.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Controlador.py" />
         <option value="$PROJECT_DIR$/instrucciones_1/instrucciones.py" />
+        <option value="$PROJECT_DIR$/Indicaciones_Mario/main.py" />
+        <option value="$PROJECT_DIR$/indicaciones/main.py" />
+        <option value="$PROJECT_DIR$/clases/control/Controlador.py" />
+        <option value="$PROJECT_DIR$/archivos/nivel.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/indicaciones/indic.py" />
       </list>
     </option>
   </component>
@@ -201,6 +195,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,14 +212,28 @@
             <path>
               <item name="ProyectoMario" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProyectoMario" type="462c0819:PsiDirectoryNode" />
+              <item name="clases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoMario" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoMario" type="462c0819:PsiDirectoryNode" />
+              <item name="clases" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoMario" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoMario" type="462c0819:PsiDirectoryNode" />
+              <item name="indicaciones" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoMario" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoMario" type="462c0819:PsiDirectoryNode" />
               <item name="instrucciones_1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,13 +243,13 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/inicio" />
       <recent name="D:\5°C\ProyectoMario" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -583,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509557467886</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Agregado instrucciones">
+      <created>1509560025134</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1509560025134</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -598,7 +615,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1272" height="689" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30228758" sideWeight="0.4937888" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30718955" sideWeight="0.4937888" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -642,7 +659,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Agregados corazones y solucionados errores" />
     <MESSAGE value="Cambiados los sprites de Mario" />
     <MESSAGE value="Arreglados bugs con las colisiones verticales" />
     <MESSAGE value="Solucionado un bug importante en las animaciones" />
@@ -667,29 +683,16 @@
     <MESSAGE value="Terminado el final, mejorado el movimiento de Mario" />
     <MESSAGE value="Agregado el Inicio" />
     <MESSAGE value="Mejorado el tutorial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejorado el tutorial" />
+    <MESSAGE value="Agregado instrucciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado instrucciones" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/clases/Signos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clases/Monedas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/archivos/procesos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -759,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archivos/nivel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tutorial/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -808,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clases/control/Controlador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="59" column="44" lean-forward="false" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clases/Mario.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -833,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -849,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="129" column="74" lean-forward="false" selection-start-line="129" selection-start-column="74" selection-end-line="129" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,9 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,25 +864,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="93" column="46" lean-forward="true" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instrucciones_1/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/instrucciones_1/.idea/vcs.xml" />
     <entry file="file://$PROJECT_DIR$/instrucciones_1/Clases/Controlador.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,9 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -935,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="138" column="38" lean-forward="false" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,32 +945,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/archivos/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indicaciones/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instrucciones_1/instrucciones.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="113" column="77" lean-forward="true" selection-start-line="113" selection-start-column="77" selection-end-line="113" selection-end-column="77" />
+        <state relative-caret-position="290">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="134" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/control/Controlador.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="74" lean-forward="false" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archivos/nivel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indicaciones/indic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="165" column="49" lean-forward="false" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
           <folding />
         </state>
       </provider>
