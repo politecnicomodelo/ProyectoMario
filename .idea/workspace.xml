@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac2b9237-d8b1-4342-9603-fedaaa26b563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/bloques.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/cargando/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/invisiblex.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/letras/A.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/letras/P.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/letras/S.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/letras/U.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario_bandera.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario_correr.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario_movimiento.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario_muerto.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario_salto.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/mario/mario_turbio.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/monedas/inicial.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/imagenes/piso_bloque.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/.idea/Tutorial.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/archivos/dibujo.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/archivos/juegos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/archivos/nivel.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/archivos/procesos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Base.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Bloque.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Controlador.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Letras.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Mario_Tuto.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Moneda.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Piso.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/tuto.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inicio" afterPath="$PROJECT_DIR$/inicio" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/juego.py" afterPath="$PROJECT_DIR$/archivos/juego.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,8 +45,8 @@
       <file leaf-file-name="juegos.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tutorial/archivos/juegos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -634,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509540608110</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Siguiendo con la union">
+      <created>1509542388607</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1509542388607</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -648,8 +613,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29027355" sideWeight="0.4937888" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29027355" sideWeight="0.4937888" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -693,7 +659,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solucionados errores con goombas y bloques" />
     <MESSAGE value="Agregados corazones y solucionados errores" />
     <MESSAGE value="Cambiados los sprites de Mario" />
     <MESSAGE value="Arreglados bugs con las colisiones verticales" />
@@ -718,7 +683,8 @@
     <MESSAGE value="Agregado archivo main del arduino" />
     <MESSAGE value="Terminado el final, mejorado el movimiento de Mario" />
     <MESSAGE value="Agregado el Inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregado el Inicio" />
+    <MESSAGE value="Siguiendo con la union" />
+    <option name="LAST_COMMIT_MESSAGE" value="Siguiendo con la union" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -919,6 +885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -926,6 +893,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -933,6 +901,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -940,6 +909,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -947,6 +917,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -954,6 +925,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -989,6 +961,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,8 +1041,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tutorial/archivos/juegos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
