@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac2b9237-d8b1-4342-9603-fedaaa26b563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/listo/clases/controlador.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/listo/listorti.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/perder/clases/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/perder/clases/controlador.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/perder/perder.py" />
+    <list default="true" id="ac2b9237-d8b1-4342-9603-fedaaa26b563" name="Default" comment="Agregadas animaciones de transicion">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inicios/Transicion_Final/cuadroblanco.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/musica/tranquilidad.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorial/clases/Fin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/dibujo.py" afterPath="$PROJECT_DIR$/archivos/dibujo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/inicializacion.py" afterPath="$PROJECT_DIR$/archivos/inicializacion.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/juego.py" afterPath="$PROJECT_DIR$/archivos/juego.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/nivel.py" afterPath="$PROJECT_DIR$/archivos/nivel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archivos/procesos.py" afterPath="$PROJECT_DIR$/archivos/procesos.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clases/Mario.py" afterPath="$PROJECT_DIR$/clases/Mario.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instrucciones_1/instrucciones.py" afterPath="$PROJECT_DIR$/instrucciones_1/instrucciones.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingreso_nombre/Clases/Base.py" afterPath="$PROJECT_DIR$/ingreso_nombre/Clases/Base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingreso_nombre/Clases/Controlador.py" afterPath="$PROJECT_DIR$/ingreso_nombre/Clases/Controlador.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingreso_nombre/Clases/Fin.py" afterPath="$PROJECT_DIR$/ingreso_nombre/Clases/Fin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ingreso_nombre/ingreso.py" afterPath="$PROJECT_DIR$/ingreso_nombre/ingreso.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inicios/Main.py" afterPath="$PROJECT_DIR$/inicios/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listo/listorti.py" afterPath="$PROJECT_DIR$/listo/listorti.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/archivos/dibujo.py" afterPath="$PROJECT_DIR$/tutorial/archivos/dibujo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/archivos/nivel.py" afterPath="$PROJECT_DIR$/tutorial/archivos/nivel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/clases/Base.py" afterPath="$PROJECT_DIR$/tutorial/clases/Base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorial/clases/Controlador.py" afterPath="$PROJECT_DIR$/tutorial/clases/Controlador.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inicios/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+            <state relative-caret-position="237">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -56,7 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>perder_vida</find>
       <find>600</find>
       <find>def colision_piso</find>
       <find>inici</find>
@@ -86,6 +88,7 @@
       <find>colisiones_</find>
       <find>colision_tuber</find>
       <find>print</find>
+      <find>cuadro</find>
     </findStrings>
     <replaceStrings>
       <replace>self.estado</replace>
@@ -96,6 +99,7 @@
       <replace>Letras</replace>
       <replace>Titulo</replace>
       <replace>&quot;indicaciones/</replace>
+      <replace>cuadroblanco</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -109,9 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Inicio/Main.py" />
-        <option value="$PROJECT_DIR$/inicio/Clases/Fondo.py" />
-        <option value="$PROJECT_DIR$/tutorial/main.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Bloque.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Letras.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Moneda.py" />
@@ -123,19 +124,13 @@
         <option value="$PROJECT_DIR$/inicio/Clases/Base.py" />
         <option value="$PROJECT_DIR$/inicio/Clases/Fin.py" />
         <option value="$PROJECT_DIR$/inicio/Clases/Dibujo.py" />
-        <option value="$PROJECT_DIR$/ingreso_nombre/Clases/Controlador.py" />
-        <option value="$PROJECT_DIR$/ingreso_nombre/ingreso.py" />
         <option value="$PROJECT_DIR$/tutorial/archivos/procesos.py" />
         <option value="$PROJECT_DIR$/tutorial/clases/Mario_Tuto.py" />
-        <option value="$PROJECT_DIR$/tutorial/archivos/dibujo.py" />
         <option value="$PROJECT_DIR$/inicio/Main.py" />
         <option value="$PROJECT_DIR$/tutorial/archivos/juegos.py" />
         <option value="$PROJECT_DIR$/Indicaciones_Mario/main.py" />
         <option value="$PROJECT_DIR$/indicaciones/main.py" />
         <option value="$PROJECT_DIR$/indicaciones/indic.py" />
-        <option value="$PROJECT_DIR$/inicios/Main.py" />
-        <option value="$PROJECT_DIR$/tutorial/archivos/nivel.py" />
-        <option value="$PROJECT_DIR$/tutorial/clases/Controlador.py" />
         <option value="$PROJECT_DIR$/instrucciones_1/Clases/Palabras.py" />
         <option value="$PROJECT_DIR$/indicaciones/Clases/Palabras.py" />
         <option value="$PROJECT_DIR$/ingreso_nombre/Clases/Palabras.py" />
@@ -150,16 +145,25 @@
         <option value="$PROJECT_DIR$/perder/clases/__init__.py" />
         <option value="$PROJECT_DIR$/archivos/procesos.py" />
         <option value="$PROJECT_DIR$/archivos/dibujo.py" />
-        <option value="$PROJECT_DIR$/archivos/nivel.py" />
         <option value="$PROJECT_DIR$/perder/clases/controlador.py" />
         <option value="$PROJECT_DIR$/archivos/inicializacion.py" />
         <option value="$PROJECT_DIR$/clases/Mario.py" />
-        <option value="$PROJECT_DIR$/archivos/juego.py" />
         <option value="$PROJECT_DIR$/perder/perder.py" />
         <option value="$PROJECT_DIR$/instrucciones_1/instrucciones.py" />
         <option value="$PROJECT_DIR$/listo/clases/controlador.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/tutorial/archivos/dibujo.py" />
+        <option value="$PROJECT_DIR$/tutorial/clases/Base.py" />
+        <option value="$PROJECT_DIR$/tutorial/clases/Controlador.py" />
+        <option value="$PROJECT_DIR$/tutorial/archivos/nivel.py" />
+        <option value="$PROJECT_DIR$/ingreso_nombre/Clases/Controlador.py" />
+        <option value="$PROJECT_DIR$/ingreso_nombre/Clases/Base.py" />
+        <option value="$PROJECT_DIR$/ingreso_nombre/Clases/Fin.py" />
+        <option value="$PROJECT_DIR$/ingreso_nombre/ingreso.py" />
         <option value="$PROJECT_DIR$/listo/listorti.py" />
+        <option value="$PROJECT_DIR$/archivos/nivel.py" />
+        <option value="$PROJECT_DIR$/inicios/Main.py" />
+        <option value="$PROJECT_DIR$/archivos/juego.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -197,6 +201,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProyectoMario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProyectoMario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="musica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProyectoMario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProyectoMario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inicios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProyectoMario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProyectoMario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="archivos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -213,6 +259,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Germán\PycharmProjects\ProyectoMario\tutorial\clases" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/inicio" />
       <recent name="D:\5°C\ProyectoMario" />
@@ -580,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509571580622</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Agregadas pantalla de perdiste y listo?">
+      <created>1509584725491</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1509584725491</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -640,7 +694,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solucionado un bug importante en las animaciones" />
     <MESSAGE value="Añadida la animacion de muerte" />
     <MESSAGE value="Agregada la animacion de muerte cuando cae" />
     <MESSAGE value="Hecha la clase basica de Mastil y Bandera" />
@@ -665,7 +718,8 @@
     <MESSAGE value="Agregado instrucciones" />
     <MESSAGE value="Agregadas segundas instrucciones" />
     <MESSAGE value="Agregados atributos finales a Mario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregados atributos finales a Mario" />
+    <MESSAGE value="Agregadas pantalla de perdiste y listo?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregadas pantalla de perdiste y listo?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,34 +728,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tutorial/clases/Bloque.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/clases/Letras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/clases/Moneda.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/clases/Piso.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ingreso_nombre/.idea/vcs.xml" />
     <entry file="file://$PROJECT_DIR$/inicios/Clases/Dibujo.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -724,13 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ingreso_nombre/Clases/Controlador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instrucciones_1/.idea/vcs.xml" />
     <entry file="file://$PROJECT_DIR$/instrucciones_1/Clases/Controlador.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -746,24 +765,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/archivos/dibujo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tutorial/clases/Mario_Tuto.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/archivos/procesos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -778,29 +783,6 @@
     <entry file="file://$PROJECT_DIR$/inicios/Letras/Subtitulo/Letra1.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inicios/Clases/Controlador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="129" column="74" lean-forward="false" selection-start-line="129" selection-start-column="74" selection-end-line="129" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inicios/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/clases/Controlador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="110" column="64" lean-forward="false" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instrucciones_1/Clases/Palabras.py">
@@ -823,14 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2754">
           <caret line="162" column="45" lean-forward="true" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ingreso_nombre/ingreso.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="46" lean-forward="true" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -911,22 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/tuto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/archivos/nivel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="47" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tutorial/archivos/juegos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -971,14 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archivos/nivel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/archivos/inicializacion.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -992,16 +942,6 @@
         <state relative-caret-position="135">
           <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/archivos/juego.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,20 +979,148 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/tuto.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/archivos/dibujo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicios/Clases/Controlador.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="129" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/clases/Fin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/archivos/procesos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/clases/Controlador.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="175" column="16" lean-forward="true" selection-start-line="175" selection-start-column="16" selection-end-line="195" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/archivos/nivel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="64" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutorial/clases/Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ingreso_nombre/Clases/Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ingreso_nombre/Clases/Fin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ingreso_nombre/Clases/Controlador.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="104" column="76" lean-forward="true" selection-start-line="104" selection-start-column="76" selection-end-line="105" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/listo/listorti.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+        <state relative-caret-position="373">
+          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ingreso_nombre/ingreso.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="101" column="41" lean-forward="false" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archivos/nivel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archivos/juego.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="6" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state relative-caret-position="272">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicios/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

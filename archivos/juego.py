@@ -17,6 +17,10 @@ def juego(colores):
 
     #Controlador.cargar_nivel(db)
 
+    pygame.mixer.music.load("musica/juego.mp3")
+    pygame.mixer.music.play(10, 0)
+    pygame.mixer.music.set_volume(0.6)
+
     ventana = Controlador.configurar_pantalla(ancho, alto)
 
     reloj = Controlador.iniciar_reloj()

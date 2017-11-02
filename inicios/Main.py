@@ -37,9 +37,9 @@ def inicio():
 
     Contador = 0
 
-    #pygame.mixer.music.load("menu_principal.wav")
-    #pygame.mixer.music.play(2,0)
-    #pygame.mixer.music.set_volume(0.25)
+    pygame.mixer.music.load("musica/menu_principal.mp3")
+    pygame.mixer.music.play(10, 0)
+    pygame.mixer.music.set_volume(0.3)
 
     while True:
 
@@ -47,6 +47,7 @@ def inicio():
 
         if Controlador.buscar_eventos():
             Devolucion = True
+
         if Devolucion and otros_frames + 4 < frames_totales:
             Termine = True
             Base.sprites_principales.add(Base.fondo[Contador])
@@ -58,6 +59,7 @@ def inicio():
         if Contador == 18:
             for sprite in Base.sprites:
                 Base.sprites.remove(sprite)
+            pygame.mixer.music.stop()
             if otros_frames + 90 < frames_totales:
                 return True
 

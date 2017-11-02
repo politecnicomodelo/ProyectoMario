@@ -3,6 +3,7 @@ from tutorial.clases.Mario_Tuto import Mario_T
 from tutorial.clases.Moneda import Moneda
 from tutorial.clases.Base import Base
 from tutorial.clases.Bloque import Bloque
+from tutorial.clases.Fin import *
 
 class Controlador(object):
 
@@ -136,7 +137,8 @@ class Controlador(object):
                     mario.detenerse()
                     mario.bajando = False
 
-        if mario.frame_permitido + 500 < frames_totales and mario.permitir is False and mario.final:
+        if mario.frame_permitido + 300 < frames_totales and mario.permitir is False and mario.final:
+            mario.final = False
             return True
 
     @classmethod
@@ -169,3 +171,26 @@ class Controlador(object):
     @classmethod
     def buscar_teclas(cls):
         return pygame.key.get_pressed()
+
+
+    @classmethod
+    def Inicializacion_Final(cls):
+
+        c1 = Final(0,0,340,184, "inicios/Transicion_Final/cuadro.png")
+        c2 = Final(340,0,340,184, "inicios/Transicion_Final/cuadro.png")
+        c3 = Final(680,0,340,184, "inicios/Transicion_Final/cuadro.png")
+        c4 = Final(1020,0,360,190, "inicios/Transicion_Final/cuadro.png")
+        c5 = Final(1020,184,360,184, "inicios/Transicion_Final/cuadro.png")
+        c6 = Final(1020,368,360,184, "inicios/Transicion_Final/cuadro.png")
+        c7 = Final(1020,552,360,190, "inicios/Transicion_Final/cuadro.png")
+        c8 = Final(680,552,340,190, "inicios/Transicion_Final/cuadro.png")
+        c9 = Final(340,552,340,190, "inicios/Transicion_Final/cuadro.png")
+        c10 = Final(0,552,340,190, "inicios/Transicion_Final/cuadro.png")
+        c11 = Final(0,368,340,184, "inicios/Transicion_Final/cuadro.png")
+        c12 = Final(0,184,340,184, "inicios/Transicion_Final/cuadro.png")
+        c13 = Final(340,184,340,184, "inicios/Transicion_Final/cuadro.png")
+        c14 = Final(680,184,340,184, "inicios/Transicion_Final/cuadro.png")
+        c15 = Final(1020,184,360,184, "inicios/Transicion_Final/cuadro.png")
+        c16 = Final(1020,368,360,184, "inicios/Transicion_Final/cuadro.png")
+        c17 = Final(680,368,340,184, "inicios/Transicion_Final/cuadro.png")
+        c18 = Final(340,368,340,184, "inicios/Transicion_Final/cuadro.png")

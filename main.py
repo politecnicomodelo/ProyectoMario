@@ -12,18 +12,22 @@ colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 
 nombre = None
 
-def main():
-    while True:
-        if inicio():
-            nombre = ingreso()
-            if tutorial():
-                if instrucciones():
-                    if indicaciones():
-                        if listo():
-                            mario = juego(colores)
-                            if mario is False:
-                                perdiste()
-                            else:
-                                pass
 
+def main():
+    if inicio():
+        pygame.mixer.music.load("musica/tranquilidad.mp3")
+        pygame.mixer.music.play(10,0)
+        pygame.mixer.music.set_volume(0.5)
+        nombre = ingreso()
+        if tutorial():
+            if instrucciones():
+                if indicaciones():
+                    if listo():
+                        pygame.mixer.music.stop()
+                        mario = juego(colores)
+                        if mario is False:
+                            perdiste()
+                        else:
+                            pass
+                        main()
 main()

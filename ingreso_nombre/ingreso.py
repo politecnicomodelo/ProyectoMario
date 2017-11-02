@@ -51,6 +51,13 @@ def ingreso():
 
     Nombre = " "
 
+    Controlador.Inicializacion_Final()
+
+    animacion = False
+    otros_frames = frames_totales
+    contador = 0
+    final = False
+
     while True:
         Controlador.set_fps(reloj, FPS)
 
@@ -88,9 +95,22 @@ def ingreso():
             pygame.draw.rect(ventana, Colores["Blanco"], (x + 600, y + 95, 50, 20))
             pygame.draw.rect(ventana, Colores["Blanco"], (x + 700, y + 95, 50, 20))
         else:
-            if frame_termino + 400 < frames_totales:
+            if frame_termino + 350 < frames_totales and final is False:
+                final = True
+                animacion = True
+
+        if animacion and otros_frames + 6 < frames_totales:
+            Base.sprites.add(Base.fondo[contador])
+            if contador == 17:
+                animacion = False
+            contador += 1
+            otros_frames = frames_totales
+
+        if contador == 18:
+            if otros_frames + 100 < frames_totales:
                 return True
-            else:
-                ventana.fill(Colores["Negro"])
+
+        Base.sprites.draw(ventana)
+
         pygame.display.update()
         frames_totales += 1

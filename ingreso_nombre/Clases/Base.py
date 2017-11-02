@@ -5,6 +5,8 @@ class Base(pygame.sprite.Sprite):
 
     Grupo = Sprites()
     Corazones = Sprites()
+    fondo = []
+    sprites = pygame.sprite.Group()
 
     def __init__(self, x, y, ancho, alto, ruta):
         pygame.sprite.Sprite.__init__(self)

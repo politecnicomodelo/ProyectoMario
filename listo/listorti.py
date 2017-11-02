@@ -37,8 +37,7 @@ def listo():
             ventana.blit(texto, (340, 150))
 
         else:
-            print ("hey")
-            ventana.blit(texto2, (550, 100))
+            ventana.blit(texto2, (590, 100))
             pygame.time.delay(1000)
             if estado == -1:
                 Controlador.rellenar_pantalla(ventana, (0,0,0))

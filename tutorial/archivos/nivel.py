@@ -25,6 +25,10 @@ def nivel(reloj, mario, ventana, colores):
 
     x = 0
 
+    animacion = False
+    otros_frames = frames_totales
+    contador = 0
+
     for i in range(40):
         piso = Piso(x,695)
         x += 72
@@ -33,10 +37,12 @@ def nivel(reloj, mario, ventana, colores):
     mario.texto = fuente.render("tutorial", False, colores["Negro"])
     mario.permitir = False
 
+    Controlador.Inicializacion_Final()
+
     while True:
 
         if procesos(reloj, mario, FPS, frames_totales, ventana):
-            return True
+            animacion = True
 
         dibujo(ventana, colores, mario)
 
@@ -46,3 +52,14 @@ def nivel(reloj, mario, ventana, colores):
             mario.estado_texto = 1
             mario.texto = fuente.render("agarra la moneda", False, colores["Negro"])
             mario.permitir = True
+
+        if animacion and otros_frames + 4 < frames_totales:
+            Base.sprites_principales.add(Base.fondo[contador])
+            if contador == 17:
+                animacion = False
+            contador += 1
+            otros_frames = frames_totales
+
+        if contador == 18:
+            if otros_frames + 60 < frames_totales:
+                return True

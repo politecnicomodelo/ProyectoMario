@@ -98,3 +98,25 @@ class Controlador(object):
                 if evento.key == pygame.K_SPACE:
                     return False
                 return True
+
+    @classmethod
+    def Inicializacion_Final(cls):
+
+        c1 = Final(0,0,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c2 = Final(340,0,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c3 = Final(680,0,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c4 = Final(1020,0,360,190, "inicios/Transicion_Final/cuadroblanco.png")
+        c5 = Final(1020,184,360,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c6 = Final(1020,368,360,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c7 = Final(1020,552,360,190, "inicios/Transicion_Final/cuadroblanco.png")
+        c8 = Final(680,552,340,190, "inicios/Transicion_Final/cuadroblanco.png")
+        c9 = Final(340,552,340,190, "inicios/Transicion_Final/cuadroblanco.png")
+        c10 = Final(0,552,340,190, "inicios/Transicion_Final/cuadroblanco.png")
+        c11 = Final(0,368,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c12 = Final(0,184,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c13 = Final(340,184,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c14 = Final(680,184,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c15 = Final(1020,184,360,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c16 = Final(1020,368,360,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c17 = Final(680,368,340,184, "inicios/Transicion_Final/cuadroblanco.png")
+        c18 = Final(340,368,340,184, "inicios/Transicion_Final/cuadroblanco.png")
