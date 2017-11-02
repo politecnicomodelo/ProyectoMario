@@ -32,6 +32,6 @@ def nivel(reloj, mario, ventana, colores, fondo):
         if frames_totales % (FPS / 4) == 0:
             segundo += 1
 
-        dibujo(fondo, ventana, colores, textos, mario)
+        dibujo(fondo, ventana, colores, textos)
 
         frames_totales += 1

@@ -2,6 +2,7 @@ from archivos.nivel import *
 from clases.control.Controlador import *
 from clases.control.Fondo import *
 from clases.Mario import Mario
+import pygame
 
 def juego(colores):
 
@@ -26,5 +27,6 @@ def juego(colores):
         if mario.animacion_castillo:
             return mario
             #Controlador.cargar_datos(db, mario)
-
-    Controlador.terminar()
+        else:
+            pygame.time.delay(3000)
+            return False

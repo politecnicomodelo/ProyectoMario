@@ -19,6 +19,8 @@ def inicializacion(mario):
     mario.inicializar_vidas()
     m = Mastil(1600)
 
+    g = Goomba(1200,620)
+
     #LETRAS
 
     P = Letra(400, 300, "imagenes/letras/P.png")

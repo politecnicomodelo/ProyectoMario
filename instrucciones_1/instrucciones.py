@@ -21,8 +21,8 @@ def instrucciones():
     Lista_Ayuda = ["a", "y", "u", "d", "a", "  ", "a", "  ", "m", "a", "r", "i","o","  ","a",
                     "  ","l","l","e","g","a","r","  ","a","l","  ","p","o","l","i",]
 
-    Lista_Primer_Horacion = ["-", " ", "s", "e", "  ", "e", "l", "  ", "m", "a", "s", "  ", "r", "a", "p", "i", "d", "o",
-                              "  ", "e", "n", "  ", "l", "l", "e", "g", "a", "r", "."]
+    Lista_Primer_Horacion = ["-", " ", "l", "l", "e", "g", "a", "  ", "l", "o", "  ", "m", "a", "s", "  ", "r", "a", "p", "i", "d", "o", "  ", "q", "u", "e",
+                             "  ", "p", "u", "e", "d", "a", "s", "!"]
 
     Lista_Segunda_Horacion = ["-", " ", "t", "e", "n", "e", "  ", "c", "u", "i", "d", "a", "d", "o", "  ", "c", "o", "n", "  ", "l",
                               "o", "s", "  ", "e", "n", "e", "m", "i", "g", "o", "s", "."]

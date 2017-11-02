@@ -5,18 +5,25 @@ from ingreso_nombre.ingreso import ingreso
 from inicios.Main import *
 from instrucciones_1.instrucciones import *
 from indicaciones.indic import *
+from perder.perder import *
+from listo.listorti import *
 
 colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 
 nombre = None
 
 def main():
-    #if inicio():
-        #nombre = ingreso()
-        #if tutorial():
-            #if instrucciones():
-                #if indicaciones():
-                    mario = juego(colores)
-                    Controlador.terminar()
+    while True:
+        if inicio():
+            nombre = ingreso()
+            if tutorial():
+                if instrucciones():
+                    if indicaciones():
+                        if listo():
+                            mario = juego(colores)
+                            if mario is False:
+                                perdiste()
+                            else:
+                                pass
 
 main()

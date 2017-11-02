@@ -58,7 +58,7 @@ class Mario(Base):
         self.cantidad_signo = 0
         self.cantidad_goombas = 0
 
-        self.vidas = 3
+        self.vidas = 1
         self.muerto = False
         self.animacion = False
         self.frame_caida = 0

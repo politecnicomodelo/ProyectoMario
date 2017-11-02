@@ -3,7 +3,7 @@ from clases.control.Controlador import Controlador
 import pygame
 
 
-def dibujo(fondo, ventana, colores, textos, mario):
+def dibujo(fondo, ventana, colores, textos):
 
     Controlador.rellenar_pantalla(ventana, fondo, colores)
     Base.sprites.draw(ventana)

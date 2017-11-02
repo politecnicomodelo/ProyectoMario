@@ -8,12 +8,12 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, fuentes, textos):
 
     Controlador.buscar_eventos(mario)
 
-    #teclas = Controlador.buscar_teclas()
+    teclas = Controlador.buscar_teclas()
 
     if mario.muerto is False:
 
-        #if teclas[pygame.K_F1]:
-            #Controlador.pausa(mario, ventana)
+        if teclas[pygame.K_F1]:
+            Controlador.pausa(mario, ventana)
 
         if mario.animacion_castillo is False:
 
