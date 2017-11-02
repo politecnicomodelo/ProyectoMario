@@ -331,3 +331,44 @@ class Controlador(object):
     @classmethod
     def cargar_datos(cls, db, mario):
         db.insertar_datos(mario)
+
+    @classmethod
+    def eliminacion_estatica(cls):
+        for item in Base.sprites:
+            Base.sprites.remove(item)
+            if item in Base.hongos:
+                Base.hongos.remove(item)
+            if item in Base.mastil:
+                Base.mastil.remove(item)
+            if item in Base.bandera:
+                Base.bandera.remove(item)
+            if Base.colegio is not None:
+                Base.colegio = None
+            if item in Base.tuberias:
+                Base.sprites_principales.remove(item)
+                Base.tuberias.remove(item)
+            elif item in Base.hongos:
+                Base.hongos.remove(item)
+                Base.hongos.remove(item)
+            elif item in Base.escalera:
+                Base.escalera.remove(item)
+                if item in Base.escaleras:
+                    Base.escaleras.remove(item)
+                else:
+                    Base.escaleras2.remove(item)
+            elif item in Base.goombas:
+                Base.goombas.remove(item)
+            elif item in Base.monedas:
+                Base.monedas.remove(item)
+            elif item in Base.piso:
+                Base.piso.remove(item)
+            else:
+                if item in Base.bloques:
+                    Base.bloques.remove(item)
+                    if item in Base.ladrillos:
+                        Base.ladrillos.remove(item)
+                    elif item in Base.ladrillos2:
+                        Base.ladrillos2.remove(item)
+                    else:
+                        Base.sprites_principales.remove(item)
+                        Base.signos.remove(item)

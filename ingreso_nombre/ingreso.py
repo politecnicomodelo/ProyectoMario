@@ -108,6 +108,8 @@ def ingreso():
 
         if contador == 18:
             if otros_frames + 100 < frames_totales:
+                for item in Base.sprites:
+                    Base.sprites.remove(item)
                 return True
 
         Base.sprites.draw(ventana)

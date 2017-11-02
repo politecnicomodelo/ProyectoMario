@@ -15,7 +15,7 @@ def listo():
 
     FPS = 120
 
-    fuente = pygame.font.SysFont("mariokartdsregular", 180)
+    fuente = pygame.font.SysFont("mariokartds", 180)
 
     texto = fuente.render("listo?", False, (255,255,255))
 
@@ -54,17 +54,17 @@ def listo():
 
         if estado == 3 and cuenta:
             estado = 2
-            fuente2 = pygame.font.SysFont("mariokartdsregular", 300)
+            fuente2 = pygame.font.SysFont("mariokartds", 300)
             texto2 = fuente2.render("3", False, (255, 255, 255))
 
         elif estado == 2:
             estado = 1
-            fuente2 = pygame.font.SysFont("mariokartdsregular", 300)
+            fuente2 = pygame.font.SysFont("mariokartds", 300)
             texto2 = fuente2.render("2", False, (255, 255, 255))
 
         elif estado == 1:
             estado = 0
-            fuente2 = pygame.font.SysFont("mariokartdsregular", 300)
+            fuente2 = pygame.font.SysFont("mariokartds", 300)
             texto2 = fuente2.render("1", False, (255, 255, 255))
 
 

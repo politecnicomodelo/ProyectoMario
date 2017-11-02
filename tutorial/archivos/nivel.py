@@ -4,6 +4,8 @@ from tutorial.clases.Piso import *
 from tutorial.clases.Letras import Letra
 from tutorial.clases.Bloque import Bloque
 from tutorial.clases.Moneda import Moneda
+from tutorial.clases.Base import Base
+from tutorial.clases.Mario_Tuto import Mario_T
 
 def nivel(reloj, mario, ventana, colores):
 
@@ -33,7 +35,7 @@ def nivel(reloj, mario, ventana, colores):
         piso = Piso(x,695)
         x += 72
     mario.estado_texto = 0
-    fuente = pygame.font.SysFont("mariokartdsregular", 70)
+    fuente = pygame.font.SysFont("mariokartds", 70)
     mario.texto = fuente.render("tutorial", False, colores["Negro"])
     mario.permitir = False
 
@@ -62,4 +64,8 @@ def nivel(reloj, mario, ventana, colores):
 
         if contador == 18:
             if otros_frames + 60 < frames_totales:
+                for item in Base.sprites_principales:
+                    Base.sprites_principales.remove(item)
+                for item in Base.sprites:
+                    Base.sprites_principales.remove(item)
                 return True

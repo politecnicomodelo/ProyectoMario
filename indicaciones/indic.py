@@ -169,6 +169,10 @@ def indicaciones():
                 Cuarta = False
 
         if frames_finales + 500 < frames_totales:
+            for i in Base.Grupo:
+                Base.Grupo.remove(i)
+            for i in Base.Corazones:
+                Base.Corazones.remove(i)
             return True
 
         ventana.blit(Ayuda.Palabra, (Ayuda.posX, Ayuda.posY))

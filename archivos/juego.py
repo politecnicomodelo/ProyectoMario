@@ -28,6 +28,9 @@ def juego(colores):
     fondo = Fondo()
 
     if nivel(reloj, mario, ventana, colores, fondo):
+
+        Controlador.eliminacion_estatica()
+
         if mario.animacion_castillo:
             return mario
             #Controlador.cargar_datos(db, mario)

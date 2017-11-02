@@ -57,10 +57,12 @@ def inicio():
             otros_frames = frames_totales
 
         if Contador == 18:
-            for sprite in Base.sprites:
-                Base.sprites.remove(sprite)
             pygame.mixer.music.stop()
             if otros_frames + 90 < frames_totales:
+                for sprite in Base.sprites:
+                    Base.sprites.remove(sprite)
+                for sprite in Base.sprites_principales:
+                    Base.sprites_principales.remove(sprite)
                 return True
 
         if not Termine:

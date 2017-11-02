@@ -16,7 +16,7 @@ def nivel(reloj, mario, ventana, colores, fondo):
 
     inicializacion(mario)
 
-    fuentes = (pygame.font.SysFont("mariokartdsregular", 50), pygame.font.SysFont("mariokartdsregular", 35))
+    fuentes = (pygame.font.SysFont("mariokartds", 50), pygame.font.SysFont("mariokartds", 35))
     textos = [fuentes[1].render("x", False, colores["Negro"]), fuentes[0].render("5", False, colores["Negro"])]
 
     while True:

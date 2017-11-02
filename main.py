@@ -15,19 +15,20 @@ nombre = None
 
 def main():
     if inicio():
-        pygame.mixer.music.load("musica/tranquilidad.mp3")
-        pygame.mixer.music.play(10,0)
-        pygame.mixer.music.set_volume(0.5)
-        nombre = ingreso()
-        if tutorial():
-            if instrucciones():
-                if indicaciones():
-                    if listo():
-                        pygame.mixer.music.stop()
+        # pygame.mixer.music.load("musica/tranquilidad.mp3")
+        # pygame.mixer.music.play(10,0)
+        # pygame.mixer.music.set_volume(0.5)
+        # nombre = ingreso()
+        # if tutorial():
+        #      if instrucciones():
+        #          if indicaciones():
+        #              if listo():
+        #                 pygame.mixer.music.stop()
                         mario = juego(colores)
-                        if mario is False:
-                            perdiste()
-                        else:
-                            pass
+                        # if mario is False:
+                        #     perdiste()
+                        # else:
+                        #     pass
                         main()
+
 main()
