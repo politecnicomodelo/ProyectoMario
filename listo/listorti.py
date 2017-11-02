@@ -1,6 +1,6 @@
 from listo.clases.controlador import Controlador
 import pygame
-
+from listo.clases.Sprites import Sprites
 
 def listo():
 
@@ -10,6 +10,10 @@ def listo():
     Controlador.iniciar()
 
     ventana = Controlador.configurar_pantalla(ancho, alto)
+
+    fondo = pygame.image.load("imagenes/fondo.jpg")
+
+    mario = pygame.image.load("imagenes/mario/mario.png")
 
     reloj = Controlador.iniciar_reloj()
 
@@ -42,6 +46,7 @@ def listo():
             if estado == -1:
                 Controlador.rellenar_pantalla(ventana, (0,0,0))
                 pygame.time.delay(1000)
+                Controlador.Aparicion(ventana, fondo, mario)
                 return True
             if estado == 0:
                 estado = -1

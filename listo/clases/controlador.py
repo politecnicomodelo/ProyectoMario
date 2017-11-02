@@ -43,3 +43,14 @@ class Controlador(object):
     @classmethod
     def buscar_teclas(cls):
         return pygame.key.get_pressed()
+
+    @classmethod
+    def Aparicion(cls, ventana, imag_1, imag_2):
+        for Alpha in range(220):
+            ventana.fill((0, 0, 0))
+            imag_1.set_alpha(Alpha)
+            imag_2.set_alpha(Alpha)
+            imag_2 = pygame.transform.scale(imag_2, (100, 100))
+            ventana.blit(imag_1, (0, 0))
+            ventana.blit(imag_2, (20, 600))
+            pygame.display.flip()
