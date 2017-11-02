@@ -13,13 +13,13 @@ def juego(colores):
 
     Controlador.iniciar()
 
-    #db = Controlador.iniciar_database()
+    db = Controlador.iniciar_database()
 
-    #Controlador.cargar_nivel(db)
+    Controlador.cargar_nivel(db)
 
-    pygame.mixer.music.load("musica/juego.mp3")
-    pygame.mixer.music.play(10, 0)
-    pygame.mixer.music.set_volume(0.6)
+    #pygame.mixer.music.load("musica/juego.mp3")
+    #pygame.mixer.music.play(10, 0)
+    #pygame.mixer.music.set_volume(0.6)
 
     ventana = Controlador.configurar_pantalla(ancho, alto)
 

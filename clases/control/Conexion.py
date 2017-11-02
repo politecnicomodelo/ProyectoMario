@@ -28,8 +28,10 @@ class Conexion(object):
                 l = Ladrillo(bloque["x"], bloque["y"], False)
             if bloque["tipo"] == "Ladrillo2":
                 l = Ladrillo(bloque["x"], bloque["y"], True)
-            if bloque["tipo"] == "Signo":
-                s = Signo(bloque["x"], bloque["y"])
+            if bloque["tipo"] == "SignoH":
+                s = Signo(bloque["x"], bloque["y"], True)
+            if bloque["tipo"] == "SignoM":
+                s = Signo(bloque["x"], bloque["y"], False)
             if bloque["tipo"] == "Moneda":
                 m = Moneda(bloque["x"], bloque["y"], False)
             if bloque["tipo"] == "Goomba":

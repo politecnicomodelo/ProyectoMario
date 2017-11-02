@@ -6,20 +6,11 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(20):
-        piso = Piso(x,695)
-        x += 72
-
-    x = 500
-
-    for i in range(35):
+    for i in range(85):
         piso = Piso(x,695)
         x += 72
 
     mario.inicializar_vidas()
-    m = Mastil(1600)
-
-    g = Goomba(1200,620)
 
     #LETRAS
 
