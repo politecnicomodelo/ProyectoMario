@@ -4,7 +4,7 @@ from clases.Hongo import *
 
 class Signo(Bloque):
 
-    def __init__(self, x, y):
+    def __init__(self, x, y, tipo):
         Bloque.__init__(self, x, y, "imagenes/signo.png")
 
         Base.sprites_principales.add(self)
@@ -14,7 +14,7 @@ class Signo(Bloque):
         self.original = None
         self.proceso = False
         self.unico = True
-        self.tipo = False
+        self.tipo = tipo
 
     def activar_tocado(self, mario):
         if self.unico:
@@ -24,7 +24,8 @@ class Signo(Bloque):
             self.image = pygame.image.load("imagenes/signotocado.png")
             self.image = pygame.transform.scale(self.image, (self.ancho, self.alto))
             self.unico = False
-            mario.monedas += 1
+            if self.tipo == False:
+                mario.monedas += 1
             mario.cantidad_signo += 1
 
     def terminar_tocado(self):
