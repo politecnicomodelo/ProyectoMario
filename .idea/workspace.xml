@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac2b9237-d8b1-4342-9603-fedaaa26b563" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final" afterPath="$PROJECT_DIR$/final" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -634,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509673158869</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Cambiado nombre del archivo principal en final">
+      <created>1509673233331</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1509673233331</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -694,7 +699,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arreglado bug en los sprites inmunes y las muertes" />
     <MESSAGE value="Creada la funcionalidad de pausa" />
     <MESSAGE value="Completada la eliminacion de sprites." />
     <MESSAGE value="Hecho el merge mágico" />
@@ -719,7 +723,8 @@
     <MESSAGE value="Agregado archivo de calibrado" />
     <MESSAGE value="Agregado con puntuacion final" />
     <MESSAGE value="Añadida la carpeta final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadida la carpeta final" />
+    <MESSAGE value="Cambiado nombre del archivo principal en final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiado nombre del archivo principal en final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
