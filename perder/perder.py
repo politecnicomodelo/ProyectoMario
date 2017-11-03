@@ -4,6 +4,10 @@ import pygame
 
 def perdiste():
 
+    pygame.mixer.music.load("musica/perdiste.mp3")
+    pygame.mixer.music.play(1,0)
+    pygame.mixer.music.set_volume(0.5)
+
     ancho = 1280
     alto = 720
 
@@ -17,11 +21,11 @@ def perdiste():
 
     frames_totales = 0
 
-    fuente = pygame.font.SysFont("mariokartds", 180)
+    fuente = pygame.font.SysFont("mariokartdsregular", 180)
 
     texto = fuente.render("perdiste!", False, (255,255,255))
 
-    fuente2 = pygame.font.SysFont("mariokartds", 80)
+    fuente2 = pygame.font.SysFont("mariokartdsregular", 80)
 
     texto2 = fuente2.render("gracias por jugar", False, (255,255,255))
 
