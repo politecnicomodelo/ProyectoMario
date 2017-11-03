@@ -351,20 +351,22 @@ class Controlador(object):
             if item in Base.tuberias:
                 Base.sprites_principales.remove(item)
                 Base.tuberias.remove(item)
-            elif item in Base.hongos:
+            if item == Base.texto:
+                Base.sprites_principales.remove(item)
+            if item in Base.hongos:
                 Base.hongos.remove(item)
                 Base.hongos.remove(item)
-            elif item in Base.escalera:
+            if item in Base.escalera:
                 Base.escalera.remove(item)
                 if item in Base.escaleras:
                     Base.escaleras.remove(item)
                 else:
                     Base.escaleras2.remove(item)
-            elif item in Base.goombas:
+            if item in Base.goombas:
                 Base.goombas.remove(item)
-            elif item in Base.monedas:
+            if item in Base.monedas:
                 Base.monedas.remove(item)
-            elif item in Base.piso:
+            if item in Base.piso:
                 Base.piso.remove(item)
             else:
                 if item in Base.bloques:

@@ -5,6 +5,7 @@ from clases.Monedas import Moneda
 from clases.Goombas import Goomba
 from clases.Escaleras import Escalera
 from clases.Tuberia import Tuberia
+from clases.Mastil import Mastil
 
 class Conexion(object):
 
@@ -40,6 +41,8 @@ class Conexion(object):
                 e = Escalera(bloque["x"], bloque["y"], True)
             if bloque["tipo"] == "Escalera2":
                 e = Escalera(bloque["x"], bloque["y"], False)
+            if bloque["tipo"] == "Mastil":
+                e = Mastil(bloque["x"])
 
         self.cursor_tuberias.execute("SELECT * FROM Tuberia")
 
@@ -48,4 +51,3 @@ class Conexion(object):
 
     def insertar_datos(self, mario):
         self.c.execute("insert into Partida values(NULL, 'Folgui', 10000, '"+str(mario.tiempo)+"', '"+str(mario.monedas)+"', '"+str(mario.vidas)+"', 8, 6)")
-
