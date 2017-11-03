@@ -69,6 +69,10 @@ class Controlador(object):
                         mario.permitir_derecha = False
                         mario.permitir_izquierda = False
 
+                if evento.key == pygame.K_x:
+                    mario.permitir_salto = True
+                    mario.salto_permitido = True
+
                 if evento.key == pygame.K_w:
                     mario.permitir_salto = True
                 if evento.key == pygame.K_p:

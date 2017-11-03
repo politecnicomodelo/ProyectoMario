@@ -8,7 +8,7 @@ from indicaciones.indic import *
 from perder.perder import *
 from listo.listorti import *
 from calibrar.calibrado import *
-from final.finalisimox import *
+#from final.finalisimox import *
 
 colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 
@@ -27,13 +27,13 @@ def main():
         #          if indicaciones():
                      #if listo():
                         #pygame.mixer.music.stop()
-                        #mario = juego(colores)
+                        mario = juego(colores)
                         # if mario is False:
                             #pygame.mixer.music.stop()
                             #perdiste()
                         # else:
                         #     pass
-                            final(1, 1, 90, 350, 5, True, 150)
-                            #main()
+                            #final(1, 1, 90, 350, 5, True, 150)
+                        main()
 
 main()

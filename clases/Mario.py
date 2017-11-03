@@ -58,7 +58,7 @@ class Mario(Base):
         self.cantidad_signo = 0
         self.cantidad_goombas = 0
 
-        self.vidas = 1
+        self.vidas = 3
         self.muerto = False
         self.animacion = False
         self.frame_caida = 0
@@ -74,6 +74,7 @@ class Mario(Base):
         self.permitir_derecha = False
         self.permitir_izquierda = False
         self.permitir_salto = False
+        self.salto_permitido = False
 
         Base.sprites_principales.add(self)
 
@@ -180,6 +181,8 @@ class Mario(Base):
             self.rect.y += 15
 
         if self.bajo_tierra() and self.flanco is False:
+            self.permitir_derecha = False
+            self.permitir_izquierda = False
             self.perder_vida(frames_totales, 645)
 
         self.colisiones_con_salto(frames_totales)
@@ -299,6 +302,7 @@ class Mario(Base):
             self.bajando = False
             self.salto = False
             self.detenerse()
+            self.salto_permitido = False
 
     def mover_pantalla(self):
         if self.rect.x > 680:
@@ -350,7 +354,6 @@ class Mario(Base):
         if tuberia.rect.x > self.rect.x:
             self.rect.x = tuberia.rect.x - 95
         else:
-            print ("hola1")
             self.rect.x = tuberia.rect.x + 150
 
     def colision_tuberia_salto(self, tuberia):

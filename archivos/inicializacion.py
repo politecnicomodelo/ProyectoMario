@@ -6,8 +6,32 @@ def inicializacion(mario):
 
     x = 0
 
-    for i in range(85):
+    for i in range(71):
         piso = Piso(x,695)
+        x += 72
+
+    x = 5264
+
+    for i in range(16):
+        piso = Piso(x,695)
+        x += 72
+
+    x = 6580
+
+    for i in range(17):
+        piso = Piso(x, 695)
+        x += 72
+
+    x = 6811
+
+    for i in range(17):
+        piso = Piso(x, 695)
+        x += 72
+
+    x = 8251
+
+    for i in range(90):
+        piso = Piso(x, 695)
         x += 72
 
     mario.inicializar_vidas()
