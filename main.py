@@ -8,6 +8,7 @@ from indicaciones.indic import *
 from perder.perder import *
 from listo.listorti import *
 from calibrar.calibrado import *
+from final.Main import *
 
 colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 
@@ -33,6 +34,7 @@ def main():
                             #perdiste()
                         # else:
                         #     pass
+                            finalizar(5, 16, 290, 350, 1, False)
                             main()
 
 main()
