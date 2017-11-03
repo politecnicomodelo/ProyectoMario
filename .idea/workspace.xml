@@ -639,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509673233331</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Quitado el .git a final">
+      <created>1509673298191</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1509673298191</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -699,7 +706,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creada la funcionalidad de pausa" />
     <MESSAGE value="Completada la eliminacion de sprites." />
     <MESSAGE value="Hecho el merge mágico" />
     <MESSAGE value="Agregada la musica, formula y nuevo sprite de Mario" />
@@ -724,7 +730,8 @@
     <MESSAGE value="Agregado con puntuacion final" />
     <MESSAGE value="Añadida la carpeta final" />
     <MESSAGE value="Cambiado nombre del archivo principal en final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiado nombre del archivo principal en final" />
+    <MESSAGE value="Quitado el .git a final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quitado el .git a final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
