@@ -8,7 +8,7 @@ from indicaciones.indic import *
 from perder.perder import *
 from listo.listorti import *
 from calibrar.calibrado import *
-from final.Main import *
+from final.finalisimo import *
 
 colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 
