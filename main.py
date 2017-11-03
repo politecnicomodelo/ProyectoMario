@@ -8,12 +8,11 @@ from indicaciones.indic import *
 from perder.perder import *
 from listo.listorti import *
 from calibrar.calibrado import *
-from final.finalisimo import *
+from final.finalisimox import *
 
 colores = {"Blanco": (255,255,255), "Negro": (0,0,0)}
 
 nombre = None
-pygame.mixer.init()
 
 
 def main():
@@ -34,7 +33,7 @@ def main():
                             #perdiste()
                         # else:
                         #     pass
-                            finalizar(5, 16, 290, 350, 1, False)
-                            main()
+                            final(1, 1, 90, 350, 5, True, 150)
+                            #main()
 
 main()
