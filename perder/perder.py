@@ -21,11 +21,11 @@ def perdiste():
 
     frames_totales = 0
 
-    fuente = pygame.font.SysFont("mariokartdsregular", 180)
+    fuente = pygame.font.SysFont("mariokartds", 180)
 
     texto = fuente.render("perdiste!", False, (255,255,255))
 
-    fuente2 = pygame.font.SysFont("mariokartdsregular", 80)
+    fuente2 = pygame.font.SysFont("mariokartds", 80)
 
     texto2 = fuente2.render("gracias por jugar", False, (255,255,255))
 

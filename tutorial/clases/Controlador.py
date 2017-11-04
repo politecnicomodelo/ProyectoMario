@@ -56,7 +56,7 @@ class Controlador(object):
                         mario.permitir_derecha = False
                         mario.permitir_izquierda = False
 
-                if evento.key == pygame.K_w:
+                if evento.key == pygame.K_x:
                     mario.permitir_salto = True
                 if evento.key == pygame.K_p:
 
@@ -92,24 +92,24 @@ class Controlador(object):
             moneda.agarrada()
             if moneda.identificador == 1:
 
-                m = Moneda(120,290,2)
-                bloque = Bloque(100,400)
+                m = Moneda(20,290,2)
+                bloque = Bloque(30,450)
 
-                fuente = pygame.font.SysFont("mariokartdsregular", 70)
+                fuente = pygame.font.SysFont("mariokartds", 70)
                 mario.estado_texto = 2
                 mario.texto = fuente.render("salta para agarrar la moneda", False, (0,0,0))
 
             if moneda.identificador == 2:
                 m = Moneda(550,600,3)
 
-                fuente = pygame.font.SysFont("mariokartdsregular", 70)
+                fuente = pygame.font.SysFont("mariokartds", 70)
                 mario.estado_texto = 3
                 mario.texto = fuente.render("agarra la ultima moneda", False, (0,0,0))
 
             if moneda.identificador == 3:
 
                 mario.estado_texto = 4
-                fuente = pygame.font.SysFont("mariokartdsregular", 70)
+                fuente = pygame.font.SysFont("mariokartds", 70)
                 mario.texto = fuente.render("fin del tutorial", False, (0,0,0))
 
                 for item in Base.bloques:

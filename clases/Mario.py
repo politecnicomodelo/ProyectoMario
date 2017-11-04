@@ -568,7 +568,7 @@ class Mario(Base):
             self.buscar_reaparicion()
             self.empiezo_inmunidad(frames_totales)
             self.flanco = False
-            self.terminar_salto()
+            self.salto_permitido = False
 
     def colision_piso_caida(self):
         piso = self.colision(Base.piso)
@@ -619,7 +619,6 @@ class Mario(Base):
             self.mover_derecha(5, frames_totales)
         if self.numero_control == 40:
             self.detenerse()
-            self.invertir()
         if self.numero_control == 70:
             Base.colegio.image = pygame.image.load("imagenes/colegio_tori.png")
             Base.colegio.image = pygame.transform.scale(Base.colegio.image, (Base.colegio.ancho, Base.colegio.alto))

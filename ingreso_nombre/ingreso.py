@@ -47,6 +47,8 @@ def ingreso():
     frame_termino = None
     termino = False
 
+    devolver = ""
+
     Lista_Letras = []
 
     Nombre = " "
@@ -110,7 +112,9 @@ def ingreso():
             if otros_frames + 100 < frames_totales:
                 for item in Base.sprites:
                     Base.sprites.remove(item)
-                return True
+                for i in Lista_Letras:
+                    devolver += i.texto
+                return devolver
 
         Base.sprites.draw(ventana)
 

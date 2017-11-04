@@ -16,10 +16,10 @@ def procesos(reloj, mario, FPS, frames_totales, ventana):
     if mario.permitir:
 
         if mario.permitir_derecha:
-            mario.mover_derecha(7, frames_totales)
+            mario.mover_derecha(3, frames_totales)
 
         elif mario.permitir_izquierda:
-            mario.mover_izquierda(7, frames_totales)
+            mario.mover_izquierda(3, frames_totales)
 
         if mario.permitir_salto and mario.salto is False:
             mario.activar_salto(340)

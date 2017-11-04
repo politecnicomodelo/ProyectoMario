@@ -26,7 +26,7 @@ def calibrado():
 
     reloj = Controlador.iniciar_reloj()
 
-    fuente = pygame.font.SysFont("mariokartdsregular", 50)
+    fuente = pygame.font.SysFont("mariokartds", 50)
     texto = fuente.render(" a   calibrar", False, (0,0,0))
 
     mario = pygame.image.load("imagenes/mario/mario.png")

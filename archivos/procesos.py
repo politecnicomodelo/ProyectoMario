@@ -24,13 +24,13 @@ def procesos(reloj, mario, FPS, frames_totales, fondo, fuentes, textos, ventana)
                 if mario.salto_permitido:
                     mario.mover_derecha(6, frames_totales)
                 elif mario.salto is False:
-                    mario.mover_derecha(8, frames_totales)
+                    mario.mover_derecha(5, frames_totales)
 
             elif mario.permitir_izquierda:
                 if mario.salto is False:
-                    mario.mover_izquierda(8, frames_totales)
-                elif mario.salto_permitido:
                     mario.mover_izquierda(6, frames_totales)
+                elif mario.salto_permitido:
+                    mario.mover_izquierda(5, frames_totales)
 
             if mario.permitir_salto and mario.salto is False:
                 if mario.colision_piso():

@@ -49,5 +49,17 @@ class Conexion(object):
         for tuberia in self.cursor_tuberias.fetchall():
             t = Tuberia(tuberia["x"], tuberia["altura"])
 
-    def insertar_datos(self, mario):
-        self.c.execute("insert into Partida values(NULL, 'Folgui', 10000, '"+str(mario.tiempo)+"', '"+str(mario.monedas)+"', '"+str(mario.vidas)+"', 8, 6)")
+    def insertar_datos(self, mario, nombre, puntuacion):
+        self.c.execute("insert into Partida values(NULL, '"+nombre+"', '"+str(puntuacion)+"', '"+str(mario.tiempo)+"', '"+str(mario.monedas)+"', '"+str(mario.vidas)+"', 8, 6)")
+        self.c.execute("use expo_modelo_2017_computacion")
+        self.c.execute("insert into Score values(NULL, 1, '"+nombre+"', '"+str(puntuacion)+"')")
+        self.c.execute("use Mario")
+
+    def buscar_posicion(self, puntos):
+
+        self.cursor_bloques.execute("SELECT * FROM Partida ORDER BY puntuacion")
+        i = 0
+        for partida in self.cursor_bloques.fetchall():
+            i += 1
+            if int(partida["puntuacion"]) == int(puntos):
+                return i

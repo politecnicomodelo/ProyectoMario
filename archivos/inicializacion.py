@@ -24,13 +24,13 @@ def inicializacion(mario):
 
     x = 6811
 
-    for i in range(17):
+    for i in range(51):
         piso = Piso(x, 695)
         x += 72
 
-    x = 8251
+    x = 10699
 
-    for i in range(90):
+    for i in range(40):
         piso = Piso(x, 695)
         x += 72
 

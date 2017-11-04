@@ -104,7 +104,7 @@ def indicaciones():
 
         if frames_entre_escritura + 150 < frames_totales:
 
-            if Primera and frames_escritura + 15 < frames_totales:
+            if Primera and frames_escritura + 10 < frames_totales:
                 frames_escritura = frames_totales
                 Primer_Oracion_texto += Lista_Primer_Oracion[posicion_h1]
                 Primer_Oracion.Escritura(Colores["Blanco"], Primer_Oracion_texto, False)
@@ -118,7 +118,7 @@ def indicaciones():
                 Segunda = True
                 Primera = False
 
-            if Segunda and frames_escritura + 15 < frames_totales:
+            if Segunda and frames_escritura + 10 < frames_totales:
                 frames_escritura = frames_totales
                 Segunda_Oracion_texto += Lista_Segunda_Oracion[posicion_h2]
                 Segunda_Oracion.Escritura(Colores["Blanco"], Segunda_Oracion_texto, False)
@@ -134,7 +134,7 @@ def indicaciones():
                 Segunda = False
                 Tercera = True
 
-            if Tercera and frames_escritura + 15 < frames_totales:
+            if Tercera and frames_escritura + 10 < frames_totales:
                 frames_escritura = frames_totales
                 Tercera_Oracion_texto += Lista_Tercera_Oracion[posicion_h3]
                 Tercera_Oracion.Escritura(Colores["Blanco"], Tercera_Oracion_texto, False)
@@ -152,7 +152,7 @@ def indicaciones():
                 Tercera = False
                 Cuarta = True
 
-            if Cuarta and frames_escritura + 15 < frames_totales:
+            if Cuarta and frames_escritura + 10 < frames_totales:
                 frames_escritura = frames_totales
                 Cuarta_Oracion_texto += Lista_Cuarta_Oracion[posicion_h4]
                 Cuarta_Oracion.Escritura(Colores["Blanco"], Cuarta_Oracion_texto, False)

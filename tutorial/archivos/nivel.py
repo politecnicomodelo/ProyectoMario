@@ -36,7 +36,7 @@ def nivel(reloj, mario, ventana, colores):
         x += 72
 
     mario.estado_texto = 0
-    fuente = pygame.font.SysFont("mariokartdsregular", 70)
+    fuente = pygame.font.SysFont("mariokartds", 70)
     mario.texto = fuente.render("tutorial", False, colores["Negro"])
     mario.permitir = False
 

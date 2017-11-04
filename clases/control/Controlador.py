@@ -22,7 +22,7 @@ class Controlador(object):
     @classmethod
     def configurar_pantalla(cls, ancho, alto):
 
-        display = pygame.display.set_mode((ancho, alto)) #, pygame.FULLSCREEN
+        display = pygame.display.set_mode((ancho, alto), pygame.FULLSCREEN) #, pygame.FULLSCREEN
         pygame.display.set_caption("Super Poli Bros")
         return display
 
@@ -41,13 +41,13 @@ class Controlador(object):
 
     @classmethod
     def mover_pantalla(cls, fondo, mario):
-        fondo.rect.x -= 20
+        fondo.rect.x -= 8
         for item in Base.sprites:
             if item not in Base.corazon.sprites():
-                item.rect.x -= 20
+                item.rect.x -= 8
         for item in Base.sprites_principales:
             if item is not mario and isinstance(item, Moneda_c) is False:
-                item.rect.x -= 20
+                item.rect.x -= 8
 
     @classmethod
     def buscar_eventos(cls, mario):
@@ -333,8 +333,12 @@ class Controlador(object):
         base.cargar_nivel()
 
     @classmethod
-    def cargar_datos(cls, db, mario):
-        db.insertar_datos(mario)
+    def cargar_datos(cls, db, mario, nombre, puntuacion):
+        db.insertar_datos(mario, nombre, puntuacion)
+
+    @classmethod
+    def buscar_posicion(cls, db, puntos):
+        return db.buscar_posicion(puntos)
 
     @classmethod
     def eliminacion_estatica(cls):
